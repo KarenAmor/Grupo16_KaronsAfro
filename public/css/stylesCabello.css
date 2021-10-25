@@ -1,0 +1,334 @@
+* {
+    font-family: "Roboto Mono", monospace;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  /*HEADER*/
+  
+  div.primeraParte {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #8c4e37;
+    justify-content: space-around;
+    width: 100vw;
+    /* display: flex;
+      background-color: #8C4E37;
+      width: 100%;
+      background-size: cover;
+      padding: 0px 0px;
+      justify-content: space-around; */
+  }
+  
+  .logo {
+    width: 100%;
+    padding: 10px 100px;
+    justify-content: right;
+    position: relative;
+    left: 100px;
+   
+  
+    /* border-radius: 30%;
+      padding: 30px 0px 10px 20px; */
+  }
+  
+  div.segundaParte {
+    display: flex;
+    background-color: #8c4e37;
+    justify-content: space-around;
+    padding: 10px;
+    /* padding: 60px 20px 30px 0px; */
+  }
+  
+  .burger-menu {
+    text-align: center;
+  }
+  .burger-menu i {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .grupoIconos {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .iconos {
+    color: black;
+    font-size: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    /* font-size: 200%;
+      padding: 10px 20px 10px 20px; */
+    text-align: right;
+  }
+  
+  .barraBusqueda {
+    font-size: 5%;
+    width: 120px;
+    padding: 10px;
+    margin: 10px;
+    /* 
+      display: flex;
+      align-items: center;
+      font-size: 150%;
+      width: 800px;
+      margin: 60px 5px 30px 0px;
+     */
+  }
+  
+  .lupa {
+    font-size: 90%;
+    padding: 0px;
+  
+    /* font-size: 150%;
+      padding: 0px; */
+  }
+  
+  .letrasMenu {
+    display: none;
+  }
+  
+  .letra {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  /*BODY*/
+  .body {
+    background-color: #f2d6bd;
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+ .cabello {
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 30px;
+  }
+  .articulo{
+      background: white;
+      margin: 50px;
+      background-position: center;
+      border-radius: 2% ;
+  }
+
+  .imagen{
+      border: solid #8c4e37 1px;
+      border-radius: 5%;
+      margin: 60px;
+      
+      
+
+
+  }
+
+  .producto {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .d-producto {
+    border-top: 1px solid transparent;
+    background-color: #fff;
+    padding: 20px 30px;
+    margin: auto;
+  }
+  .datos{
+      color: black;
+  }
+  .d2-producto {
+    border-top: 1px solid transparent;
+    background-color: #fff;
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 5%;
+    
+  }
+
+  .titulo{
+      padding: 5px;
+      text-decoration: underline;
+      text-align: left;
+  }
+
+  h2{
+      text-align: left;
+      font-size: 20px;
+      text-decoration: underline;
+  }
+
+
+  
+  /*FOOTER*/
+  
+  .footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color: white;
+   
+    justify-content: space-around;
+  }
+  
+  .footer p {
+    padding: 10px 0px 0px 50px;
+  }
+  
+  .letra2 {
+    color: white;
+    text-decoration: none;
+    margin: 0px;
+    padding: 50px;
+  }
+  
+  
+  /*_________________MEDIA QUIERES_________________*/
+  
+  @media (min-width: 769px) {
+  
+    /*HEADER*/
+  
+  div.primeraParte{
+      display: flex;
+      background-color: #8C4E37;
+      width: 105vw;
+      background-size: cover;
+      padding: 0px 0px;
+      justify-content: space-around;
+      
+  }
+  
+  div.segundaParte{
+      display: flex;
+      background-color: #8C4E37;
+      justify-content: flex-end;
+      padding: 50px 20px 30px 0px;
+      position: relative;
+      left: 200px;
+     
+  }
+  
+  .iconos{
+      color: black;
+      font-size: 200%;
+      padding: 50px 10px 20px 40px;
+      text-align: right;
+      display: flex;
+      text-decoration: none;    
+  
+  }
+     
+  
+  .logo{
+      border-radius: 30%;
+      width: 45%;
+      padding: 30px 0px 10px 20px;
+      position: absolute;
+      left: 90px;
+      top: 10px;
+  }
+  
+  .barraBusqueda{
+      font-size: 100%;
+      width: 600px;
+      margin: 60px 5px 30px 0px;
+      
+    
+      
+  }
+  
+  .lupa{
+      font-size: 150%;
+      padding: 0px;
+  }
+  
+  
+  .letrasMenu{
+      background-color: #A65E44;
+      display: flex;  
+      width: 105vw;
+      justify-content: space-around;
+      color: black;
+      font-style: normal;
+      text-decoration: none;
+      padding: 10px;
+      margin: 2px;
+      align-items: center;
+  
+      
+      
+      
+  }
+  
+  .letra{
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 70px;
+      
+  }
+  
+  .burger-menu{
+      display: none;
+  }
+  
+  /*BODY*/
+  .articulo{
+    
+   width: 70vw;
+   position: relative;
+   left: 200px;
+     
+  } 
+
+  section div article{
+      position: relative;
+  }
+  .d-producto {
+    position: absolute;
+    left: 500px;
+    bottom: 200px;
+   
+  }
+  .titulo{
+      font-size: 30px;
+  }
+  .datos{
+      font-size: 20px;
+  }
+  .descripcion{
+      text-align: left;
+      font-size: 20px;
+  }
+  
+  /*FOOTER*/
+  
+  .footer{
+      background-color: black;
+      width: 105vw;
+      display: flex;
+      flex-direction: row;
+      color: white;
+      padding-right: 20px;
+      justify-content: space-around;
+  }
+  
+  .letra2{
+      color: white;
+      text-decoration: none;
+     
+  }
+  }
+  

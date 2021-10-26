@@ -427,6 +427,15 @@ main section .botones-cuadro-pago button:hover{
        
        
     }
+
+    .letrasMenu ul{
+        border-right: 3px dashed #f2be22;
+    }
+
+    .letrasMenu ul li .letra:hover{
+        color: #f2be22;
+        border-radius: 20px;
+    }
    
     .letra{
         color: black;

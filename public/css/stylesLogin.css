@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 * {
     font-family: "Roboto Mono", monospace;
@@ -111,8 +112,11 @@
 }
 
 h3{
-    text-align: center;
-    font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+  font-size: 30px;
+
 }
 
 .login {
@@ -288,16 +292,16 @@ h3{
       color: #f2be22;
       border-radius: 20px;
     }
-    
+
     .letra{
-        color: black;
-        font-weight: bold;
-        text-decoration: none;
-        display: flex;
-        justify-content: space-around;
-        padding: 10px 80px;
-        
-    }
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 80px;
+      
+  }
     
     .burger-menu{
         display: none;
@@ -320,6 +324,7 @@ h3{
   .letra2{
       color: white;
       text-decoration: none;
+      font-weight: normal;
      
   }
   }

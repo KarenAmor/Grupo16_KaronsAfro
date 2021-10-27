@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
 * {
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
@@ -107,7 +109,7 @@ div.segundaParte {
   padding-bottom: 10px;
   font-weight: bold;
 }
-.cabello .piel .maquillaje .accesorios {
+.cabello, .piel, .maquillaje, .accesorios {
   text-align: center;
   font-weight: bold;
   padding: 20px;
@@ -274,14 +276,14 @@ div.segundaParte{
   }
   
   .letra{
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 80px;
-      
-  }
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 80px;
+    
+}
   
   .burger-menu{
       display: none;
@@ -331,6 +333,7 @@ section div article{
 .letra2{
     color: white;
     text-decoration: none;
+    font-weight: normal;
    
 }
 }

@@ -13,7 +13,7 @@ app.get("/login",(req,res)=>{
     res.sendFile(path.resolve(__dirname, "./views/login.html"))
 });
 app.get('/cabello', (req, res)=> {
-    res.sendFile(path.join(__dirname, './views/cabelloDetail.html'));
+    res.sendFile(path.join(__dirname, './views/cabello.html'));
 });
 app.get('/piel', (req, res)=> {
     res.sendFile(path.join(__dirname, './views/piel.html'));
@@ -32,6 +32,10 @@ app.get(('/register'), (req, res) =>{
 app.get(('/carrito_compras'), (req, res) =>{
     res.sendFile(path.join(__dirname, './views/productCart.html'));
 })
+
+app.get('/quienesSomos', (req, res)=> {
+    res.sendFile(path.join(__dirname, './views/quienesSomos.html'));
+});
 
 
 app.listen(port, ()=> console.log(`Servidor corriendo ${port}`))

@@ -97,83 +97,76 @@ div.segundaParte {
   display: none;
 }
 
-.letra{
+.letra {
   color: black;
   font-weight: bold;
   text-decoration: none;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 80px;
-  
 }
 
 /*BODY*/
 .body {
   background-color: #f2d6bd;
   padding-bottom: 10px;
+  font-weight: bold;
 }
-h3 {
+.cabello, .piel, .maquillaje, .accesorios {
   text-align: center;
   font-weight: bold;
   padding: 20px;
   font-size: 30px;
+}
+.articulo{
+    background: white;
+    margin: 50px;
+    background-position: center;
+    border-radius: 2% ;
+}
+
+.imagen{
+    border: solid #8c4e37 1px;
+    border-radius: 5%;
+    margin: 60px;
+    
+    
+
 
 }
 
-.register {
-  padding: 20px;
-  margin-top: 20px;
-  background-color: white;
-  opacity: 80%;
-  border-radius: 5px;
-  margin: 2% 10% 2% 10%;
+.producto {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.forma {
-  margin-bottom: 20px;
-  align-items: center;
+.d-producto {
+  border-top: 1px solid transparent;
+  background-color: #fff;
+  padding: 20px 30px;
+  margin: auto;
+}
+.datos{
+    color: black;
+}
+.d2-producto {
+  border-top: 1px solid transparent;
+  background-color: #fff;
+  padding: 20px 30px;
+  text-align: center;
+  border-radius: 5%;
+  
 }
 
-.forma input {
-  width: 100%;
-  margin-top: 5px;
-  padding: 8px 5px;
-  border-radius: 5px;
-  border: 1px solid black;
+.titulo{
+    padding: 5px;
+    text-decoration: underline;
+    text-align: left;
 }
 
-.botonRegistrarse {
-  background-color: #8c4e37;
-  color: white;
-  text-decoration: none;
-  width: 100%;
-  margin-bottom: 10px;
-  margin-top: 5px;
-  padding: 8px 5px;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  transition-property: all;
-}
-.botonRegistrarse:hover{
-  background-color: #F28E13;
-}
-
-.botonBorrar {
-  background-color: #8c4e37;
-  color: white;
-  width: 100%;
-  margin-bottom: 10px;
-  margin-top: 5px;
-  padding: 8px 5px;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  transition-property: all;
-}
-
-.botonBorrar:hover{
-  background-color: #F28E13;
+h2{
+    text-align: left;
+    font-size: 20px;
+    text-decoration: underline;
 }
 
 
@@ -203,30 +196,29 @@ h3 {
 
 /*_________________MEDIA QUIERES_________________*/
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
+  /*HEADER*/
 
-    /*HEADER*/
-  
-    div.primeraParte{
-      display: flex;
-      background-color: #8C4E37;
-      width: 105vw;
-      background-size: cover;
-      padding: 0px 0px;
-      justify-content: space-around;
-      
-  }
-  
-  div.segundaParte{
-      display: flex;
-      background-color: #8C4E37;
-      justify-content: flex-end;
-      padding: 50px 20px 30px 0px;
-      position: relative;
-      left: 200px;
-     
-  }
+  div.primeraParte{
+    display: flex;
+    background-color: #8C4E37;
+    width: 105vw;
+    background-size: cover;
+    padding: 0px 0px;
+    justify-content: space-around;
+    
+}
+
+div.segundaParte{
+    display: flex;
+    background-color: #8C4E37;
+    justify-content: flex-end;
+    padding: 50px 20px 30px 0px;
+    position: relative;
+    left: 200px;
+   
+}
   .iconos{
       color: black;
       font-size: 200%;
@@ -284,21 +276,50 @@ h3 {
   }
   
   .letra{
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 80px;
-      
-  }
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 80px;
+    
+}
   
   .burger-menu{
       display: none;
   }
 
 /*BODY*/
+.articulo{
+  
+ width: 70vw;
+ position: relative;
+ left: 200px;
+   
+} 
 
+section div article{
+    position: relative;
+}
+.d-producto {
+  position: absolute;
+  left: 450px;
+  bottom: 100px;
+ 
+}
+.titulo{
+    font-size: 30px;
+}
+.datos{
+   
+  font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+.descripcion{
+    text-align: left;
+    font-size: 20px;
+}
 
 /*FOOTER*/
 
@@ -315,7 +336,6 @@ h3 {
 .letra2{
     color: white;
     text-decoration: none;
-    font-weight: normal;
-   
+    font-weight: normal;   
 }
 }

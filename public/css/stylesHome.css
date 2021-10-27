@@ -309,19 +309,17 @@ div.segundaParte{
 }
 
 .letrasMenu{
-    background-color: #A65E44;
-    display: flex;  
-    justify-content: space-around;
-    color: black;
-    font-style: normal;
-    text-decoration: none;
-    padding: 10px;
-    margin: 2px;
-    align-items: center;
-
-    
-    
-    
+  background-color: #A65E44;
+  display: flex;  
+  width: 105vw;
+  justify-content: space-around;
+  color: black;
+  font-style: normal;
+  text-decoration: none;
+  padding: 10px;
+  margin: 2px;
+  align-items: center;  
+  
 }
 
 .letrasMenu ul{

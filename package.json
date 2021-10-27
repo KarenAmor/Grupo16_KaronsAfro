@@ -19,11 +19,7 @@
   },
   "homepage": "https://github.com/KarenAmor/Grupo16_KaronsAfro#readme",
   "dependencies": {
-<<<<<<< HEAD
-    "nodemon": "^2.0.13"
-     }
-=======
-    "express": "^4.17.1"
+
   }
->>>>>>> bd39b78ad3f060efb5c6c6dbfeecaf3b0ecc491a
 }
+

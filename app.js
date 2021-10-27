@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-const express = require('express');
+
+const express = require ('express');
 const app = express();
 const path = require('path');
 const port = process.env.PORT ||3000;
@@ -9,11 +9,11 @@ app.use(express.static(publicFolderPath));
 app.get('/', (req, res)=> {
     res.sendFile(path.resolve(__dirname, './views/home.html'));
 });
-app.get('/', (req, res)=> {
-    res.sendFile(post.resolve(__dirname, './views/home.html'));
+app.get("/login",(req,res)=>{
+    res.sendFile(path.resolve(__dirname, "./views/login.html"))
 });
 app.get('/cabello', (req, res)=> {
-    res.sendFile(path.join(__dirname, './views/cabello.html'));
+    res.sendFile(path.join(__dirname, './views/cabelloDetail.html'));
 });
 app.get('/piel', (req, res)=> {
     res.sendFile(path.join(__dirname, './views/piel.html'));
@@ -29,30 +29,34 @@ app.get(('/register'), (req, res) =>{
     res.sendFile(path.join(__dirname, './views/register.html'));
 })
 
+app.get(('/carrito_compras'), (req, res) =>{
+    res.sendFile(path.join(__dirname, './views/productCart.html'));
+})
+
 
 app.listen(port, ()=> console.log(`Servidor corriendo ${port}`))
-=======
-const express = require ('express');
-const path = require ('path');
-const app = express ();
-const port = process.env.PORT || 3000;
-app.use(express.static(path.resolve(__dirname,"./public")));
 
-app.get("/register",(req,res)=>{
-    res.sendFile(path.resolve(__dirname, "./views/register.html"))
-});
+// const express = require ('express');
+// const path = require ('path');
+// const app = express ();
+// const port = process.env.PORT || 3000;
+// app.use(express.static(path.resolve(__dirname,"./public")));
 
-app.get("/login",(req,res)=>{
-    res.sendFile(path.resolve(__dirname, "./views/login.html"))
-});
+// app.get("/register",(req,res)=>{
+//     res.sendFile(path.resolve(__dirname, "./views/register.html"))
+// });
 
-app.get("/cabelloDetail",(req,res)=>{
-    res.sendFile(path.resolve(__dirname, "./views/cabelloDetail.html"))
-});
+// app.get("/login",(req,res)=>{
+//     res.sendFile(path.resolve(__dirname, "./views/login.html"))
+// });
 
-app.get("/productCart",(req,res)=>{
-    res.sendFile(path.resolve(__dirname, "./views/productCart.html"))
-});
+// app.get("/cabelloDetail",(req,res)=>{
+//     res.sendFile(path.resolve(__dirname, "./views/cabelloDetail.html"))
+// });
 
-app.listen(port, () => console.log ('servidor corriendo en puesto 3000'));
->>>>>>> bd39b78ad3f060efb5c6c6dbfeecaf3b0ecc491a
+// app.get("/productCart",(req,res)=>{
+//     res.sendFile(path.resolve(__dirname, "./views/productCart.html"))
+// });
+
+// app.listen(port, () => console.log ('servidor corriendo en puesto 3000'));
+

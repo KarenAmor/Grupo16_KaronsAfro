@@ -356,25 +356,25 @@ main section .botones-cuadro-pago button:hover{
 
         /*HEADER*/
       
-      div.primeraParte{
-          display: flex;
-          background-color: #8C4E37;
-          width: 100%;
-          background-size: cover;
-          padding: 0px 0px;
-          justify-content: space-around;
-          
-      }
-      
-      div.segundaParte{
-          display: flex;
-          background-color: #8C4E37;
-          justify-content: flex-end;
-          padding: 50px 20px 30px 0px;
-          position: relative;
-          left: 200px;
-         
-      }
+        div.primeraParte{
+            display: flex;
+            background-color: #8C4E37;
+            width: 105vw;
+            background-size: cover;
+            padding: 0px 0px;
+            justify-content: space-around;
+            
+        }
+        
+        div.segundaParte{
+            display: flex;
+            background-color: #8C4E37;
+            justify-content: flex-end;
+            padding: 50px 20px 30px 0px;
+            position: relative;
+            left: 200px;
+           
+        }
       .iconos{
           color: black;
           font-size: 200%;
@@ -391,7 +391,7 @@ main section .botones-cuadro-pago button:hover{
           width: 45%;
           padding: 30px 0px 10px 20px;
           position: absolute;
-          left: 5px;
+          left: 100px;
       }
       
       .barraBusqueda{

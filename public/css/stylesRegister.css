@@ -199,10 +199,10 @@ h3 {
 
     /*HEADER*/
   
-  div.primeraParte{
+    div.primeraParte{
       display: flex;
       background-color: #8C4E37;
-      width: 100%;
+      width: 105vw;
       background-size: cover;
       padding: 0px 0px;
       justify-content: space-around;
@@ -234,7 +234,7 @@ h3 {
       width: 45%;
       padding: 30px 0px 10px 20px;
       position: absolute;
-      left: 5px;
+      left: 100px;
   }
   
   .barraBusqueda{

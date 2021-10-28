@@ -156,6 +156,10 @@ main section .contenido-carrito .productos-en-bolsa .precio-producto {
   left: 90px;
 }
 
+main section .boton-eliminar{
+  text-align: center;
+}
+
 main section .cuadro-pago {
   border: 1px solid #261e1a;
   margin: 10px;
@@ -226,7 +230,18 @@ main section .botones-cuadro-pago button:hover {
 
 /* main producto */
 
-@media (min-width: 0) {
+@media (max-width: 481px) {
+
+  /*header*/
+  .logo{
+    width: 50px;
+    left: -122px;
+  }
+
+  .logo img{
+    width: 250px;
+  }
+
   /* main */
   main section {
     display: block;
@@ -260,14 +275,28 @@ main section .botones-cuadro-pago button:hover {
     margin: auto;
     margin-bottom: 10px;
   }
+
+  main section .boton-eliminar{
+    position: relative;
+    bottom: 40px;
+  }
 }
 
-@media (min-width: 481px) {
+ @media (min-width: 481px) {
   /* header */
+
+  .logo{
+    width: 50px;
+    left: -122px;
+  }
+
+  .logo img{
+    width: 250px;
+  }
 
   /* main */
   main section {
-    display: flex;
+    display: block;
     justify-content: space-around;
   }
 
@@ -277,9 +306,8 @@ main section .botones-cuadro-pago button:hover {
   }
 
   main section .contenido-carrito .subtitulos-productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+
   }
 
   main section .contenido-carrito .subtitulos-productos p {
@@ -311,13 +339,8 @@ main section .botones-cuadro-pago button:hover {
   }
 
   main section .cuadro-pago {
-    border: 1px solid #261e1a;
-    margin: 10px;
-    padding: 10px;
-    padding-bottom: 30px;
-    margin-bottom: 40px;
-    width: 300px;
-    background: white;
+    margin: auto;
+    margin-bottom: 10px;
   }
 
   main section .cuadro-pago .cupones {
@@ -351,6 +374,11 @@ main section .botones-cuadro-pago button:hover {
     border: 1px double #f2be22;
     border-radius: 2px;
   }
+}
+
+main section .boton-eliminar{
+  position: relative;
+  bottom: 40px;
 }
 
 @media (min-width: 769px) {
@@ -452,8 +480,8 @@ main section .botones-cuadro-pago button:hover {
 
   main section .contenido-carrito .subtitulos-productos {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
   }
 
   main section .contenido-carrito .subtitulos-productos h5 {
@@ -466,7 +494,7 @@ main section .botones-cuadro-pago button:hover {
     display: flex;
     justify-content: space-around;
     position: relative;
-    right: 200px;
+    right: 120px;
   }
 
   main section .contenido-carrito .productos-en-bolsa .producto {
@@ -486,6 +514,12 @@ main section .botones-cuadro-pago button:hover {
   main section .contenido-carrito .productos-en-bolsa .precio-producto {
     position: relative;
     left: 310px;
+  }
+
+  main section .boton-eliminar{
+    height: 20px;
+    position: relative;
+    top:48px
   }
 
   main section .cuadro-pago {

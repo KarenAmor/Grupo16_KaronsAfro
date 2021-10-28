@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/KarenAmor/Grupo16_KaronsAfro#readme",
   "dependencies": {
-
+    "express": "^4.17.1"
   }
 }
 

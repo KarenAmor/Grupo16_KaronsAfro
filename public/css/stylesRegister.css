@@ -10,11 +10,12 @@
 /*HEADER*/
 
 div.primeraParte {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #8c4e37;
-  justify-content: space-around;
-  width: 100vw;
+  
+      background-color: #8C4E37;
+      width: 105vw;
+      background-size: cover;
+      padding: 0px 0px;
+      
   /* display: flex;
     background-color: #8C4E37;
     width: 100%;
@@ -25,14 +26,26 @@ div.primeraParte {
 
 .logo {
   width: 100%;
-  padding: 10px 100px;
-  justify-content: right;
+  /* padding: 10px 100px; */
+  /* justify-content: right;
   position: relative;
-  left: 100px;
+  left: 100px; */
  
 
   /* border-radius: 30%;
     padding: 30px 0px 10px 20px; */
+}
+
+.logo img{
+  width: 100vw;
+  justify-content: center;
+  background-position: center;
+  margin: auto;
+  padding: 20px;
+  
+}
+.lupa{
+  display: none;
 }
 
 div.segundaParte {
@@ -182,26 +195,57 @@ h3 {
 
 .footer {
   background-color: black;
+  width: 105vw;
   display: flex;
   flex-direction: column;
   color: white;
- 
   justify-content: space-around;
+  text-align: center;
 }
 
+
 .footer p {
-  padding: 10px 0px 0px 50px;
+  padding: 10px 0px 0px 15px;
 }
 
 .letra2 {
   color: white;
   text-decoration: none;
   margin: 0px;
-  padding: 50px;
+  padding: 25px;
+  text-align: center;
 }
 
 
 /*_________________MEDIA QUIERES_________________*/
+
+@media (min-width:481px) {
+  /*HEADER*/
+  .iconos {
+    color: black;
+    font-size: 150%;
+    padding: 10px;
+    margin-top: 10px;
+    /* font-size: 200%;
+      padding: 10px 20px 10px 20px; */
+    text-align: right;
+  }
+  
+  .barraBusqueda {
+    font-size: 10%;
+    width: 350px;
+    padding: 10px;
+    margin: 10px;
+    /* 
+      display: flex;
+      align-items: center;
+      font-size: 150%;
+      width: 800px;
+      margin: 60px 5px 30px 0px;
+     */
+  }
+
+}
 
 @media (min-width: 769px) {
 
@@ -212,6 +256,7 @@ h3 {
       display: flex;
       background-color: #8C4E37;
       width: 105vw;
+      height: 15vw;
       background-size: cover;
       padding: 0px 0px;
       justify-content: space-around;
@@ -229,27 +274,42 @@ h3 {
   }
   .iconos{
       color: black;
+      width: 5vw;
       font-size: 200%;
-      padding: 50px 10px 20px 40px;
+      padding: 50px 0px 20px 0px;
       text-align: right;
       display: flex;
-      text-decoration: none;    
+      text-decoration: none;   
+      position: relative;
+      left: -400px; 
   
   }
      
   
-  .logo{
+  /* .logo{
       border-radius: 30%;
-      width: 45%;
-      padding: 30px 0px 10px 20px;
-      position: absolute;
-      left: 100px;
+      width: 40px;
+      /* padding: 30px 0px 10px 20px; */
+      /* position: absolute; */
+      /* left: 100px; */
+  /* } */ 
+
+  .logo img{
+    
+    width: 40%;
+    padding: 10px;
+    position: relative;
+    left: 100px;
+
+
   }
   
   .barraBusqueda{
       font-size: 100%;
-      width: 600px;
+      width: 38vw;
       margin: 60px 5px 30px 0px;
+      position: relative;
+      left: -550px;
       
     
       
@@ -258,11 +318,17 @@ h3 {
   .lupa{
       font-size: 150%;
       padding: 0px;
+      height: 2vw;
+      display:flex;
+      position: absolute;
+      bottom: 120px;
+      left: 100px;
+      display: none;
   }
   
   .letrasMenu{
     background-color: #A65E44;
-    display: flex;  
+    display: flex;
     width: 105vw;
     justify-content: space-around;
     color: black;
@@ -270,7 +336,9 @@ h3 {
     text-decoration: none;
     padding: 10px;
     margin: 2px;
-    align-items: center;  
+    align-items: center;
+    position: absolute;
+    top: 208px;  
     
   }
   
@@ -299,6 +367,10 @@ h3 {
 
 /*BODY*/
 
+.body{
+  width: 100vw;
+  margin-right: 0px;
+}
 
 /*FOOTER*/
 
@@ -310,6 +382,7 @@ h3 {
     color: white;
     padding-right: 20px;
     justify-content: space-around;
+    text-align: left;
 }
 
 .letra2{

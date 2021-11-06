@@ -241,6 +241,7 @@ main section .botones-cuadro-pago button:hover {
 
 .footer p {
   padding: 10px 0px 0px 15px;
+  font-size: 16px;
 }
 
 .letra2 {
@@ -249,6 +250,7 @@ main section .botones-cuadro-pago button:hover {
   margin: 0px;
   padding: 25px;
   text-align: center;
+  font-size: 12px;
 }
 
 /* main producto */

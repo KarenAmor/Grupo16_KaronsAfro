@@ -218,6 +218,7 @@ main ul li img{
   
   .footer p {
     padding: 10px 0px 0px 15px;
+    font-size: 16px;
   }
   
   .letra2 {
@@ -226,8 +227,8 @@ main ul li img{
     margin: 0px;
     padding: 25px;
     text-align: center;
+    font-size: 12px;
   }
-
   /*_________________MEDIA QUIERES_________________*/
    /*TABLET*/
   @media screen and (min-width:424px){

@@ -115,20 +115,16 @@ font-size: 18px;
 }
 .articulo{
     background: white;
-    margin: 50px;
+    margin: 20px;
     background-position: center;
     border-radius: 2% ;
+    align-items: center;
 }
 
 .imagen{
     border: solid #8c4e37 1px;
     border-radius: 5%;
-    margin: 60px;
-    
-    
-
-
-}
+  max-width: 900px;}
 
 .producto {
   display: flex;
@@ -142,6 +138,11 @@ font-size: 18px;
   background-color: #fff;
   padding: 20px 30px;
   margin: auto;
+  text-align: justify;
+}
+
+.d-producto p{
+  font-size: 20px;
 }
 .datos{
     color: black;
@@ -303,4 +304,7 @@ nav .letra{
 font-size: 22px;
 margin-right: 33px;      
                 }
+.imagen{
+  margin-left: 400px;
+}
       }

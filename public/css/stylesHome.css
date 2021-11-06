@@ -132,7 +132,7 @@ main ul li img{
 
 .container, .container2, .container3{
     margin: auto;
-    background-color: white;  
+    background-color: #f2d6bd;
     height: 350px; 
     bottom: 0;
     }
@@ -252,6 +252,7 @@ main ul li img{
       margin-left: 100px;
       margin-right: 100px;
       justify-content: center;
+     
               }
 
   }

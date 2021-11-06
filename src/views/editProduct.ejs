@@ -1,0 +1,45 @@
+<%- include ('./partials/doctype') %>
+
+    <%- include ('./partials/head') %>
+    <link rel="stylesheet" href="/css/stylesEditProduct.css">
+
+        <body class="body">
+            <%- include ('./partials/header') %>
+                <main class="body">
+                    <h3> EDITAR PRODUCTO</h3>
+                    <form action="#" method="get" class="register"><b>
+                            <div class="forma">
+                                <label>Nombre del Producto</label>
+                                <input type="text" name="nombreProducto" required>
+                            </div>
+                            <div class="forma">
+                                <label>Precio</label>
+                                <input type="text" name="precioProducto" required>
+                            </div>
+                            <div class="forma">
+                                <label>Referencia</label>
+                                <input type="texto" name="referenciaProducto" required>
+                            </div>
+                            <div class="forma">
+                                <label>Cantidad Disponible</label>
+                                <input type="texto" name="cantidadProducto" required>
+                            </div>
+                            <div class="forma">
+                                <label>Descripción del Producto</label>
+                                <input type="texto" name="cdescripcionProducto" required>
+                            </div>
+
+                            <div class="forma">
+                                <h4>Imagen del Producto</h4>
+                                <input type="file" name="imagenProducto" accept=".jpg , .png" required>
+                            </div>
+                            <div>
+                                <button class="botonEdit" type="submit"><b>Actualizar Cambios</b></button>
+                        </b>
+                    </form>
+
+                </main>
+                <%- include ('./partials/footer') %>
+        </body>
+
+        </html>

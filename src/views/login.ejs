@@ -1,0 +1,37 @@
+<%- include ('./partials/doctype') %>
+
+    <%- include ('./partials/head') %>
+    <link rel="stylesheet" href="/css/stylesLogin.css">
+
+        <body class="body">
+            <%- include ('./partials/header') %>
+                <main class="body">
+                    <h3> Bienvenido(a)
+                        Inicia Sesion
+                    </h3>
+                    <form action="#" method="get" class="login"><b>
+                            <div>
+                                <label class="forma">Usuario</label>
+                                <input type="text" name="Usuario" required>
+                            </div>
+                            <div>
+                                <label class="forma">Contraseña</label>
+                                <input type="password" name="contraseñaUsuario" required>
+                            </div>
+                            <button class="boton" type="submit"><a class="boton" href="#"><b>Ingresar</b></a></button>
+                            <div class="contraseña">
+                                <a class="contraseña" href="#">Olvidaste tu contraseña?</a>
+                            </div>
+
+                            <div>
+                                <button class="boton"><a class="boton" href="#"><b>Crear Cuenta</b></a></button>
+                            </div>
+                        </b>
+                    </form>
+
+                </main>
+                <%- include ('./partials/footer') %>
+
+        </body>
+
+        </html>

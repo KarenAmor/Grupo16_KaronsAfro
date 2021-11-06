@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include ('./partials/doctype') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/stylesLogin.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <title>Kairos Afro</title>
-</head>
+    <%- include ('./partials/head') %>
+    <link rel="stylesheet" href="/css/stylesRegister.css">
 
 <body class="body">
     <header>
@@ -66,27 +58,60 @@
         </nav>
     </header>
     <main class="body">
-        <h3> Bienvenido(a)
-             Inicia Sesion
-        </h3>
-        <form action="#" method="get" class="login"><b>
-                <div>
-                    <label class="forma">Usuario</label>
-                    <input type="text" name="Usuario" required>
+        <h3> CREAR CUENTA</h3>
+        <form action="#" method="get" class="register"><b>
+                <div class="forma">
+                    <label>Nombre</label>
+                    <input type="text" name="nombreUsuario" min="3" required>
+                </div>
+                <div class="forma">
+                    <label>Apellido</label>
+                    <input type="text" name="apellidoUsuario" min="3" required>
+                </div>
+                <div class="forma">
+                    <label>Correo Electrónico</label>
+                    <input type="email" name="emailUsuario" required>
+                </div>
+                <div class="forma">
+                    <label>Contraseña</label>
+                    <input type="password" name="contraseñaUsuario" min="8" required>
+                </div>
+                <div class="forma">
+                    <label>Confirmación de Contraseña</label>
+                    <input type="password" name="confirmacionContraseñaUsuario" min="8" required>
+                </div>
+                <div class="forma">
+                    <label>Pais de Residencia</label required>
+                    <select>
+                        <option><b>Colombia</b></option>
+                        <option><b>Venezuela</b></option>
+                    </select>
+                </div>
+                <div class="forma">
+                    <label>Indicativo</label required>
+                    <select>
+                        <option><b>+57</b></option>
+                        <option><b>+58</b></option>
+                    </select>
+                </div>
+                <div class="forma">
+                    <label>Celular</label>
+                    <input type="text" name="celularUsuario" min="10" required>
+                </div>
+                <div class="forma">
+                    <label>Dirección</label>
+                    <input type="text" name="direccionUsuario" required>
                 </div>
                 <div>
-                    <label class="forma">Contraseña</label>
-                    <input type="password" name="contraseñaUsuario" required>
-                </div>                
-                <button class="boton" type="submit"><a class="boton" href="#"><b>Ingresar</b></a></button>
-                <div class="contraseña">
-                    <a class="contraseña" href="#">Olvidaste tu contraseña?</a>
+                    <label>
+                        <input type="radio" name="terminosUsuario" required>
+                        Acepto término y condiciones
+                    </label>
                 </div>
+                <button class="botonRegistrarse" type="submit"><b>Registrarse</b></button>
+                <button class="botonBorrar" type="reset"><b>Borrar</b></button>
 
-                <div>
-                    <button class="boton"><a class="boton" href="#"><b>Crear Cuenta</b></a></button>
-                </div>               
-            </b>           
+            </b>
         </form>
 
     </main>

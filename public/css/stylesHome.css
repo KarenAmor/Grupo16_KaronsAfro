@@ -104,6 +104,7 @@ font-size: 18px;
 }
 /*MAIN*/
 main{
+    background-color: #f2d6bd;
     position: relative;
     display: flex;
     justify-content: center;

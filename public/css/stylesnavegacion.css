@@ -131,6 +131,7 @@ font-size: 18px;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+  
 }
 
 .d-producto {
@@ -291,6 +292,8 @@ font-weight: normal;
   margin-right: 60px;
   justify-content: center;
                    }
+
+
 .letrasMenu ul li .letra:hover{
 color: #f2be22;
 border-radius: 20px;

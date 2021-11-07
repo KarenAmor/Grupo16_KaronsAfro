@@ -1,43 +1,76 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 * {
-  padding: 0px;
-  margin: 0px;
-  font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
+  margin: 0%;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+html,
+body {
+  font-size: 62.5%;
+  font-family: "Roboto Mono", monospace;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-/* header */
+/*HEADER*/
 
 header {
-  width: 100%;
-}
-
-div.primeraParte {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #8c4e37;
-  justify-content: space-around;
-  width: 100vw;
-}
-
-.logo {
-  width: 100%;
-  padding: 10px 100px;
-  justify-content: right;
   position: relative;
-  left: 100px;
-}
-
-div.segundaParte {
   display: flex;
-  background-color: #8c4e37;
-  justify-content: space-around;
-  padding: 10px;
+  justify-content: center;
+  width: 100%;
+  min-width: 320px;
+  height: 320px;
+  text-align: center;
+  background: linear-gradient(207.8deg, #201e1c 16.69%, #f7931a 100%);
+}
+header img {
+  margin-top: 0px;
+  align-self: center;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.burger-menu {
-  text-align: center;
+.primeraParte .segundaParte .form {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.primeraParte .segundaParte .form .contenedor {
+  width: 300px;
+  border-radius: 100px;
+  border: 1px solid #dfe1e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primeraParte .segundaParte .form input {
+  width: 265px;
+  height: 25px;
+  border: none;
+  outline: none;
+}
+.primeraParte .segundaParte .form .contenedor:hover {
+  box-shadow: 0 1px 6px 0 #20212447;
+  border-color: #dfe1e500;
+}
+.primeraParte .segundaParte .form .lupa {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
 }
 .burger-menu i {
   background-color: white;
@@ -49,41 +82,24 @@ div.segundaParte {
 }
 
 .grupoIconos {
-  padding: 10px;
+  font-size: 3rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
-
-.iconos {
+.grupoIconos .iconos {
+  margin-right: 30px;
   color: black;
-  font-size: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  text-align: right;
 }
-
-.barraBusqueda {
-  font-size: 5%;
-  width: 120px;
-  padding: 10px;
-  margin: 10px;
-}
-
-.lupa {
-  font-size: 90%;
-  padding: 0px;
+.grupoIconos .iconos:hover {
+  border: 1px solid #c6c6c6;
+  box-shadow: 0 1px 1px black;
+  color: #222;
 }
 
 .letrasMenu {
   display: none;
 }
-
-.letra {
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-}
-
 /* footer */
 
 .footer {
@@ -116,7 +132,8 @@ main {
 }
 
 .admin{
-    padding: 10px;
+    display: block;
+    margin-bottom: -15px;
 }
 
 .admin h2{
@@ -128,13 +145,23 @@ main {
     padding-bottom: 10px;
 }
 
+.admin .agregar-producto a{
+  font-size: 17px;
+}
+
 .admin .table-1{
     margin-right: -80px;
     display: flex;
     justify-content: center;
+    font-size: 13px;
+}
+
+.admin .table-1 .table-2{
+    width: 100%;
 }
 
 .admin .table-1 .table-2 thead{
+    width: 90vw;
     display: flex;
     border-bottom: 1px solid black;
 }
@@ -142,43 +169,111 @@ main {
 .admin .table-1 .table-2 thead tr{
     display: block;
     width: 100vw;
-    
 }
 
 .admin .table-1 .table-2 thead tr th{
     display: inline;
-    margin-right: 210px;
-    
-}
-
-.admin .table-1 .table-2 tbody{
-    display: flex;
+    margin-right: 190px;    
 }
 
 .admin .table-1 .table-2 tbody tr{
     display: block;
-    width: 100vw;
+    width: 90vw;
     border-bottom: 1px solid gray;
 }
 
 .admin .table-1 .table-2 tbody tr td{
     display: inline;
-    margin-right: 160px;    
 } 
 
-.admin .table-1 .table-2 tbody tr td .icon-eye{
-    position: absolute;
-    left: 565px;
+.admin .table-1 .table-2 tbody .primer-item td{
+    margin-right: 160px;
 }
 
-.admin .table-1 .table-2 tbody tr td .icon-pencil{
-    position: absolute;
-    left: 825px;
+.admin .table-1 .table-2 tbody .primer-item td .icon-eye{
+    position: relative;
+    right: 45px;
 }
 
-.admin .table-1 .table-2 tbody tr td .icon-trash{
-    position: absolute;
-    left: 1110px;
+.admin .table-1 .table-2 tbody .primer-item td .icon-trash{
+    position: relative;
+    left: 70px;
+}
+
+.admin .table-1 .table-2 tbody .segundo-item td{
+    margin-right: 160px;
+}
+
+.admin .table-1 .table-2 tbody .segundo-item td .icon-eye{
+    position: relative;
+    left: 10px;
+}
+
+.admin .table-1 .table-2 tbody .segundo-item td .icon-pencil{
+    position: relative;
+    left: 55px;
+}
+
+.admin .table-1 .table-2 tbody .segundo-item td .icon-trash{
+    position: relative;
+    left: 125px;
+}
+
+.admin .table-1 .table-2 tbody .tercer-item td{
+    margin-right: 160px;
+}
+
+.admin .table-1 .table-2 tbody .tercer-item td .icon-eye{
+    position: relative;
+    right: 51px;
+}
+
+.admin .table-1 .table-2 tbody .tercer-item td .icon-pencil{
+    position: relative;
+    right: 8px;
+}
+
+.admin .table-1 .table-2 tbody .tercer-item td .icon-trash{
+    position: relative;
+    left: 63px;
+}
+
+.admin .table-1 .table-2 tbody .cuarto-item td{
+    margin-right: 160px;
+}
+
+.admin .table-1 .table-2 tbody .cuarto-item td .icon-eye{
+    position: relative;
+    right: 168px;
+}
+
+.admin .table-1 .table-2 tbody .cuarto-item td .icon-pencil{
+    position: relative;
+    right: 125px;
+}
+
+.admin .table-1 .table-2 tbody .cuarto-item td .icon-trash{
+    position: relative;
+    right: 53px;
+}
+
+.admin .table-1 .table-2 tbody .quinto-item td{
+    margin-right: 160px;
+}
+
+.admin .table-1 .table-2 tbody .quinto-item td .icon-eye{
+    position: relative;
+    right: 11px;
+}
+
+.admin .table-1 .table-2 tbody .quinto-item td .icon-pencil{
+    position: relative;
+    left: 30px;
+}
+
+.admin .table-1 .table-2 tbody .quinto-item td .icon-trash{
+    position: relative;
+    left: 103px;
 }
 
 .admin .table-1 .table-2 tbody tr td a:visited{
@@ -188,137 +283,196 @@ main {
 /* footer */
 
 .footer {
-    background-color: black;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  justify-content: space-around;
+}
+
+.footer p {
+  padding: 10px 0px 0px 15px;
+  font-size: 16px;
+}
+
+.letra2 {
+  color: white;
+  text-decoration: none;
+  margin: 0px;
+  padding: 25px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/*_________________MEDIA QUIERES_________________*/
+/*TABLET*/
+@media screen and (min-width: 424px) {
+  header {
+    height: 350px;
+  }
+  main {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    margin-right: 0px;
+  }
+  main ul li img {
+    margin: 0;
+    padding: 0;
+    width: 424px;
+    margin-left: -64px;
+    margin-right: 20px;
+    justify-content: center;
+  }
+  .menu,
+  .menu2,
+  .menu3 {
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    justify-content: center;
+  }
+}
+
+/*COMPUTADOR*/
+
+@media screen and (min-width: 768px) {
+  header {
+    width: 100%;
+    height: 81vh;
+  }
+  .burger-menu i {
+    display: none;
+  }
+  .contenedor {
+    margin-top: 20px;
+  }
+  .container,
+  .container2,
+  .container3 {
+    height: 500px;
+  }
+
+  nav .letrasMenu {
+    display: flex;
+    justify-content: space-between;
+    border: black solid 1px;
+    background-color: white;
+    font-weight: bold;
+  }
+  nav .letra {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 30px;
+  }
+  main ul li img {
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    margin-left: -150px;
+    margin-right: 20px;
+    justify-content: center;
+  }
+
+  /*MAIN*/
+  .articulo{
+    width: 35%;
+    padding: 10px;
+ 
+   }
+   .imagen {
+     border: solid #8c4e37 1px;
+     border-radius: 5%;
+     width: 70%;
+   }
+   
+   .producto {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-around;
+       
+   }
+   
+   .d-producto {
+     border-top: 1px solid transparent;
+     background-color: #fff;
+     padding: 20px 30px;
+     margin: auto;
+   }
+   .datos {
+     color: black;
+     font-size: 16px;
+     text-align: left;
+   }
+   .d2-producto {
+     border-top: 1px solid transparent;
+     background-color: #fff;
+     padding: 20px 30px;
+     text-align: center;
+     border-radius: 5%;
+   }
+   
+   .titulo {
+     padding: 5px;
+     text-decoration: underline;
+     text-align: left;
+     font-size: 20px;
+   }
+   
+   h2 {
+     text-align: left;
+     font-size: 20px;
+     text-decoration: underline;
+   }
+ 
+   .descripcion{
+     font-size: 16px;
+     text-align: justify;
+   }
+
+
+  /*FOOTER*/
+  .footer {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     color: white;
-  
+    padding-right: 0px;
     justify-content: space-around;
+    text-align: left;
   }
-  
-  .footer p {
-    padding: 10px 0px 0px 15px;
-    font-size: 16px;
-  }
-  
+
   .letra2 {
     color: white;
     text-decoration: none;
-    margin: 0px;
-    padding: 25px;
-    text-align: center;
-    font-size: 12px;
+    font-weight: normal;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    width: 100%;
+    height: 91vh;
+  }
+  main ul li img {
+    margin: 0;
+    padding: 0;
+    width: 700px;
+    margin-left: -195px;
+    margin-right: 60px;
+    justify-content: center;
   }
 
-@media (min-width: 768px) {
-
-    /*HEADER*/
-header{
-  height: 70vh;
+  .letrasMenu ul li .letra:hover {
+    color: #f2be22;
+    border-radius: 20px;
+  }
+  nav .letra {
+    font-size: 22px;
+    margin-right: 33px;
+  }
 }
-    div.primeraParte{
-        display: flex;
-        background-color: #8C4E37;
-        width: 105vw;
-        background-size: cover;
-        padding: 0px 0px;
-        justify-content: space-around;
-       
-    }
-   
-    div.segundaParte{
-        display: flex;
-        background-color: #8C4E37;
-        justify-content: flex-end;
-        padding: 50px 20px 30px 0px;
-        position: relative;
-        left: 200px;
-       
-    }
-   
-    .iconos{
-        color: black;
-        font-size: 200%;
-        padding: 50px 10px 20px 40px;
-        text-align: right;
-        display: flex;
-        text-decoration: none;    
-   
-    }
-       
-   
-    .logo{
-        border-radius: 30%;
-        width: 45%;
-        padding: 30px 0px 10px 20px;
-        position: absolute;
-        left: 90px;
-        top: 10px;
-    }
-   
-    .barraBusqueda{
-        font-size: 100%;
-        width: 600px;
-        margin: 60px 5px 30px 0px;
-       
-     
-       
-    }
-   
-    .lupa{
-        font-size: 150%;
-        padding: 0px;
-    }
-   
-   
-    .letrasMenu{
-        background-color: #A65E44;
-        display: flex;  
-        width: 105vw;
-        justify-content: space-around;
-        color: black;
-        font-style: normal;
-        text-decoration: none;
-        padding: 10px;
-        margin: 2px;
-        align-items: center;   
-    }
-
-    .letrasMenu ul{
-        border-right: 3px dashed #f2be22;
-    }
-
-    .letrasMenu ul li .letra:hover{
-        color: #f2be22;
-        border-radius: 20px;
-    }
-   
-    .letra{
-        color: black;
-        font-weight: bold;
-        text-decoration: none;
-        display: flex;
-        justify-content: space-around;
-        padding: 10px 70px;
-       
-    }
-   
-    .burger-menu{
-        display: none;
-    }
-       /*FOOTER*/
-       .footer{
-        background-color: black;
-        width: 105vw;
-        display: flex;
-        flex-direction: row;
-        color: white;
-        padding-right: 20px;
-        justify-content: space-around;
-    }
-   
-    .letra2{
-        color: white;
-        text-decoration: none;
-    }
-} 

@@ -210,10 +210,12 @@ main {
     font-size: 12px;
   }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
     /*HEADER*/
-
+header{
+  height: 70vh;
+}
     div.primeraParte{
         display: flex;
         background-color: #8C4E37;

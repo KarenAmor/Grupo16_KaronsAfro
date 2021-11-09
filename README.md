@@ -22,3 +22,7 @@ Además, se escogieron los siguientes sitios web a partir de su diseño, divisi�
 ## Enlace al tablero de trabajo: 
 
 https://trello.com/b/OtOsrkFK/grupo16karonsafro
+
+## Enlace Heroku: 
+
+https://grupo16-karonsafro.herokuapp.com/

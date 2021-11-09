@@ -108,6 +108,7 @@ main {
   padding: 20px;
   padding-bottom: 100px;
   width: 100%;
+  margin-bottom: -15px;
 }
 
 main h3 {
@@ -130,29 +131,31 @@ main h3 {
 } 
 
 main section {
-  display: flex;
+  display: block;
   justify-content: space-around;
 }
 
 main section .contenido-carrito {
   margin: 20px;
-  
+  width: 90vw;
 }
 
 main section .contenido-carrito .subtitulos-productos {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
+  margin-left: -45px;
 }
 
 main section .contenido-carrito .subtitulos-productos h5 {
-  padding-left: 110px;
   padding-bottom: 10px;
+  font-size: 15px;
 }
 
 main section .contenido-carrito .productos-en-bolsa {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  font-size: 18px;
+  margin-left: -169px;
 }
 
 main section .contenido-carrito .productos-en-bolsa .producto {
@@ -185,6 +188,7 @@ main section .cuadro-pago {
   margin-bottom: 40px;
   width: 300px;
   background: white;
+  font-size: 15px;
 }
 
 main section .cuadro-pago .cupones {
@@ -269,7 +273,6 @@ main section .botones-cuadro-pago button:hover {
 
   main section .contenido-carrito {
     margin: 20px;
-    width: 20vw;
   }
 
   main section .contenido-carrito .subtitulos-productos {
@@ -284,7 +287,8 @@ main section .botones-cuadro-pago button:hover {
 
   main section .contenido-carrito .productos-en-bolsa {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    margin-left: -141px;
   }
 
   main section .contenido-carrito .productos-en-bolsa .producto {
@@ -389,6 +393,7 @@ main section .botones-cuadro-pago button:hover {
 
   main section .contenido-carrito {
     margin: 20px;
+    width: 20vw;
   }
 
   main section .contenido-carrito .subtitulos-productos {
@@ -408,6 +413,7 @@ main section .botones-cuadro-pago button:hover {
     justify-content: space-around;
     position: relative;
     right: 120px;
+    margin-left: 0;
   }
 
   main section .contenido-carrito .productos-en-bolsa .producto {

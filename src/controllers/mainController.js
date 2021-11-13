@@ -55,6 +55,9 @@ const controller ={
         res.render('addProduct')
 
     },
+    store: (req,res)=>{
+        res.redirect("/administrador")
+    },
     editProduct: (req,res)=>{
         // res.sendFile(path.resolve(__dirname, "../views/editProduct.html"))
         res.render('editProduct')

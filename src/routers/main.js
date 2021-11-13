@@ -15,6 +15,7 @@ router.get('/carrito_compras', controller.carritoCompras);
 router.get('/quienesSomos', controller.quienesSomos);
 router.get('/administrador', controller.administrador);
 router.get('/addProduct', controller.addProduct);
+router.post('/',controller.store);
 router.get('/editProduct', controller.editProduct);
 
 

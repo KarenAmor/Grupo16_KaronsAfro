@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "Name": "Carlos",
+        "LastName": "Lavado",
+        "Email": "carlos@hotmail.com",
+        "Password": "carlos123",
+        "ConfirmPassword": "carlos123",
+        "CountryResidence": "Colombia",
+        "Ext": "+57",
+        "PhoneNumber": "388-673-8009",
+        "Adress": "bogota"
+    },
+    {
+        "id": 2,
+        "Name": "Sharon",
+        "LastName": "Florez",
+        "Email": "sharon@hotmail.com",
+        "Password": "sharon123",
+        "ConfirmPassword": "sharon123",
+        "CountryResidence": "Colombia",
+        "Ext": "+57",
+        "PhoneNumber": "446-127-5282",
+        "Adress": "Bogota"
+    },
+    {
+        "id": 3,
+        "Name": "Karen",
+        "LastName": "Moreno",
+        "Email": "karen@hotmail.com",
+        "Password": "karen123",
+        "ConfirmPassword": "karen123",
+        "CountryResidence": "Colombia",
+        "Ext": "+57",
+        "PhoneNumber": "399-742-8390",
+        "Adress": "Antioquia"
+    },
+    {
+        "id": 4,
+        "Name": "Jason",
+        "LastName": "Rodriguez",
+        "Email": "ahawken3@webeden.co.uk",
+        "Password": "Wv01UMATIJq",
+        "ConfirmPassword": "Wv01UMATIJq",
+        "CountryResidence": "Argentina",
+        "Ext": "+59",
+        "PhoneNumber": "682-386-6315",
+        "Adress": "Buenos Aires"
+    },
+    {
+        "id": 5,
+        "Name": "Yessica",
+        "LastName": "Paz",
+        "Email": "rmistry4@sfgate.com",
+        "Password": "gAw5yVE",
+        "ConfirmPassword": "gAw5yVE",
+        "CountryResidence": "Venezuela",
+        "Ext": "+58",
+        "PhoneNumber": "834-434-7149",
+        "Adress": "Caracas"
+    }
+]

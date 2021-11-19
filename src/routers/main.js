@@ -6,10 +6,10 @@ const router = express.Router();
 
 router.get('/', controller.home);
 router.get('/login', controller.login);
-router.get('/cabello', controller.cabello);
-router.get('/piel', controller.piel);
-router.get('/maquillaje', controller.maquillaje);
-router.get('/accesorios', controller.accesorios);
+router.get('/producto/cabello', controller.cabello);
+router.get('/producto/piel', controller.piel);
+router.get('/producto/maquillaje', controller.maquillaje);
+router.get('/producto/accesorios', controller.accesorios);
 router.get('/register', controller.register);
 router.get('/carrito_compras', controller.carritoCompras);
 router.get('/quienesSomos', controller.quienesSomos);

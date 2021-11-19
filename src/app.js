@@ -21,10 +21,10 @@ app.use(methodOverride('_method'));
 
 app.use('/', rutas);
 app.use('/login', rutas);
-app.use('/cabello', rutas);
-app.use('/piel', rutas);
-app.use('/maquillaje', rutas);
-app.use('/accesorios', rutas);
+app.use('/producto/cabello', rutas);
+app.use('/producto/piel', rutas);
+app.use('/producto/maquillaje', rutas);
+app.use('/producto/accesorios', rutas);
 app.use('/register', rutas);
 app.use('/carrito_compras', rutas);
 app.use('/quienesSomos', rutas);

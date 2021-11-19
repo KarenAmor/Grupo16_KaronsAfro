@@ -31,9 +31,8 @@ app.use('/quienesSomos', rutas);
 app.use('/administrador', rutas);
 app.use('/addProduct', rutas);
 app.use('/editProduct', rutas);
-
-// app.use('/administrador/update/:id', rutas);
-// app.use('/administrador/delete/:id', rutas);
+app.use('/administrador/update/:id', rutas);
+app.use('/administrador/delete/:id', rutas);
 
 
 app.listen(port, ()=> console.log(`Servidor corriendo ${port}`))

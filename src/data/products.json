@@ -2,65 +2,81 @@
     {
         "id": 1,
         "Name": "Crema de peinar SKALA",
-        "Price": 33.000,
+        "Price": 33,
         "Reference": "11-852",
+        "Quantity": 2,
         "Description": "Crema de peinar para cabello tipo c2, contiene vitaminas y minerales que ayudan al crecimiento.",
         "Image": "crema-skala.png"
     },
     {
         "id": 2,
         "Name": "Aceite de Ricino Negro",
-        "Price": 37.000,
+        "Price": 37,
         "Reference": "11-488",
+        "Quantity": 2,
         "Description": "Este enjuague para trenzas y cuero cabelludo, limpia suavemente y acondiciona el cabello sin causar frizz.",
         "Image": "aceite-ricino.png"
     },
     {
         "id": 3,
         "Name": "Crema Blanqueadora Pgitiel de Arminio",
-        "Price": 18.000,
+        "Price": 18,
         "Reference": "11-789",
+        "Quantity": 2,
         "Description": "Crema con agente activo que ayuda a la renovacion celular y aclaramiento de la piel.",
         "Image": "crema-pgitiel.png"
     },
     {
         "id": 4,
         "Name": "Crema Cetafhil",
-        "Price": 45.000,
+        "Price": 45,
         "Reference": "11-199",
+        "Quantity": 2,
         "Description": "Crema de piel, que nueva celulas muertas e hidrata rejuvenienciendo y dando una piel terza.",
         "Image": "crema-cetafhil.png"
     },
     {
         "id": 5,
         "Name": "Set de Maquillaje",
-        "Price": 83.000,
+        "Price": 83,
         "Reference": "11-974",
+        "Quantity": 2,
         "Description": "Polvo compacto, base, primer, labial y pestañina para la rutina diaria.",
         "Image": "set-maquillaje.png"
     },
     {
         "id": 6,
         "Name": "Polvo Compacto",
-        "Price": 10.000,
+        "Price": 10,
         "Reference": "11-870",
+        "Quantity": 2,
         "Description": "Polvo tipo mate para todo tipo de piel.",
         "Image": "polvo-compacto.png"
     },
     {
         "id": 7,
         "Name": "Turbante Sencillo",
-        "Price": 33.000,
+        "Price": 33,
         "Reference": "11-976",
+        "Quantity": 2,
         "Description": "Turbante de algodon con lindo estampado floral.",
         "Image": "turbante.png"
     },
     {
         "id": 8,
         "Name": "Aretes",
-        "Price": 15.000,
+        "Price": 15,
         "Reference": "11-111",
+        "Quantity": 2,
         "Description": "Aretes tipo argolla con perla de munaro en centro.",
         "Image": "aretes.png"
+    },
+    {
+        "id": 9,
+        "Image": "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
+    },
+    {
+        "id": 10,
+        "Image": "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
     }
 ]

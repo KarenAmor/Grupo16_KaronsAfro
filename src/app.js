@@ -29,7 +29,7 @@ app.use('/register', rutas);
 app.use('/carrito_compras', rutas);
 app.use('/quienesSomos', rutas);
 app.use('/administrador', rutas);
-app.use('/addProduct', rutas);
+app.use('/administrador/addProduct', rutas);
 app.use('/editProduct', rutas);
 
 // app.use('/administrador/update/:id', rutas);

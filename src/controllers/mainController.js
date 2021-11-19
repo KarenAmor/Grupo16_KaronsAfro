@@ -1,4 +1,5 @@
 const path = require ('path');
+const fs=require('fs');
 
 const controller ={
 
@@ -83,6 +84,22 @@ const controller ={
     
 
     store: (req,res)=>{
+        let db=JSON.parse(fs.readFileSync(path.resolve(__dirname,"../data/products.json")))
+        let lastProduc=db.pop()
+        db.push(lastProduc)
+        const newProduct={
+            id: lastProduc.id+1,
+            Name: req.body.nombreProducto,
+            Price: req.body.precioProducto,
+            Reference: req.body.referenciaProducto,
+            Quantity: req.body.cantidadProducto,
+            Description: req.body.descripcionProducto,
+            Image: "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
+        }
+        console.log(newProduct);
+        db.push(newProduct)
+        let productJson=JSON.stringify(db,null,4)
+        fs.writeFileSync(path.resolve(__dirname,"../data/products.json"),productJson)
         res.redirect("/administrador")
     },
 

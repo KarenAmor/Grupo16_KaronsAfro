@@ -20,8 +20,8 @@ router.get('/editProduct', controller.editProduct);
 router.get('/administrador', controller.administrador);
 
 /*** CREATE ONE PRODUCT ***/
-router.get('/addProduct', controller.addProduct);
-router.post('/',controller.store);
+router.get('/administrador/addProduct', controller.addProduct);
+router.post('/administrador',controller.store);
 
 
 /*** GET ONE PRODUCT ***/

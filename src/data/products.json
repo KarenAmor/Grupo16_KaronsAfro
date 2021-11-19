@@ -70,13 +70,5 @@
         "Quantity": 2,
         "Description": "Aretes tipo argolla con perla de munaro en centro.",
         "Image": "aretes.png"
-    },
-    {
-        "id": 9,
-        "Image": "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
-    },
-    {
-        "id": 10,
-        "Image": "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
     }
 ]

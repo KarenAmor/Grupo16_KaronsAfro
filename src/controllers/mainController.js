@@ -1,5 +1,6 @@
 const path = require ('path');
 const fs=require('fs');
+const productsDb=require('../data/products.json')
 
 const controller ={
 
@@ -87,16 +88,15 @@ const controller ={
         let db=JSON.parse(fs.readFileSync(path.resolve(__dirname,"../data/products.json")))
         let lastProduc=db.pop()
         db.push(lastProduc)
-        const newProduct={
+        let newProduct={
             id: lastProduc.id+1,
-            Name: req.body.nombreProducto,
-            Price: req.body.precioProducto,
-            Reference: req.body.referenciaProducto,
-            Quantity: req.body.cantidadProducto,
-            Description: req.body.descripcionProducto,
+            Name: "Brazalete",
+            Price: 40,
+            Reference: "11-111",
+            Quantity: 2,
+            Description: "Brazeletes dorados",
             Image: "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
         }
-        console.log(newProduct);
         db.push(newProduct)
         let productJson=JSON.stringify(db,null,4)
         fs.writeFileSync(path.resolve(__dirname,"../data/products.json"),productJson)
@@ -115,7 +115,25 @@ const controller ={
 
     },  
 
-    // update: (req,res) =>{
+    update: (req,res) =>{
+        let id=9
+        let productToEdit=productsDb.filter(items=>items.id==id)[0]
+        let productsUpdated=productsDb.filter(items=>items.id!=id)
+        // console.log(productToEdit.id);
+        productToEdit={
+            id: productToEdit.id,
+            Name: productToEdit.Name,
+            Price: 50,
+            Reference: productToEdit.Reference,
+            Quantity:productToEdit.Quantity,
+            Description: productToEdit.Description,
+            Image: "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
+        }
+        productsUpdated.push(productToEdit)
+        let productJson=JSON.stringify(productsUpdated,null,4)
+        fs.writeFileSync(path.resolve(__dirname,"../data/products.json"),productJson)
+        res.redirect("/administrador")
+    },
     //     const productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));
     //     req.body.id = req.params.id;
     //     req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
@@ -131,7 +149,13 @@ const controller ={
     // },
 
 /*** DELETE ONE PRODUCT***/
-
+    delete: (req,res)=>{        
+        let id=9
+        let productDeleted=productsDb.filter(items=>items.id!=id)
+        let productJson=JSON.stringify(productDeleted,null,4)
+        fs.writeFileSync(path.resolve(__dirname,"../data/products.json"),productJson)
+        res.redirect("/administrador")
+    }
     // delete : (req, res) => {
     // const id = req.params.id;
     // const productosUpdated = productos.filter(productos => productos.id != id)

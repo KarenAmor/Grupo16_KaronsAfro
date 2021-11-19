@@ -29,14 +29,14 @@ router.post('/administrador',controller.store);
 
 
 /*** EDIT ONE PRODUCT ***/
-
+router.put('/administrador/editProduct',controller.update)
 
 
 // router.put('/administrador/update/:id', upload.single('imagen'), controller.update);
 
 
 /*** DELETE ONE PRODUCT***/
-
+router.delete("/administrador/delete",controller.delete)
 
 // router.get('/administrador/delete/:id', controller.delete);
 

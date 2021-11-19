@@ -31,6 +31,7 @@ app.use('/quienesSomos', rutas);
 app.use('/administrador', rutas);
 app.use('/administrador/addProduct', rutas);
 app.use('/editProduct', rutas);
+app.use('/administrador/editProduct', rutas);
 app.use('/administrador/update/:id', rutas);
 app.use('/administrador/delete/:id', rutas);
 

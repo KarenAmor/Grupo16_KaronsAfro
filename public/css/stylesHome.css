@@ -99,8 +99,8 @@ font-size: 18px;
     color: #222;
 }
 
-.letrasMenu{
-    display: none;
+/*.letrasMenu{
+  display: none;
 }
 /*MAIN*/
 main{
@@ -263,7 +263,7 @@ main ul li img{
   @media screen and (min-width: 768px){
      header{
           width: 100%;
-          height: 70vh;
+          height: 73vh;
       }
       .burger-menu i{
           display: none;
@@ -321,7 +321,7 @@ font-weight: normal;
  @media screen and (min-width: 1024px){
    header{
     width: 100%;
-    height: 73vh;
+    height: 75vh;
     }
     main ul li img {        
     margin: 0;

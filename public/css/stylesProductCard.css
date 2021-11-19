@@ -508,7 +508,7 @@ font-weight: normal;
  @media screen and (min-width: 1024px){
    header{
     width: 100%;
-    height: 73vh;
+    height: 75vh;
     }
     main ul li img {        
     margin: 0;

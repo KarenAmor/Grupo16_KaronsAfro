@@ -13,7 +13,7 @@ router.get('/producto/accesorios', controller.accesorios);
 router.get('/register', controller.register);
 router.get('/carrito_compras', controller.carritoCompras);
 router.get('/quienesSomos', controller.quienesSomos);
-router.get('/editProduct', controller.editProduct);
+router.get('/editProduct/:id', controller.editProduct);
 
 
 /*** GET ALL PRODUCTS ***/
@@ -29,14 +29,14 @@ router.post('/administrador',controller.store);
 
 
 /*** EDIT ONE PRODUCT ***/
-router.put('/administrador/editProduct',controller.update)
+router.put('/administrador/editProduct/:id',controller.update)
 
 
 // router.put('/administrador/update/:id', upload.single('imagen'), controller.update);
 
 
 /*** DELETE ONE PRODUCT***/
-router.delete("/administrador/delete",controller.delete)
+router.delete("/administrador/delete/:id",controller.delete)
 
 // router.get('/administrador/delete/:id', controller.delete);
 

@@ -7,27 +7,27 @@
             <%- include ('./partials/header') %>
                 <main class="body">
                     <h3> EDITAR PRODUCTO</h3>
-                    <form action="/administrador/editProduct?_method=PUT
+                    <form action="/administrador/editProduct/<%= product.id %>?_method=PUT
                         " method="POST" class="register"><b>
                             <div class="forma">
                                 <label>Nombre del Producto</label>
-                                <input type="text" name="nombreProducto" required>
+                                <input type="text" name="nombreProducto" value="<%= product.Name %>" required>
                             </div>
                             <div class="forma">
                                 <label>Precio</label>
-                                <input type="text" name="precioProducto" required>
+                                <input type="text" name="precioProducto" value="<%= product.Price %>" required>
                             </div>
                             <div class="forma">
                                 <label>Referencia</label>
-                                <input type="texto" name="referenciaProducto" required>
+                                <input type="texto" name="referenciaProducto" value="<%= product.Reference %>" required>
                             </div>
                             <div class="forma">
                                 <label>Cantidad Disponible</label>
-                                <input type="texto" name="cantidadProducto" required>
+                                <input type="texto" name="cantidadProducto" value="<%= product.Quantity %>" required>
                             </div>
                             <div class="forma">
                                 <label>Descripción del Producto</label>
-                                <input type="texto" name="descripcionProducto" required>
+                                <input type="texto" name="descripcionProducto" value="<%= product.Description %>" required>
                             </div>
 
                             <div class="forma">

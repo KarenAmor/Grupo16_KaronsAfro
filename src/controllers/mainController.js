@@ -69,8 +69,8 @@ const controller ={
     administrador: (req,res)=>{
         // res.sendFile(path.resolve(__dirname, "../views/administrador.html"))
         // res.render('administrador')
-        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));
-        res.render(path.resolve(__dirname, '../views/administrador'), {productos});
+        // let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));
+        res.render(path.resolve(__dirname, '../views/administrador'), { productos: productsDb });
     },
   
 /*** CREATE ONE PRODUCT ***/
@@ -86,12 +86,12 @@ const controller ={
 
     store: (req,res)=>{
         let db=JSON.parse(fs.readFileSync(path.resolve(__dirname,"../data/products.json")))
-        let lastProduc=db.pop()
-        db.push(lastProduc)
+        let lastProduct=db.pop()
+        db.push(lastProduct)
         let newProduct={
-            id: lastProduc.id+1,
+            id: lastProduct.id+1,
             Name: "Brazalete",
-            Price: 40,
+            Price: req.body.precioProducto,
             Reference: "11-111",
             Quantity: 2,
             Description: "Brazeletes dorados",
@@ -111,8 +111,9 @@ const controller ={
 
     editProduct: (req,res)=>{
     // res.sendFile(path.resolve(__dirname, "../views/editProduct.html"))
-        res.render('editProduct')
-
+        const idProduct=req.params.id
+        const product=productsDb.filter(items=>items.id==idProduct)[0]
+        res.render('editProduct',{product})
     },  
 
     update: (req,res) =>{

@@ -85,16 +85,17 @@ const controller ={
     
 
     store: (req,res)=>{
+        //TODO agregar la logica dentro de model
         let db=JSON.parse(fs.readFileSync(path.resolve(__dirname,"../data/products.json")))
         let lastProduct=db.pop()
         db.push(lastProduct)
         let newProduct={
             id: lastProduct.id+1,
-            Name: "Brazalete",
+            Name: req.body.nombreProducto,
             Price: req.body.precioProducto,
-            Reference: "11-111",
-            Quantity: 2,
-            Description: "Brazeletes dorados",
+            Reference: req.body.referenciaProducto,
+            Quantity: req.body.cantidadProducto,
+            Description: req.body.descripcionProducto,
             Image: "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
         }
         db.push(newProduct)
@@ -117,17 +118,16 @@ const controller ={
     },  
 
     update: (req,res) =>{
-        let id=9
+        let id=req.params.id
         let productToEdit=productsDb.filter(items=>items.id==id)[0]
         let productsUpdated=productsDb.filter(items=>items.id!=id)
-        // console.log(productToEdit.id);
         productToEdit={
             id: productToEdit.id,
-            Name: productToEdit.Name,
-            Price: 50,
-            Reference: productToEdit.Reference,
-            Quantity:productToEdit.Quantity,
-            Description: productToEdit.Description,
+            Name: req.body.nombreProducto,
+            Price: req.body.precioProducto,
+            Reference: req.body.referenciaProducto,
+            Quantity: req.body.cantidadProducto,
+            Description: req.body.descripcionProducto,
             Image: "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
         }
         productsUpdated.push(productToEdit)
@@ -135,39 +135,15 @@ const controller ={
         fs.writeFileSync(path.resolve(__dirname,"../data/products.json"),productJson)
         res.redirect("/administrador")
     },
-    //     const productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));
-    //     req.body.id = req.params.id;
-    //     req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
-    //     const productosUpdate = productos.map(productos =>{
-    //         if(productos.id == req.body.id){
-    //             return productos = req.body;
-    //         }
-    //         return productos;
-    //     })
-    //     const productosActualizar = JSON.stringify(productosUpdate,null,4);
-    //     fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),productosActualizar)
-    //     res.redirect(`/administrador/update/${id}`);
-    // },
 
 /*** DELETE ONE PRODUCT***/
     delete: (req,res)=>{        
-        let id=9
+        let id=req.params.id
         let productDeleted=productsDb.filter(items=>items.id!=id)
         let productJson=JSON.stringify(productDeleted,null,4)
         fs.writeFileSync(path.resolve(__dirname,"../data/products.json"),productJson)
         res.redirect("/administrador")
     }
-    // delete : (req, res) => {
-    // const id = req.params.id;
-    // const productosUpdated = productos.filter(productos => productos.id != id)
-
-    // let jsonProductos = JSON.stringify(productosUpdated, null, 4);
-    // fs.writeFileSync(productosFilePath, jsonProductos)
-    
-    // res.redirect('/')
-    // },
-
-
 }
 
 module.exports= controller

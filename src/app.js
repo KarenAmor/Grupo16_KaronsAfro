@@ -15,7 +15,7 @@ app.set('views',path.resolve(__dirname,"./views"));
 app.use(express.static('public'))
 
 const publicFolderPath= path.resolve(__dirname, './public')
-
+app.use(express.urlencoded({extended:false}));
 app.use(express.static(publicFolderPath));
 app.use(methodOverride('_method'));
 

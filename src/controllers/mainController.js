@@ -92,9 +92,9 @@ const controller ={
         let newProduct={
             id: lastProduct.id+1,
             Name: req.body.nombreProducto,
-            Price: req.body.precioProducto,
+            Price: parseInt(req.body.precioProducto),
             Reference: req.body.referenciaProducto,
-            Quantity: req.body.cantidadProducto,
+            Quantity: parseInt(req.body.cantidadProducto),
             Description: req.body.descripcionProducto,
             Image: "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
         }
@@ -104,8 +104,15 @@ const controller ={
         res.redirect("/administrador")
     },
 
+/*** GET ONE PRODUCT ***/
 
- 
+    detail: (req,res)=>{
+        // res.sendFile(path.resolve(__dirname, "../views/accesorios.html"))
+        const detailProduct = req.params.id
+        const idDetailProduct = productsDb.filter(items=>items.id==detailProduct)[0]
+        res.render('detail', {idDetailProduct})               
+
+    },
 
 /*** EDIT ONE PRODUCT ***/
 
@@ -124,11 +131,11 @@ const controller ={
         productToEdit={
             id: productToEdit.id,
             Name: req.body.nombreProducto,
-            Price: req.body.precioProducto,
+            Price: parseInt(req.body.precioProducto),
             Reference: req.body.referenciaProducto,
-            Quantity: req.body.cantidadProducto,
+            Quantity: parseInt(req.body.cantidadProducto),
             Description: req.body.descripcionProducto,
-            Image: "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
+            Image: productToEdit.Image
         }
         productsUpdated.push(productToEdit)
         let productJson=JSON.stringify(productsUpdated,null,4)

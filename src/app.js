@@ -25,6 +25,7 @@ app.use('/producto/cabello', rutas);
 app.use('/producto/piel', rutas);
 app.use('/producto/maquillaje', rutas);
 app.use('/producto/accesorios', rutas);
+app.use('/producto/detail', rutas);
 app.use('/register', rutas);
 app.use('/carrito_compras', rutas);
 app.use('/quienesSomos', rutas);

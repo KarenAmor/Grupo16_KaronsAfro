@@ -6,7 +6,7 @@
         "Reference": "11-852",
         "Quantity": 2,
         "Description": "Crema de peinar para cabello tipo c2, contiene vitaminas y minerales que ayudan al crecimiento.",
-        "Image": "crema-skala.png"
+        "Image": "http://cdn.shopify.com/s/files/1/0066/2349/4233/products/skala_divino_Potao_1024x.png?v=1597306288"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "Reference": "11-488",
         "Quantity": 2,
         "Description": "Este enjuague para trenzas y cuero cabelludo, limpia suavemente y acondiciona el cabello sin causar frizz.",
-        "Image": "aceite-ricino.png"
+        "Image": "https://cdn.shopify.com/s/files/1/0066/2349/4233/products/e6d1efc0-39f0-4c24-b738-c49234e1c733_400x.png?v=1588966650"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "Reference": "11-789",
         "Quantity": 2,
         "Description": "Crema con agente activo que ayuda a la renovacion celular y aclaramiento de la piel.",
-        "Image": "crema-pgitiel.png"
+        "Image": "https://www.distribuidoramarakay.com/wp-content/uploads/2021/02/CREMA-BLANQUEADORA-PIEL-ARMINIO-BELLEZA-MARAKAY-2.png"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "Reference": "11-199",
         "Quantity": 2,
         "Description": "Crema de piel, que nueva celulas muertas e hidrata rejuvenienciendo y dando una piel terza.",
-        "Image": "crema-cetafhil.png"
+        "Image": "https://m.media-amazon.com/images/I/71AJRun-T1L._AC_SS450_.jpg"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "Reference": "11-974",
         "Quantity": 2,
         "Description": "Polvo compacto, base, primer, labial y pestañina para la rutina diaria.",
-        "Image": "set-maquillaje.png"
+        "Image": "https://http2.mlstatic.com/D_NQ_NP_655603-MCO41817551346_052020-O.webp"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "Reference": "11-870",
         "Quantity": 2,
         "Description": "Polvo tipo mate para todo tipo de piel.",
-        "Image": "polvo-compacto.png"
+        "Image": "https://http2.mlstatic.com/D_NQ_NP_2X_926954-MCO41611842458_052020-F.webp"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "Reference": "11-976",
         "Quantity": 2,
         "Description": "Turbante de algodon con lindo estampado floral.",
-        "Image": "turbante.png"
+        "Image": "https://http2.mlstatic.com/D_NQ_NP_677770-MCO45408890889_042021-W.webp"
     },
     {
         "id": 8,
@@ -69,6 +69,6 @@
         "Reference": "11-111",
         "Quantity": 2,
         "Description": "Aretes tipo argolla con perla de munaro en centro.",
-        "Image": "aretes.png"
+        "Image": "https://http2.mlstatic.com/D_NQ_NP_901000-MCO45119592934_032021-V.webp"
     }
 ]

@@ -1,19 +1,43 @@
 <%- include ('./partials/doctype') %>
 
-<%- include ('./partials/head') %>
-<link rel="stylesheet" href="/css/stylesHome.css">
+    <%- include ('./partials/head') %>
+    <link rel="stylesheet" href="/css/stylesdetail.css">
 
-<body>
-    <%- include ('./partials/header') %>
+        <body class="body">
+            <%- include ('./partials/header') %>
 
-    <h2 class="products-title">Detalle del producto: NOMBRE DEL PRODUCTO</h2>
-			
-		<div class="product-detail">
-					<img src="http://cdn.shopify.com/s/files/1/0066/2349/4233/products/skala_divino_Potao_1024x.png?v=1597306288/¿?" alt="product image" class="product-detail-img">
-					<p class="product-detail-description">
-						PRODUCT DESCRIPTION
-					</p>
-				
-    
-</body>
-</html>
+                <main>
+                    <section>
+                        <h3 class="cabello">DETALLE DEL PRODUCTO</h3>
+                        <div class="producto">
+                            <article class="articulo">
+                                <img class="imagen"
+                                    src=<%=idDetailProduct.Image%>
+                                    width="300px" height="250px" alt="Skala">
+                                <div class="d-producto">
+									<% if(locals.idDetailProduct){%>
+									<h3 class="titulo"><%=idDetailProduct.Name%></h3>
+                                    <p class="datos">Precio: <%=idDetailProduct.Price%></p>
+                                    <p class="datos">Referencia: <%=idDetailProduct.Reference%></p>
+                                    <p class="datos">Cantidad: 1 <a class="datos" href="#"></a> <i
+                                            class="fas fa-plus"></i></a></p>
+                                    <p class="datos">Añadir carrito <a class="datos" href="/carrito"><i
+                                                class="fas fa-cart-arrow-down"></i> </a></i></p>
+                                </div>
+                                <div class="d2-producto">
+                                    <h2>Descripción:</h2>
+                                    <p class="descripcion"><%=idDetailProduct.Description%></p>
+								</div>
+									<%}%>									
+                                    
+                               
+                            </article>                         
+                        </div>
+
+                    </section>
+                </main>
+                <%- include ('./partials/footer') %>
+
+        </body>
+
+        </html>

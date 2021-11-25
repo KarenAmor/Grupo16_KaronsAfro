@@ -27,7 +27,7 @@
                                      <tr class="primer-item">
                                         <td><%= items.id %> </td>
                                         <td><%= items.Name %> </td>
-                                        <td><a href="/producto/cabello" class="icon-eye"><i class="far fa-eye"></i></a></td>
+                                        <td><a href="/producto/detail/<%= items.id %>" class="icon-eye"><i class="far fa-eye"></i></a></td>
                                         <td><a href="/administrador/editProduct/<%= items.id %>" class="icon-pencil"><i
                                                     class="fas fa-pencil-alt"></i></a></td>
                                         <td><form action="/administrador/delete/<%= items.id %>?_method=DELETE" method="POST">

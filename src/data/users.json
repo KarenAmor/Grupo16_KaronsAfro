@@ -9,7 +9,8 @@
         "CountryResidence": "Colombia",
         "Ext": "+57",
         "PhoneNumber": "388-673-8009",
-        "Adress": "bogota"
+        "Adress": "bogota",
+        "Role": 1
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@
         "CountryResidence": "Colombia",
         "Ext": "+57",
         "PhoneNumber": "446-127-5282",
-        "Adress": "Bogota"
+        "Adress": "Bogota",
+        "Role": 1
     },
     {
         "id": 3,
@@ -33,7 +35,8 @@
         "CountryResidence": "Colombia",
         "Ext": "+57",
         "PhoneNumber": "399-742-8390",
-        "Adress": "Antioquia"
+        "Adress": "Antioquia",
+        "Role": 1
     },
     {
         "id": 4,
@@ -45,7 +48,8 @@
         "CountryResidence": "Argentina",
         "Ext": "+59",
         "PhoneNumber": "682-386-6315",
-        "Adress": "Buenos Aires"
+        "Adress": "Buenos Aires",
+        "Role": 2
     },
     {
         "id": 5,
@@ -57,6 +61,7 @@
         "CountryResidence": "Venezuela",
         "Ext": "+58",
         "PhoneNumber": "834-434-7149",
-        "Adress": "Caracas"
+        "Adress": "Caracas",
+        "Role": 2
     }
 ]

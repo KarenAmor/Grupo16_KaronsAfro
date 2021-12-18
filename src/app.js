@@ -4,24 +4,29 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 const port = process.env.PORT ||3000;
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const session = require('express-session');
 
 const rutas = require("./routers/main.js")
+
+const usuario = require("./routers/userRouter.js")
 
 app.set('view engine', 'ejs');
 
 app.set('views',path.resolve(__dirname,"./views"));
 
 app.use(express.static('public'))
-
 const publicFolderPath= path.resolve(__dirname, './public')
+
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(publicFolderPath));
 app.use(methodOverride('_method'));
+app.use(express.json())
+app.use(session({secret:'Secreto'}));
 
 app.use('/', rutas);
-app.use('/login', rutas);
-app.use('/producto/cabello', rutas);
+app.use('/login', usuario);
+/*app.use('/producto/cabello', rutas);
 app.use('/producto/piel', rutas);
 app.use('/producto/maquillaje', rutas);
 app.use('/producto/accesorios', rutas);
@@ -34,7 +39,7 @@ app.use('/administrador/addProduct', rutas);
 app.use('/editProduct', rutas);
 app.use('/administrador/editProduct', rutas);
 app.use('/administrador/update/:id', rutas);
-app.use('/administrador/delete/:id', rutas);
+app.use('/administrador/delete/:id', rutas);*/
 
 
 app.listen(port, ()=> console.log(`Servidor corriendo ${port}`))

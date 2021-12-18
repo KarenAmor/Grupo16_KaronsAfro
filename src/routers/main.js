@@ -12,7 +12,7 @@ router.get('/producto/piel', controller.piel);
 router.get('/producto/maquillaje', controller.maquillaje);
 router.get('/producto/accesorios', controller.accesorios);
 
-router.get('/register', controller.register);
+// router.get('/register', controller.register);
 router.get('/carrito_compras', controller.carritoCompras);
 router.get('/quienesSomos', controller.quienesSomos);
 router.get('/editProduct/:id', controller.editProduct);

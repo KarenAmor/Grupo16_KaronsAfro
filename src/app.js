@@ -5,8 +5,10 @@ const path = require('path');
 const router = express.Router();
 const port = process.env.PORT ||3000;
 const methodOverride = require('method-override')
+const session=require('express-session');
 
 const rutas = require("./routers/main.js")
+const userLoggedMiddleware=require("./middlewares/userLoggedMiddleware");
 
 app.set('view engine', 'ejs');
 
@@ -18,6 +20,8 @@ const publicFolderPath= path.resolve(__dirname, './public')
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(publicFolderPath));
 app.use(methodOverride('_method'));
+app.use(session({secret: "Shhhh... Fran and Mati don't have to know it...", resave: false, saveUninitialized: false}));
+app.use(userLoggedMiddleware);
 
 app.use('/', rutas);
 app.use('/login', rutas);

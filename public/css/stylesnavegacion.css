@@ -117,6 +117,14 @@ main {
   right: 1px;
   left: 1px;
 }
+.user-icon a i{
+  padding: 10px;
+  font-size: 30px;
+}
+.saludo-user h1{
+  font-size: 15px;
+  margin-left: 10px;
+}
 .cabello,
 .piel,
 .maquillaje,

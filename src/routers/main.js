@@ -1,24 +1,28 @@
 const controller = require("../controllers/mainController")
+const guestMiddleware=require("../middlewares/guestMiddleware")
+const adminMiddleware=require("../middlewares/adminMiddleware")
 
 const express = require('express');
 const router = express.Router();
 
 
 router.get('/', controller.home);
-router.get('/login', controller.login);
+router.get('/login', guestMiddleware, controller.login);
+router.post('/login', controller.loginProcess);
+router.get('/logout/', controller.logout);
 router.get('/producto/cabello', controller.cabello);
 router.get('/producto/piel', controller.piel);
 router.get('/producto/maquillaje', controller.maquillaje);
 router.get('/producto/accesorios', controller.accesorios);
 
-router.get('/register', controller.register);
+router.get('/register', guestMiddleware, controller.register);
 router.get('/carrito_compras', controller.carritoCompras);
 router.get('/quienesSomos', controller.quienesSomos);
 router.get('/editProduct/:id', controller.editProduct);
 
 
 /*** GET ALL PRODUCTS ***/
-router.get('/administrador', controller.administrador);
+router.get('/administrador', adminMiddleware, controller.administrador);
 
 /*** CREATE ONE PRODUCT ***/
 router.get('/administrador/addProduct', controller.addProduct);
@@ -41,9 +45,5 @@ router.put('/administrador/editProduct/:id',controller.update)
 router.delete("/administrador/delete/:id",controller.delete)
 
 // router.get('/administrador/delete/:id', controller.delete);
-
-
-
-
 
 module.exports=router;

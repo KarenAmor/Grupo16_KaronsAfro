@@ -31,10 +31,13 @@
             <a href="#" class="letra2"><i class="fab fa-instagram"></i></a>
         </nav>
     </div>
-    <div>
+    <% if (locals.isAdminLogged) { %>
+     <div>
         <p><b><a href="/administrador" class="letra2">Administrador</a></b></p>
         <br>
     </div>
+    <% } %>
+    
 
 
 </footer>

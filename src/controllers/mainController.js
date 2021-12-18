@@ -1,6 +1,7 @@
 const path = require ('path');
 const fs=require('fs');
 const productsDb=require('../data/products.json')
+const usersDb=require('../data/users.json');
 
 const controller ={
 
@@ -150,7 +151,32 @@ const controller ={
         let productJson=JSON.stringify(productDeleted,null,4)
         fs.writeFileSync(path.resolve(__dirname,"../data/products.json"),productJson)
         res.redirect("/administrador")
+    },
+    loginProcess:(req,res)=>{
+        let userLogin=req.body.Usuario;
+        let userFind=usersDb.filter(user=>user.Email==userLogin)[0]
+        if(userFind!=null){
+            if(userFind.Role==1){
+                delete userFind.Password
+                delete userFind.ConfirmPassword
+                req.session.adminLogged=userFind;          
+                res.redirect('/');
+            }else{
+                delete userFind.Password
+                delete userFind.ConfirmPassword
+                req.session.userLogged=userFind;
+                res.redirect('/');
+            }
+        }else{
+            res.send('no hay usuario registrado con el correo')
+        }
+        
+    },
+    logout: (req,res)=>{
+        req.session.destroy();
+        return res.redirect('/')
     }
+     
 }
 
 module.exports= controller

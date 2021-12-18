@@ -9,7 +9,7 @@ const session = require('express-session');
 
 const rutas = require("./routers/main.js")
 
-const usuario = require("./routers/userRouter2.js")
+const usuario = require("./routers/user.js")
 
 app.set('view engine', 'ejs');
 
@@ -25,7 +25,7 @@ app.use(express.json())
 app.use(session({secret:'Secreto'}));
 
 app.use('/', rutas);
-app.use('/login', usuario);
+app.use('/', usuario);
 
 
 app.listen(port, ()=> console.log(`Servidor corriendo ${port}`))

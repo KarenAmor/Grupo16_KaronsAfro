@@ -87,5 +87,11 @@ router.post(
   upload.single("avatar"),
   userController.create
 );
+router.get('/login', userController.login);
+
+router.post('/login', [
+    body('email').isEmail().withMessage('Email invalido'),
+    body('password').isLength({min:8}).withMessage('La contraseña debe terner minimo 8 caracteres')
+],userController.processLogin);
 
 module.exports = router;

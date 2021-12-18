@@ -88,5 +88,15 @@
         "ConfirmPassword": "$2a$10$N9VMtEuxzcmcz7AQKyIo/udtxCSTtnQ.ZilUso7pnpHedMk7iPLJa",
         "Avatar": "foto-1639842566377.png",
         "Role": 2
+    },
+    {
+        "id": 10,
+        "Name": "karen",
+        "LastName": "perez",
+        "Email": "karen@gmail.com",
+        "Password": "$2a$10$3oeeaI9xIWEckmNcZO3scOPI.gnAa.PzDCLGt95luoJqQKW2CzMy2",
+        "ConfirmPassword": "$2a$10$.AnthUooSYk.0.aXmqC9fO82EsqAn3jQyT0h6DijJ0qbb71vJ9C4S",
+        "Avatar": "foto-1639844859284.jpg",
+        "Role": 2
     }
 ]

@@ -43,11 +43,11 @@ const controller ={
     },
 
 
-    register: (req,res)=>{
+    /*register: (req,res)=>{
         // res.sendFile(path.resolve(__dirname, "../views/register.html"))
         res.render('register')
 
-    },
+    },*/
 
 
     carritoCompras: (req,res)=>{

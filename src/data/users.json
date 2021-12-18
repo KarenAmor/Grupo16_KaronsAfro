@@ -6,10 +6,7 @@
         "Email": "carlos@hotmail.com",
         "Password": "carlos123",
         "ConfirmPassword": "carlos123",
-        "CountryResidence": "Colombia",
-        "Ext": "+57",
-        "PhoneNumber": "388-673-8009",
-        "Adress": "bogota",
+        "Avatar": "usuario.png",
         "Role": 1
     },
     {
@@ -19,10 +16,7 @@
         "Email": "sharon@hotmail.com",
         "Password": "sharon123",
         "ConfirmPassword": "sharon123",
-        "CountryResidence": "Colombia",
-        "Ext": "+57",
-        "PhoneNumber": "446-127-5282",
-        "Adress": "Bogota",
+        "Avatar": "usuario.png",
         "Role": 1
     },
     {
@@ -32,10 +26,7 @@
         "Email": "karen@hotmail.com",
         "Password": "karen123",
         "ConfirmPassword": "karen123",
-        "CountryResidence": "Colombia",
-        "Ext": "+57",
-        "PhoneNumber": "399-742-8390",
-        "Adress": "Antioquia",
+        "Avatar": "usuario.png",
         "Role": 1
     },
     {
@@ -45,10 +36,7 @@
         "Email": "ahawken3@webeden.co.uk",
         "Password": "Wv01UMATIJq",
         "ConfirmPassword": "Wv01UMATIJq",
-        "CountryResidence": "Argentina",
-        "Ext": "+59",
-        "PhoneNumber": "682-386-6315",
-        "Adress": "Buenos Aires",
+        "Avatar": "usuario.png",
         "Role": 2
     },
     {
@@ -58,10 +46,47 @@
         "Email": "rmistry4@sfgate.com",
         "Password": "gAw5yVE",
         "ConfirmPassword": "gAw5yVE",
-        "CountryResidence": "Venezuela",
-        "Ext": "+58",
-        "PhoneNumber": "834-434-7149",
-        "Adress": "Caracas",
+        "Avatar": "usuario.png",
+        "Role": 2
+    },
+    {
+        "id": 6,
+        "Name": " Daniela",
+        "LastName": "Paez",
+        "Email": "Daniela@gmail.com",
+        "Password": "$2a$10$ULFo5dNtbLVUj8PvmT/FWOYnejVGZUDbxlbE8mt/J3OxlM6JwufQS",
+        "ConfirmPassword": "$2a$10$tmJUriM3FUJrXFduxGbgV.HYZ7/YqwuDzHlnPu738t7FL8eXJJkMi",
+        "Avatar": "foto-1639666274977.jpg",
+        "Role": 2
+    },
+    {
+        "id": 7,
+        "Name": "lucia",
+        "LastName": "Toro",
+        "Email": "lucia@gmail.com",
+        "Password": "$2a$10$dwVt/QfQeOSRcsxzKjBU3.4OIS1/jE96Aia5YWGDGslA8m6IwuanW",
+        "ConfirmPassword": "$2a$10$PnwbvzyZEP1Z4um.bFFesOppjMsJQfKgZlKh302PQJqGWFuB7BJ32",
+        "Avatar": "foto-1639792208166.png",
+        "Role": 2
+    },
+    {
+        "id": 8,
+        "Name": "Laura",
+        "LastName": "Peña",
+        "Email": "laura@gmail.com",
+        "Password": "$2a$10$LXKy39DzFk7WnRXu7OcdfOwClUReMxUhIjlmnQwEa94HrCFrwKIw2",
+        "ConfirmPassword": "$2a$10$1w8//m3VTG8S8.iqEyWSrOUHMLhG8/teqyQx05q.LmeZiStrPhdxu",
+        "Avatar": "foto-1639839961757.png",
+        "Role": 2
+    },
+    {
+        "id": 9,
+        "Name": "Nelson",
+        "LastName": "Rodriguez",
+        "Email": "nelson@gmail.com",
+        "Password": "$2a$10$OIG0GbZmun.ASi6JmCAR8eo6hFFdiMD4MayR.v4.5rYtN4eo9gKmu",
+        "ConfirmPassword": "$2a$10$N9VMtEuxzcmcz7AQKyIo/udtxCSTtnQ.ZilUso7pnpHedMk7iPLJa",
+        "Avatar": "foto-1639842566377.png",
         "Role": 2
     }
 ]

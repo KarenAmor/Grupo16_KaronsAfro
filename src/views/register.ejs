@@ -7,57 +7,112 @@
     <%- include ('./partials/header') %>
     <main class="body">
         <h3> CREAR CUENTA</h3>
-        <form action="#" method="get" class="register"><b>
+             
+        <form action="/register" method="POST" class="register" enctype="multipart/form-data"><b>
                 <div class="forma">
                     <label>Nombre</label>
-                    <input type="text" name="nombreUsuario" min="3" required>
+                    <input 
+                        type="text" 
+                        name="nombreUsuario" 
+                        min="3" 
+                        required
+                        class= "<%= locals.errors && errors.nombreUsuario ? 'is-invalid' : null %> "
+                        value="<%= locals.oldData ? oldData.nombreUsuario : null %>"
+                    >  
+                    <% if (locals.errors && errors.nombreUsuario) { %>
+                        <div class="text-danger">
+                            <%= errors.nombreUsuario.msg  %> 
+                        </div>                     
+                    <% } %>
+                    
                 </div>
                 <div class="forma">
                     <label>Apellido</label>
-                    <input type="text" name="apellidoUsuario" min="3" required>
+                    <input 
+                        type="text" 
+                        name="apellidoUsuario" 
+                        min="3" 
+                        required 
+                        class= "<%= locals.errors && errors.apellidoUsuario ? 'is-invalid' : null %> "
+                        value="<%= locals.oldData ? oldData.apellidoUsuario : null %>"                    
+                    >
+                    <% if (locals.errors && errors.apellidoUsuario) { %>
+                        <div class="text-danger">
+                            <%= errors.apellidoUsuario.msg  %> 
+                        </div>                     
+                    <% } %>
                 </div>
                 <div class="forma">
                     <label>Correo Electrónico</label>
-                    <input type="email" name="emailUsuario" required>
+                    <input 
+                        type="email" 
+                        name="emailUsuario" 
+                        required
+                        class= "<%= locals.errors && errors.emailUsuario ? 'is-invalid' : null %> "
+                        value="<%= locals.oldData ? oldData.emailUsuario : null %>"
+                    >
+                    <% if (locals.errors && errors.emailUsuario) { %>
+                        <div class="text-danger">
+                            <%= errors.emailUsuario.msg  %> 
+                        </div>                     
+                    <% } %>
                 </div>
                 <div class="forma">
                     <label>Contraseña</label>
-                    <input type="password" name="contraseñaUsuario" min="8" required>
+                    <input 
+                        type="password" 
+                        name="contraseñaUsuario" 
+                        min="8" 
+                        required
+                        class= "<%= locals.errors && errors.contraseñaUsuario ? 'is-invalid' : null %> "
+                        
+                    >
+                    <% if (locals.errors && errors.contraseñaUsuario) { %>
+                        <div class="text-danger">
+                            <%= errors.contraseñaUsuario.msg  %> 
+                        </div>                     
+                    <% } %>
                 </div>
                 <div class="forma">
                     <label>Confirmación de Contraseña</label>
-                    <input type="password" name="confirmacionContraseñaUsuario" min="8" required>
+                    <input 
+                        type="password" 
+                        name="confirmacionContraseñaUsuario" 
+                        min="8" 
+                        required
+                        class= "<%= locals.errors && errors.confirmacionContraseñaUsuario ? 'is-invalid' : null %> "
+                        
+                    >
+                    <% if (locals.errors && errors.confirmacionContraseñaUsuario) { %>
+                        <div class="text-danger">
+                            <%= errors.confirmacionContraseñaUsuario.msg  %> 
+                        </div>                     
+                    <% } %>
                 </div>
                 <div class="forma">
-                    <label>Pais de Residencia</label required>
-                    <select>
-                        <option><b>Colombia</b></option>
-                        <option><b>Venezuela</b></option>
-                    </select>
-                </div>
-                <div class="forma">
-                    <label>Indicativo</label required>
-                    <select>
-                        <option><b>+57</b></option>
-                        <option><b>+58</b></option>
-                    </select>
-                </div>
-                <div class="forma">
-                    <label>Celular</label>
-                    <input type="text" name="celularUsuario" min="10" required>
-                </div>
-                <div class="forma">
-                    <label>Dirección</label>
-                    <input type="text" name="direccionUsuario" required>
-                </div>
-                <div>
+                    <input 
+                        type="file"   
+                        name="avatar"  
+                        placeholder="Debes eligir tu avatar..." 
+                        required
+                        class= "<%= locals.errors && errors.avatar ? 'is-invalid' : null %> "
+                        value="<%= locals.oldData ? oldData.avatar : null %>"
+                    >
+                    <% if (locals.errors && errors.avatar) { %>
+                        <div class="text-danger">
+                            <%= errors.avatar.msg  %> 
+                        </div>                     
+                    <% } %>
+                </div> 
+                <!-- <div>
                     <label class="terminos">
                         <input type="radio" name="terminosUsuario" required>
-                        Acepto término y condiciones
+                        Acepto términos y condiciones
                     </label>
-                </div>
+                </div> -->
                 <button class="botonRegistrarse" type="submit"><b>Registrarse</b></button>
                 <button class="botonBorrar" type="reset"><b>Borrar</b></button>
+                <div class="terminos">Ya tengo una cuenta? <a href="/login">Inicia sesión</a></div>
 
             </b>
         </form>
@@ -68,3 +123,5 @@
 </body>
 
 </html>
+
+

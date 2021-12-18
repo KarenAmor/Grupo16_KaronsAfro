@@ -7,15 +7,14 @@ const router = express.Router();
 
 
 router.get('/', controller.home);
-router.get('/login', guestMiddleware, controller.login);
-router.post('/login', controller.loginProcess);
-router.get('/logout/', controller.logout);
+//router.get('/login', controller.login);
+
 router.get('/producto/cabello', controller.cabello);
 router.get('/producto/piel', controller.piel);
 router.get('/producto/maquillaje', controller.maquillaje);
 router.get('/producto/accesorios', controller.accesorios);
 
-router.get('/register', guestMiddleware, controller.register);
+// router.get('/register', controller.register);
 router.get('/carrito_compras', controller.carritoCompras);
 router.get('/quienesSomos', controller.quienesSomos);
 router.get('/editProduct/:id', controller.editProduct);

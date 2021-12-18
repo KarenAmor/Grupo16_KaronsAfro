@@ -11,10 +11,9 @@ const controller ={
     },
 
 
-    login: (req,res)=>{
-        // res.sendFile(path.resolve(__dirname, "../views/login.html"))
+   /*login: (req,res)=>{
         res.render('login')
-    },
+    },*/
 
 
     cabello: (req,res)=>{
@@ -45,11 +44,11 @@ const controller ={
     },
 
 
-    register: (req,res)=>{
+    /*register: (req,res)=>{
         // res.sendFile(path.resolve(__dirname, "../views/register.html"))
         res.render('register')
 
-    },
+    },*/
 
 
     carritoCompras: (req,res)=>{

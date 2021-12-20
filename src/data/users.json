@@ -98,5 +98,15 @@
         "ConfirmPassword": "$2a$10$.AnthUooSYk.0.aXmqC9fO82EsqAn3jQyT0h6DijJ0qbb71vJ9C4S",
         "Avatar": "foto-1639844859284.jpg",
         "Role": 2
+    },
+    {
+        "id": 11,
+        "Name": "Carlos",
+        "LastName": "Rodriguez",
+        "Email": "carlosr@hotmail.com",
+        "Password": "$2a$10$ASgjEDOqRwQnHq3Yv9O3fuSVoOGnFDN/QCVDZoZphPrDwuqWqrUMa",
+        "ConfirmPassword": "$2a$10$GtDOI6ETB.w0/sW0vYRpZOUkWkp7mS/fFldiAqs8o6TZDNhHP8CqO",
+        "Avatar": "foto-1640013068977.jpeg",
+        "Role": 1
     }
 ]

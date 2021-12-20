@@ -23,14 +23,10 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-<<<<<<< HEAD
-    "method-override": "^3.0.0"
-=======
     "express-validator": "^6.13.0",
     "method-override": "^3.0.0",
     "multer": "^1.4.3",
     "nodemon": "^2.0.15"
->>>>>>> 32efbb6a2984395067311dc4e4cc94b791c8192e
   },
   "devDependencies": {}
 }

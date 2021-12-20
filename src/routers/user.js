@@ -94,9 +94,9 @@ router.get('/login', guestMiddleware, userController.login);
 router.post('/login', [
     body('email').isEmail().withMessage('Email invalido'),
     body('password').isLength({min:8}).withMessage('La contraseña debe terner minimo 8 caracteres')
-],userController.processLogin);
+],userController.loginProcess);
 
 // router.post('/login', controller.loginProcess);
-router.get('/logout/', controller.logout);
+router.get('/logout/', userController.logout);
 
 module.exports = router;

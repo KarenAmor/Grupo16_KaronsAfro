@@ -18,7 +18,7 @@ const userController = {
 
         const resultValidation = validationResult(req);
 
-        // if (resultValidation.isEmpty()){
+        if (resultValidation.isEmpty()){
         let db = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../data/users.json")))
         let lastUser = db.pop()
         db.push(lastUser)
@@ -36,14 +36,14 @@ const userController = {
         let usersJson = JSON.stringify(db, null, 4)
         fs.writeFileSync(path.resolve(__dirname, "../data/users.json"), usersJson)
         res.redirect("/login");
-        // }
-        //  }else{
-        //   return res.render ('register', {
-        //     errors: resultValidation.mapped(),
-        //     oldData: req.body
-        //     });
+         
+          }else{
+           return res.render ('register', {
+             errors: resultValidation.mapped(),
+             oldData: req.body
+             });
 
-        //  }  
+          }  
 
 
 
@@ -88,13 +88,11 @@ const userController = {
     },
     loginProcess: (req, res) => {
         let errors = validationResult(req);
-        // if (errors.isEmpty()){     
-        // return res.render('login', { errors: errors.errors });
-        //  } else {
-            let userLoginE = req.body.email;
+        if (errors.isEmpty()){     
+         let userLoginE = req.body.email;
             let userLoginP= req.body.password;
             let userFind = usersDb.filter(user => user.Email == userLoginE && bcrypt.compareSync(userLoginP, user.Password))[0]
-            if (userFind != null) {                     
+            if (userFind != undefined) {                     
                 if (userFind.Role == 1) {
                     delete userFind.Password
                     delete userFind.ConfirmPassword
@@ -106,13 +104,15 @@ const userController = {
                     req.session.userLogged = userFind;
                     res.redirect('/');
                 }
-            }// else{
-            //      return res.render('login', {
-            //          errors: [
-            //              { msg: 'Credenciales invalidas' }
-            //         ]
-            //    });
-            //  }
+            }
+          } else {
+            // else{
+                 return res.render('login', {
+                     errors: [
+                          { msg: 'Credenciales invalidas' }
+                     ]
+                });
+              }
          //}
     },
     logout: (req, res) => {

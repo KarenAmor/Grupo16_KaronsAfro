@@ -85,15 +85,15 @@ router.get("/register", guestMiddleware, userController.registro);
 
 router.post(
   "/register",
-  validacionesRegistro,
   upload.single("avatar"),
+  validacionesRegistro,
   userController.create
 );
 router.get('/login', guestMiddleware, userController.login);
 
 router.post('/login', [
     body('email').isEmail().withMessage('Email invalido'),
-    body('password').isLength({min:8}).withMessage('La contraseña debe terner minimo 8 caracteres')
+    body('password').isLength({min:8}).withMessage('La contraseña debe tener minimo 8 caracteres')
 ],userController.loginProcess);
 
 // router.post('/login', controller.loginProcess);

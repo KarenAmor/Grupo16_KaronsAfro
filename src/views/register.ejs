@@ -15,7 +15,7 @@
                         type="text" 
                         name="nombreUsuario" 
                         min="3" 
-                        required
+                        
                         class= "<%= locals.errors && errors.nombreUsuario ? 'is-invalid' : null %> "
                         value="<%= locals.oldData ? oldData.nombreUsuario : null %>"
                     >  
@@ -32,7 +32,7 @@
                         type="text" 
                         name="apellidoUsuario" 
                         min="3" 
-                        required 
+
                         class= "<%= locals.errors && errors.apellidoUsuario ? 'is-invalid' : null %> "
                         value="<%= locals.oldData ? oldData.apellidoUsuario : null %>"                    
                     >
@@ -47,7 +47,7 @@
                     <input 
                         type="email" 
                         name="emailUsuario" 
-                        required
+
                         class= "<%= locals.errors && errors.emailUsuario ? 'is-invalid' : null %> "
                         value="<%= locals.oldData ? oldData.emailUsuario : null %>"
                     >
@@ -63,7 +63,7 @@
                         type="password" 
                         name="contraseñaUsuario" 
                         min="8" 
-                        required
+
                         class= "<%= locals.errors && errors.contraseñaUsuario ? 'is-invalid' : null %> "
                         
                     >
@@ -79,7 +79,7 @@
                         type="password" 
                         name="confirmacionContraseñaUsuario" 
                         min="8" 
-                        required
+
                         class= "<%= locals.errors && errors.confirmacionContraseñaUsuario ? 'is-invalid' : null %> "
                         
                     >
@@ -94,7 +94,7 @@
                         type="file"   
                         name="avatar"  
                         placeholder="Debes eligir tu avatar..." 
-                        required
+
                         class= "<%= locals.errors && errors.avatar ? 'is-invalid' : null %> "
                         value="<%= locals.oldData ? oldData.avatar : null %>"
                     >

@@ -34,6 +34,7 @@ router.get('/producto/detail/:id', controller.detail);
 
 
 /*** EDIT ONE PRODUCT ***/
+router.get('/administrador/editProduct/:id', controller.editProduct);
 router.put('/administrador/editProduct/:id',controller.update)
 
 

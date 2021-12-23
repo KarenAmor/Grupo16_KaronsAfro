@@ -115,7 +115,7 @@ ________________________________________________________________________________
 • Realizar adecuaciones a última hora cuando la entrega del sprint este cercana. 
 
 ## LESS OF:
-• No dejar las inquietudes a ultimo momento a los profesores.
+• No dejar las inquietudes a ultimo momento a los profesores ni a los integrantes del grupo.
 • No avisar a los integrantes del grupo cuando se presentan impedimentos en las responsabilidades asignadas.
 
 ______________________________________________________________________________________________________________

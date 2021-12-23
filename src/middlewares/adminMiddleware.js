@@ -1,5 +1,5 @@
 const login=function(req,res,next){
-    if(req.session.adminLogged==null){
+    if(req.session.adminLogged==undefined){
         return res.redirect('/');
     }
     next();

@@ -1,8 +1,8 @@
 const login=function(req,res,next){
-    if(req.session.adminLogged!=null){
+    if(req.session.adminLogged!=undefined){
         return res.redirect('/');
     }else{
-        if(req.session.userLogged!=null){
+        if(req.session.userLogged!=undefined){
             return res.redirect('/'); 
         }
     }

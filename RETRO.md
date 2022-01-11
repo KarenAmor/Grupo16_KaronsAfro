@@ -20,6 +20,7 @@
 ## LESS OF:
 •	Esperar a la clase en vivo para solucionar dudas. En lugar de esto, consultar por los medios de comunicación existentes.
 
+______________________________________________________________________________________________________________
 
 ## ESTRELLA DE MAR DEL SPRINT 2:
 
@@ -43,6 +44,8 @@
 • No dejar las inquietudes a ultimo momento a los profesores.
 • No avisar a los integrantes del grupo cuando se presentan impedimentos en las responsabilidades asignadas.
 
+______________________________________________________________________________________________________________
+
 ## ESTRELLA DE MAR DEL SPRINT 3:
 
 ## KEEP DOING:
@@ -64,6 +67,8 @@
 ## LESS OF:
 • No dejar las inquietudes a ultimo momento a los profesores.
 • No avisar a los integrantes del grupo cuando se presentan impedimentos en las responsabilidades asignadas.
+
+______________________________________________________________________________________________________________
 
 ## ESTRELLA DE MAR DEL SPRINT 4:
 
@@ -87,3 +92,30 @@
 ## LESS OF:
 • No dejar las inquietudes a ultimo momento a los profesores.
 • No avisar a los integrantes del grupo cuando se presentan impedimentos en las responsabilidades asignadas.
+
+______________________________________________________________________________________________________________
+
+## ESTRELLA DE MAR DEL SPRINT 5:
+
+## KEEP DOING:
+• Una reunion por semana.
+• Distribución de responsabilidades.
+• Apoyo mutuo entre los integrantes del grupo.
+• Requerir la ayuda de los docentes cuando sea necesario.
+
+## MORE OF:
+• Informar constantemente cuando haya dificultades en la realización de las responsabilidades.
+• Mantenerse informado en los temas vistos para evitar inconvenientes.
+• La entrega de las responsabilidades individuales son máximo dos días antes de la entrega del sprint actual.
+
+## START DOING:
+• Estudiar API's.
+
+## STOP DOING:
+• Realizar adecuaciones a última hora cuando la entrega del sprint este cercana. 
+
+## LESS OF:
+• No dejar las inquietudes a ultimo momento a los profesores ni a los integrantes del grupo.
+• No avisar a los integrantes del grupo cuando se presentan impedimentos en las responsabilidades asignadas.
+
+______________________________________________________________________________________________________________

@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const guestMiddleware=require("../middlewares/guestMiddleware")
-const adminMiddleware=require("../middlewares/adminMiddleware")
+const guestMiddleware=require("../middlewares/guestMiddleware");
 
 const bcrypt = require("bcryptjs");
 const fs = require("fs");

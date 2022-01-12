@@ -17,5 +17,6 @@ router.get('/carrito_compras', controller.carritoCompras);
 router.get('/quienesSomos', controller.quienesSomos);
 // router.get('/editProduct/:id', controller.editProduct);
 // router.get('/administrador/delete/:id', controller.delete);
+router.post('/search',controller.getSearch);
 
 module.exports=router;

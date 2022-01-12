@@ -7,7 +7,7 @@ const productsModel={
     findAll: ()=>{
         return productsDb;
     },
-    create: (name,price,reference,quantity,description)=>{
+    create: (name,price,reference,quantity,description, Image)=>{
         let productsDb = JSON.parse(fs.readFileSync(path.resolve(__dirname, "./products.json")));
         let lastProduct = productsDb.pop();
         productsDb.push(lastProduct);
@@ -18,7 +18,7 @@ const productsModel={
             Reference: reference,
             Quantity: parseInt(quantity),
             Description: description,
-            Image: "https://www.universia.net/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/assets/img/default-image.png"
+            Image: Image.filename
         }
         productsDb.push(newProduct);
         let productJson = JSON.stringify(productsDb, null, 4);

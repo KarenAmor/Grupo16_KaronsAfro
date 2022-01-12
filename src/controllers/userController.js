@@ -71,8 +71,6 @@ const userController = {
                     req.session.adminLogged = userFind;
                     res.redirect('/');
                 } else {
-                    userFind.Password
-                    userFind.ConfirmPassword
                     req.session.userLogged = userFind;
                     res.redirect('/');
                 }

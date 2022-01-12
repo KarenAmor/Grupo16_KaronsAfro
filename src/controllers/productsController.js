@@ -21,7 +21,8 @@ const producstController = {
     },
     store: (req, res) => {
         let { nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto } = req.body;
-        productsModel.create(nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto);
+        let imagenProducto=req.file;
+        productsModel.create(nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto, imagenProducto);        
         res.redirect("/administrador");
     },
 

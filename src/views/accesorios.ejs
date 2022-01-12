@@ -10,14 +10,15 @@
                     <section>
                         <h3 class="accesorios">ACCESORIOS</h3>
                         <div class="producto">
-                            <article class="articulo">
+                            <% accessories.forEach(product => { %>
+                             <article class="articulo">
                                     <img class="imagen"
-                                        src="https://http2.mlstatic.com/D_NQ_NP_677770-MCO45408890889_042021-W.webp"
-                                        width="300px" height="250px" alt="turbante">
+                                        src="/images/products/<%= product.Image %>"
+                                        width="300px" height="250px" alt="<%= product.Name %>">
                                     <div class="d-producto">
-                                        <h3 class="titulo">Turbante Sencillo</h3>
-                                        <p class="datos">Precio: $33.000</p>
-                                        <p class="datos">Referencia:11-234</p>
+                                        <h3 class="titulo"><%= product.Name %></h3>
+                                        <p class="datos">Precio: $<%= toThousand(product.Price) %></p>
+                                        <p class="datos">Referencia: <%= product.Reference %></p>
                                         <p class="datos">Cantidad: 1 <a class="datos" href="#"></a> <i
                                                 class="fas fa-plus"></i></a></p>
                                         <p class="datos">Añadir carrito <a class="datos" href="/carrito"><i
@@ -25,10 +26,12 @@
                                     </div>
                                     <div class="d2-producto">
                                         <h2>Descripción:</h2>
-                                        <p class="descripcion">Turbante de algodon con lindo estampado floral</p>
+                                        <p class="descripcion"><%= product.Description %></p>
                                     </div>
                                 </article>
-                                <article class="articulo">
+                            <% }) %>
+                            
+                                <!-- <article class="articulo">
                                     <img class="imagen"
                                         src="https://http2.mlstatic.com/D_NQ_NP_901000-MCO45119592934_032021-V.webp"
                                         width="300px" height="250px" alt="aretes">
@@ -45,10 +48,8 @@
                                         <h2>Descripción:</h2>
                                         <p class="descripcion">Aretes tipo argolla con perla de munaro en centro</p>
                                     </div>
-                            </article>
-                        </div>
-                            
-
+                            </article> -->
+                        </div>                        
                     </section>
                 </main>
                 <%- include ('./partials/footer') %>

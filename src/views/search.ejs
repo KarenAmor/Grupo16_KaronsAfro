@@ -1,0 +1,44 @@
+<%- include ('./partials/doctype') %>
+
+    <%- include ('./partials/head') %>
+        <link rel="stylesheet" href="/css/stylesnavegacion.css">
+
+        <body class="body">
+            <%- include ('./partials/header') %>
+                <main>
+                    <%- include('./partials/greetingsUser') %>
+                        <section>
+                            <h3 class="accesorios">Resultado de Búsqueda de "<%= productToFind %>":</h3>
+                            <div class="producto">
+                                <% products.forEach(product=> { %>
+                                    <article class="articulo">
+                                        <img class="imagen" src="/images/products/<%= product.Image %>" width="300px"
+                                            height="250px" alt="<%= product.Name %>">
+                                        <div class="d-producto">
+                                            <h3 class="titulo">
+                                                <%= product.Name %>
+                                            </h3>
+                                            <p class="datos">Precio: $<%= toThousand(product.Price) %>
+                                            </p>
+                                            <p class="datos">Referencia: <%= product.Reference %>
+                                            </p>
+                                            <p class="datos">Cantidad: 1 <a class="datos" href="#"></a> <i
+                                                    class="fas fa-plus"></i></a></p>
+                                            <p class="datos">Añadir carrito <a class="datos" href="/carrito"><i
+                                                        class="fas fa-cart-arrow-down"></i> </a></i></p>
+                                        </div>
+                                        <div class="d2-producto">
+                                            <h2>Descripción:</h2>
+                                            <p class="descripcion">
+                                                <%= product.Description %>
+                                            </p>
+                                        </div>
+                                    </article>
+                                    <% }) %>
+                            </div>
+                        </section>
+                </main>
+                <%- include ('./partials/footer') %>
+        </body>
+
+        </html>

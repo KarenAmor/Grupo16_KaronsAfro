@@ -4,15 +4,16 @@
         
         <div class="segundaParte">
             <div>
-            <div class="form" action="#" method="GET">
+            <form action="/search" method="post">
+                <div class="form" action="#" method="GET">
                 <div class="contenedor">
                     <span class="lupa">
                         <i class="fas fa-search"></i>
                     </span>
-                    <input type="text">
+                    <input type="text" name="search">
                 </div>
                 </div>
-           
+            </form>                       
             <nav>
             <div class="grupoIconos">
                 <% if (locals.isUserLogged) { %>

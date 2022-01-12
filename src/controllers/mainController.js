@@ -1,35 +1,46 @@
 // const path = require ('path');
 // const fs=require('fs');
+const productsModel = require('../model/products');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 
     home: (req, res) => {
         // res.sendFile(path.resolve(__dirname, '../views/home.html'));
-        res.render('home')
+        res.render('home');
     },
     cabello: (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/cabello.html"))
-        res.render('cabello')
+        let hairProducts=productsModel.findAll().filter(item=>item.Reference.slice(1,2)==0);
+        res.render('cabello',{hairProducts: hairProducts, toThousand});
     },
     piel: (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/piel.html"))
-        res.render('piel')
+        let skinProducts=productsModel.findAll().filter(item=>item.Reference.slice(1,2)==1);
+        res.render('piel',{skinProducts: skinProducts, toThousand});
     },
     maquillaje: (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/maquillaje.html"))
-        res.render('maquillaje')
+        let makeupProducts=productsModel.findAll().filter(item=>item.Reference.slice(1,2)==2);
+        res.render('maquillaje',{makeupProducts: makeupProducts, toThousand});
     },
     accesorios: (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/accesorios.html"))
-        res.render('accesorios')
+        let accessories=productsModel.findAll().filter(item=>item.Reference.slice(1,2)==3);
+        res.render('accesorios', {accessories: accessories, toThousand});
     },
     carritoCompras: (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/carritoCompras.html"))
-        res.render('carritoCompras')
+        res.render('carritoCompras');
     },
     quienesSomos: (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/quienesSomos.html"))
-        res.render('quienesSomos')
+        res.render('quienesSomos');
+    },
+    getSearch: (req,res)=>{
+        let productToFind=req.body.search;
+        let products=productsModel.findAll().filter(item=>item.Name==productToFind);
+        res.render('search',{products: products, productToFind, toThousand});
     }
 }
 

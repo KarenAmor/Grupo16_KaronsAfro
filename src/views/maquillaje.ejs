@@ -9,15 +9,16 @@
                     <%- include('./partials/greetingsUser') %> 
                     <section>
                         <h3 class="maquillaje">MAQUILLAJE</h3>
-                        <div class="producto">                           
-                                <article class="articulo">
+                        <div class="producto">       
+                            <% makeupProducts.forEach(product => { %>
+                             <article class="articulo">
                                     <img class="imagen"
-                                        src="https://http2.mlstatic.com/D_NQ_NP_655603-MCO41817551346_052020-O.webp"
-                                        width="300px" height="250px" alt="set">
+                                        src="/images/products/<%= product.Image %>"
+                                        width="300px" height="250px" alt="<%= product.Name %>">
                                     <div class="d-producto">
-                                        <h3 class="titulo">Set de Maquillaje</h3>
-                                        <p class="datos">Precio: $83.000</p>
-                                        <p class="datos">Referencia:11-234</p>
+                                        <h3 class="titulo"><%= product.Name %></h3>
+                                        <p class="datos">Precio: $<%= toThousand(product.Price) %></p>
+                                        <p class="datos">Referencia: <%= product.Reference %></p>
                                         <p class="datos">Cantidad: 1 <a class="datos" href="#"></a> <i
                                                 class="fas fa-plus"></i></a></p>
                                         <p class="datos">Añadir carrito <a class="datos" href="/carrito"><i
@@ -25,11 +26,12 @@
                                     </div>
                                     <div class="d2-producto">
                                         <h2>Descripción:</h2>
-                                        <p class="descripcion">Polvo compacto, base, primer, labial y pestañina para la
-                                            rutina diaria</p>
+                                        <p class="descripcion"><%= product.Description %></p>
                                     </div>
                                 </article>
-                                <article class="articulo">
+                            <% }) %>                    
+                                
+                                <!-- <article class="articulo">
                                     <img class="imagen"
                                         src="https://http2.mlstatic.com/D_NQ_NP_2X_926954-MCO41611842458_052020-F.webp"
                                         width="300px" height="250px" alt="set">
@@ -46,9 +48,8 @@
                                         <h2>Descripción:</h2>
                                         <p class="descripcion">Polvo tipo mate para todo tipo de piel</p>
                                     </div>
-                            </article>
+                            </article> -->
                         </div>
-
                     </section>
                 </main>
                 <%- include ('./partials/footer') %>

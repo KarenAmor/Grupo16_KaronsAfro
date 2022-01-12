@@ -37,10 +37,7 @@ last_name: {
   
 };
 let config = {
-  timestamps: true,
-  createdAt: 'created_at',
-  updatedAt: 'updated_at',
-  deletedAt: false
+  timestamps: false
 };
 const User = sequelize.define(alias,cols,config);
 

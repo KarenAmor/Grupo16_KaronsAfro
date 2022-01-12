@@ -6,6 +6,8 @@
             <div>
             <form action="/search" method="post">
                 <div class="form" action="#" method="GET">
+            
+            <div class="form" action="/home" method="GET">
                 <div class="contenedor">
                     <span class="lupa">
                         <i class="fas fa-search"></i>
@@ -16,6 +18,12 @@
             </form>                       
             <nav>
             <div class="grupoIconos">
+                    <input type="text">
+                </div>              
+           
+            </div>
+        </div>
+        <div class="grupoIconos">
                 <% if (locals.isUserLogged) { %>
                     <div><a href="/logout/" class="iconos"><i class="fas fa-door-open"></i></a></div>    
                     <div><a href="/carrito_compras" class="iconos"><i class="fas fa-shopping-cart" alt="Carrito de Compra"></i></a>
@@ -25,35 +33,38 @@
                 <div><a href="/carrito_compras" class="iconos"><i class="fas fa-shopping-cart" alt="Carrito de Compra"></i></a>
                 </div>
                 <% } %>
-            </div>
-        </nav>
+        </div>
+        <nav>
 
             <div class="burger-menu">
                 <i class="fas fa-bars"></i>
             </div>
 
-        </div>
-    
-   <nav>
-        <div class="letrasMenu">
-            <ul type="none">
-                <li><a href="/" class="letra">Inicio</a></li>
-            </ul>
-            <ul type="none">
-                <li><a href="/quienesSomos" class="letra">¿Quienes somos?</a></li>
-            </ul>
-            <ul type="none">
-                <li><a href="/producto/cabello" class="letra">Cabello</a></li>
-            </ul>
-            <ul type="none">
-                <li><a href="/producto/piel" class="letra">Piel</a></li>
-            </ul>
-            <ul type="none">
-                <li><a href="/producto/maquillaje" class="letra">Maquillaje</a></li>
-            </ul>
-            <ul type="none">
-                <li><a href="/producto/accesorios" class="letra">Accesorios</a></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
+    </div>
+    <div>
+        <nav>
+            <div class="letrasMenu">
+                <ul type="none">
+                    <li><a href="/" class="letra">Inicio</a></li>
+                </ul>
+                <ul type="none">
+                    <li><a href="/quienesSomos" class="letra">¿Quienes somos?</a></li>
+                </ul>
+                <ul type="none">
+                    <li><a href="/producto/cabello" class="letra">Cabello</a></li>
+                </ul>
+                <ul type="none">
+                    <li><a href="/producto/piel" class="letra">Piel</a></li>
+                </ul>
+                <ul type="none">
+                    <li><a href="/producto/maquillaje" class="letra">Maquillaje</a></li>
+                </ul>
+                <ul type="none">
+                    <li><a href="/producto/accesorios" class="letra">Accesorios</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+  
 </header>

@@ -108,5 +108,25 @@
         "ConfirmPassword": "$2a$10$GtDOI6ETB.w0/sW0vYRpZOUkWkp7mS/fFldiAqs8o6TZDNhHP8CqO",
         "Avatar": "foto-1640013068977.jpeg",
         "Role": 1
+    },
+    {
+        "id": 12,
+        "Name": "karen",
+        "LastName": "perez",
+        "Email": "karen@gmail.com",
+        "Password": "$2a$10$F9bC4ClQ2TBuGBWR92j3i.hpFvJkwpk574SkHhp.5blFHabfi15mu",
+        "ConfirmPassword": "$2a$10$Q.Nf3vbllb8PcKSsa0t2Wei3.RSiJ/7Hvij5gKSPvo2Mn9QTA1.ZW",
+        "Avatar": "foto-1640014074781.jpeg",
+        "Role": 2
+    },
+    {
+        "id": 13,
+        "Name": "Daniela",
+        "LastName": "Ortiz",
+        "Email": "daniela@hotmail.com",
+        "Password": "$2a$10$y.9vXu042epAgNh5fNT6beeBbmymIbxJ.oz3wH0k/mSNAYUe3zwP6",
+        "ConfirmPassword": "$2a$10$OCAgfgfEtxyMx49H9tujVuRmJ54.NF.nQA5VRqcOpStHf/7DPHKWC",
+        "Avatar": "foto-1640014228878.jpeg",
+        "Role": 2
     }
 ]

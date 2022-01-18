@@ -98,4 +98,10 @@ router.post('/login', [
 // router.post('/login', controller.loginProcess);
 router.get('/logout/', userController.logout);
 
+router.get('/user/:id', userController.edit);
+
+router.put('/user/:id', userController.update);
+
+router.get('user/detail/:id', userController.detail);
+
 module.exports = router;

@@ -1,6 +1,9 @@
 const usersModel = require('../model/users.js');
 
 const { validationResult } = require('express-validator');
+const { decodeBase64 } = require('bcryptjs');
+
+const db = require("../database/models/User");
 
 const userController = {
 
@@ -24,6 +27,42 @@ const userController = {
             });
         }
     },
+
+    edit: function (req,res) {
+
+        db.User.findByPk (req.params.id)
+        .then (function(user){
+            res.render ("editUser", {user:user})
+        })       
+       
+    },
+
+    update: function (req,res) {
+        db.User.update({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            password: req.body.password,
+            role: req.body.role,
+            avatar: req.body.avatar,
+
+        },{
+            where: {
+                id: req.params.id
+            }
+        }) 
+        res.direct("/user/" + req.params.id)
+
+    },
+
+    detail: function (req, res){
+        db.User.findByPk(req.params.id)
+        .then (function(user){
+            res.render("userDetail", {user:user})
+        })
+
+    },
+
     login: (req, res) => {
         res.render('login');
     },

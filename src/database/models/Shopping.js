@@ -5,37 +5,37 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: DataTypes.INTEGER
+      type: dataTypes.INTEGER
     },
    
     user_id: {
       field: 'user_id',
       allowNull: false,
-      type: DataTypes.INTEGER,
-      references: {
-        model: USER_TABLE,
-        key: 'id'
-      }    
+      type: dataTypes.INTEGER,
+      // references: {
+      //   model: USER_TABLE,
+      //   key: 'id'
+      // }    
     },
 
     envoice_id: {
         field: 'envoice_id',
         allowNull: false,
-        type: DataTypes.INTEGER,
-        references: {
-          model: ENVOICE_TABLE,
-          key: 'id'
-        }   
+        type: dataTypes.INTEGER,
+        // references: {
+        //   model: ENVOICE_TABLE,
+        //   key: 'id'
+        // }   
       },
 
      product_id: {
         field: 'product_id',
         allowNull: false,
-        type: DataTypes.INTEGER,
-        references: {
-          model: ENVOICE_TABLE,
-          key: 'id'
-        },     
+        type: dataTypes.INTEGER,
+        // references: {
+        //   model: ENVOICE_TABLE,
+        //   key: 'id'
+        // },     
       },
   };
   let config = {
@@ -49,13 +49,11 @@ module.exports = (sequelize, dataTypes) => {
               as: "shopping", 
               foreignKey: "user_id"
           })
-          Shopping.belongsToMany(models.product, { 
+          Shopping.belongsTo(models.Product, { 
             as: "product",
-            foreignKey: 'product_id',
-            otherKey: 'envoice_id',
-            timestamps: false
+            foreignKey: 'products_id',
         })
       }
   
-      return Envoice
+      return Shopping
   };

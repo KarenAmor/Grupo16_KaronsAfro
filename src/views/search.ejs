@@ -10,17 +10,18 @@
                         <section>
                             <h3 class="accesorios">Resultado de Búsqueda de "<%= productToFind %>":</h3>
                             <div class="producto">
-                                <% products.forEach(product=> { %>
+                                <% if (products!=false) { %>
+                                 <% products.forEach(product=> { %>
                                     <article class="articulo">
-                                        <img class="imagen" src="/images/products/<%= product.Image %>" width="300px"
-                                            height="250px" alt="<%= product.Name %>">
+                                        <img class="imagen" src="/images/products/<%= product.image %>" width="300px"
+                                            height="250px" alt="<%= product.name %>">
                                         <div class="d-producto">
                                             <h3 class="titulo">
-                                                <%= product.Name %>
+                                                <%= product.name %>
                                             </h3>
-                                            <p class="datos">Precio: $<%= toThousand(product.Price) %>
+                                            <p class="datos">Precio: $<%= toThousand(product.price) %>
                                             </p>
-                                            <p class="datos">Referencia: <%= product.Reference %>
+                                            <p class="datos">Referencia: <%= product.reference %>
                                             </p>
                                             <p class="datos">Cantidad: 1 <a class="datos" href="#"></a> <i
                                                     class="fas fa-plus"></i></a></p>
@@ -30,11 +31,15 @@
                                         <div class="d2-producto">
                                             <h2>Descripción:</h2>
                                             <p class="descripcion">
-                                                <%= product.Description %>
+                                                <%= product.description %>
                                             </p>
                                         </div>
                                     </article>
                                     <% }) %>
+                                <% }else{ %>
+                                    <br>
+                                    <h1 class="accesorios">No se encontró ningún producto relacionado a la búsqueda.</h1>
+                                <% } %> 
                             </div>
                         </section>
                 </main>

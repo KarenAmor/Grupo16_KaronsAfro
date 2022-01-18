@@ -4,12 +4,16 @@ const producstController = {
 
     /*** GET ALL PRODUCTS ***/
 
-    administrador: (req, res) => {
+    administrador: async (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/administrador.html"))
         // res.render('administrador')
         // let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')));
-        let allProducts = productsModel.findAll();
-        res.render('administrador', { productos: allProducts });
+        try {
+            let allProducts = await productsModel.findAll();
+            res.render('administrador', { productos: allProducts });
+        } catch (error) {
+            console.log(error);
+        }        
     },
 
     /*** CREATE ONE PRODUCT ***/
@@ -28,25 +32,34 @@ const producstController = {
 
     /*** GET ONE PRODUCT ***/
 
-    detail: (req, res) => {
+    detail: async(req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/accesorios.html"))
-        let detailProduct = req.params.id;
-        let idDetailProduct = productsModel.findByPk(detailProduct);
-        res.render('detail', { idDetailProduct });
+        try {
+            let detailProduct = req.params.id;
+            let idDetailProduct = await productsModel.findByPk(detailProduct);
+            res.render('detail', { idDetailProduct }); 
+        } catch (error) {
+            console.log(error);
+        }        
     },
 
     /*** EDIT ONE PRODUCT ***/
 
-    editProduct: (req, res) => {
+    editProduct: async(req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/editProduct.html"))
-        let idProduct = req.params.id
-        let product = productsModel.editOne(idProduct);
-        res.render('editProduct', { product });
+        try {
+            let idProduct = req.params.id
+            let product = await productsModel.editOne(idProduct);
+            res.render('editProduct', { product });  
+        } catch (error) {
+            console.log(error);
+        }        
     },
     update: (req, res) => {
         let id = req.params.id;
         let { nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto } = req.body;
-        productsModel.update(id, nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto);
+        let imagenProducto=req.file;
+        productsModel.update(id, nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto, imagenProducto);
         res.redirect("/administrador");
     },
 

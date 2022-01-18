@@ -9,25 +9,48 @@ const controller = {
         // res.sendFile(path.resolve(__dirname, '../views/home.html'));
         res.render('home');
     },
-    cabello: (req, res) => {
+    cabello: async (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/cabello.html"))
-        let hairProducts=productsModel.findAll().filter(item=>item.Reference.slice(1,2)==0);
-        res.render('cabello',{hairProducts: hairProducts, toThousand});
+        try {
+            let hair='10-';
+            let hairProducts= await productsModel.findByCategory(hair)/*.filter(item=>item.reference.slice(1,2)==0)*/;
+            res.render('cabello',{hairProducts: hairProducts, toThousand});
+        } catch (error) {
+            console.log(error);
+        }        
     },
-    piel: (req, res) => {
+    piel: async(req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/piel.html"))
-        let skinProducts=productsModel.findAll().filter(item=>item.Reference.slice(1,2)==1);
-        res.render('piel',{skinProducts: skinProducts, toThousand});
+        try {
+            let skin='11-';
+            let skinProducts=await productsModel.findByCategory(skin)/*.filter(item=>item.Reference.slice(1,2)==1)*/;
+            res.render('piel',{skinProducts: skinProducts, toThousand});
+        } catch (error) {
+            console.log(error);
+        }
+        
     },
-    maquillaje: (req, res) => {
+    maquillaje: async(req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/maquillaje.html"))
-        let makeupProducts=productsModel.findAll().filter(item=>item.Reference.slice(1,2)==2);
-        res.render('maquillaje',{makeupProducts: makeupProducts, toThousand});
+        try {
+            let makeup='12-';
+            let makeupProducts=await productsModel.findByCategory(makeup)/*.filter(item=>item.Reference.slice(1,2)==2)*/;
+            res.render('maquillaje',{makeupProducts: makeupProducts, toThousand});
+        } catch (error) {
+            console.log(error);
+        }
+        
     },
-    accesorios: (req, res) => {
+    accesorios: async (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/accesorios.html"))
-        let accessories=productsModel.findAll().filter(item=>item.Reference.slice(1,2)==3);
-        res.render('accesorios', {accessories: accessories, toThousand});
+        try {
+            let accessories='13-';
+            let accessoriesProducts= await productsModel.findByCategory(accessories)/*.filter(item=>item.Reference.slice(1,2)==3)*/;
+            res.render('accesorios', {accessories: accessoriesProducts, toThousand});          
+        } catch (error) {
+            console.log(error);
+        }
+        
     },
     carritoCompras: (req, res) => {
         // res.sendFile(path.resolve(__dirname, "../views/carritoCompras.html"))
@@ -37,10 +60,14 @@ const controller = {
         // res.sendFile(path.resolve(__dirname, "../views/quienesSomos.html"))
         res.render('quienesSomos');
     },
-    getSearch: (req,res)=>{
-        let productToFind=req.body.search;
-        let products=productsModel.findAll().filter(item=>item.Name==productToFind);
-        res.render('search',{products: products, productToFind, toThousand});
+    getSearch: async(req,res)=>{
+        try {
+            let productToFind=req.body.search.toLowerCase();
+            let products=await productsModel.findAll(productToFind)/*.filter(item=>item.Name==productToFind)*/;
+            res.render('search',{products: products, productToFind, toThousand});
+        } catch (error) {
+            console.log(error);
+        }        
     }
 }
 

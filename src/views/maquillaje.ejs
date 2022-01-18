@@ -13,12 +13,12 @@
                             <% makeupProducts.forEach(product => { %>
                              <article class="articulo">
                                     <img class="imagen"
-                                        src="/images/products/<%= product.Image %>"
-                                        width="300px" height="250px" alt="<%= product.Name %>">
+                                        src="/images/products/<%= product.image %>"
+                                        width="300px" height="250px" alt="<%= product.name %>">
                                     <div class="d-producto">
-                                        <h3 class="titulo"><%= product.Name %></h3>
-                                        <p class="datos">Precio: $<%= toThousand(product.Price) %></p>
-                                        <p class="datos">Referencia: <%= product.Reference %></p>
+                                        <h3 class="titulo"><%= product.name %></h3>
+                                        <p class="datos">Precio: $<%= toThousand(product.price) %></p>
+                                        <p class="datos">Referencia: <%= product.reference %></p>
                                         <p class="datos">Cantidad: 1 <a class="datos" href="#"></a> <i
                                                 class="fas fa-plus"></i></a></p>
                                         <p class="datos">Añadir carrito <a class="datos" href="/carrito"><i
@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="d2-producto">
                                         <h2>Descripción:</h2>
-                                        <p class="descripcion"><%= product.Description %></p>
+                                        <p class="descripcion"><%= product.description %></p>
                                     </div>
                                 </article>
                             <% }) %>                    

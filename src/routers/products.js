@@ -32,7 +32,7 @@ router.get('/producto/detail/:id', adminMiddleware, productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/administrador/editProduct/:id', adminMiddleware, productsController.editProduct);
-router.put('/administrador/editProduct/:id',productsController.update)
+router.put('/administrador/editProduct/:id', upload.single("imagenProducto"), productsController.update)
 
 
 // router.put('/administrador/update/:id', upload.single('imagen'), controller.update);

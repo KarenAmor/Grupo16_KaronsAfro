@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: dataTypes.INTEGER
   },
   first_name: {
     type: dataTypes.STRING(100),
@@ -17,21 +17,21 @@ last_name: {
 },
   email: {
     allowNull: false,
-    type: DataTypes.STRING,
+    type: dataTypes.STRING,
     unique: true,
   },
   password: {
     allowNull: false,
-    type: DataTypes.STRING
+    type: dataTypes.STRING
   },
   //confirmar contraseña
   role: {
     allowNull: false,
-    type: DataTypes.INTEGER,
+    type: dataTypes.INTEGER,
   },
   //avatar
   avatar: {
-    type: DataTypes.STRING,
+    type: dataTypes.STRING,
     allowNull: false,
   },
   

@@ -5,27 +5,27 @@ module.exports = (sequelize, dataTypes) => {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: dataTypes.INTEGER
   },
 
-  shopping_id: {
-    field: 'shopping_id',
+  idshopping: {
+    field: 'idshopping',
     allowNull: false,
-    type: DataTypes.INTEGER,
-    references: {
-      model: SHOPPING_TABLE,
-      key: 'id'
-    },
+    type: dataTypes.INTEGER,
+    // references: {
+    //   model: Shopping,
+    //   key: 'id'
+    // },
    },
  
-  user_id: {
-    field: 'user_id',
+  iduser: {
+    field: 'iduser',
     allowNull: false,
-    type: DataTypes.INTEGER,
-    references: {
-      model: USER_TABLE,
-      key: 'id'
-    },
+    type: dataTypes.INTEGER,
+    // references: {
+    //   model: USER,
+    //   key: 'id'
+    // },
    
   }
 };
@@ -40,11 +40,9 @@ Envoice.associate = function(models) {
             as: "envoice", 
             foreignKey: "user_id"
         })
-Envoice.belongsToMany(models.Shopping, { 
+  Envoice.hasMany(models.Shopping, { 
           as: "shopping",
-          foreignKey: 'envoice_id',
-          otherKey: 'product_id',
-          timestamps: false
+          foreignKey: 'envoices_id1',
       })
     }
 

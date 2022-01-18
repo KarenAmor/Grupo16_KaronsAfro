@@ -5,32 +5,31 @@ module.exports = (sequelize, dataTypes) => {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: dataTypes.INTEGER
   },
   name: {
-    type: DataTypes.STRING,
+    type: dataTypes.STRING,
     allowNull: false,
   },
   price: {
-    type: DataTypes.INTEGER,
+    type: dataTypes.INTEGER,
     allowNull: false,
   },
   reference:{
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    autoIncrement: true,
+    type: dataTypes.INTEGER,
+    allowNull: false
    },
    quantity:{
-    type: DataTypes.INTEGER,
+    type: dataTypes.INTEGER,
     allowNull: false,
    },
  
   description: {
-    type: DataTypes.TEXT,
+    type: dataTypes.TEXT,
     allowNull: false,
   },
   image: {
-    type: DataTypes.STRING,
+    type: dataTypes.STRING,
     allowNull: false,
   },
   
@@ -41,9 +40,9 @@ let config = {
 const Product= sequelize.define(alias,cols,config);
 
 Product.associate = function (models) {
-  Product.belongsTo(models.Shopping, { 
+  Product.hasMany(models.Shopping, { 
       as: "shopping",
-      foreignKey: "shopping_id"
+      foreignKey: "products_id"
   })  
 }
 

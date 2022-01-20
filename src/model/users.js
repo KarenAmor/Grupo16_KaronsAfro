@@ -1,10 +1,14 @@
 const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const usersDb = require('./users.json');
-const db = require("../database/models/User");
+// const usersDb = require('./users.json');
+const usersDb=require('../database/models');
+
 
 const usersModel = {
+
+    /* CREATE USER */
+
     // create: (name, lastName, email, pass, confirmedPass, avatar) => {
     //     let lastUser = usersDb.pop()
     //     usersDb.push(lastUser)
@@ -22,25 +26,74 @@ const usersModel = {
     //     let usersJson = JSON.stringify(usersDb, null, 4)
     //     fs.writeFileSync(path.resolve(__dirname, "./users.json"), usersJson)
     // },
-    create : function(req, res) {
+    create: (first_name,last_name,email,pass,confirmedPass,role,avatar)=>{
 
-        db.User.create({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            password: req.body.password,
-            role: req.body.role,
-            avatar: req.body.avatar,
-        })
+        try {
+            usersDb.User.create({
+                first_name: first_name,
+                last_name: last_name,
+                email: email,
+                password: bcrypt.hashSync(pass, 10),
+                confirmacionPassword: bcrypt.hashSync(confirmedPass, 10),
+                role: role,
+                avatar: avatar ? avatar.filename : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU",
+            })            
+        } catch (error) {
+            console.log(error);
+            
+        }        
 
     },
+
+    /* LOGIN */
+
     access: (email, pass) => {
         let user = usersDb.filter(user => user.Email == email && bcrypt.compareSync(pass, user.Password))[0]
         return user;
     }, 
 
-    
+    /* EDIT USER */
 
+    editOne: async(id)=>{
+        try {
+            let user =await usersDb.User.findByPk(id);
+            return user; 
+        } catch (error) {
+            console.log(error);
+        }        
+    },  
+
+    update: (first_name,last_name,email,pass,confirmedPass,role,avatar)=>{
+
+        try {
+            usersDb.User.update({
+                first_name: first_name,
+                last_name: last_name,
+                email: email,
+                password: bcrypt.hashSync(pass, 10),
+                confirmacionPassword: bcrypt.hashSync(confirmedPass, 10),
+                role: role,
+                avatar: avatar ? avatar.filename : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU",
+            })            
+        } catch (error) {
+            console.log(error);
+            
+        }       
+
+    },
+
+     /* DETAIL USER */
+
+    detail: async(id)=>{
+        try {
+            let idDetailUser = await usersDb.User.findByPk(id);
+            return idDetailUser;
+        } catch (error) {
+            console.log(error);
+        }        
+    },
+
+    
 
 }
 

@@ -1,51 +1,30 @@
 <%- include ('./partials/doctype') %>
 
     <%- include ('./partials/head') %>
-        <link rel="stylesheet" href="/css/stylesRegister.css">
+        <link rel="stylesheet" href="/css/stylesDetailUser.css">
 
         <body class="body">
             <%- include ('./partials/header') %>
                 <main class="body">
-                    <h3> CREAR CUENTA</h3>
 
-                    <form action="/user/detail/<%=user.id%>?_method=PUT" method="POST" class="register" enctype="multipart/form-data"><b>
-                            <div class="forma">
-                                <label>Nombre</label>
-                                <input type="text" name="nombreUsuario" min="3" value="<%=user.first_name%>">
-
-                            </div>
-                            <div class="forma">
-                                <label>Apellido</label>
-                                <input type="text" name="apellidoUsuario" min="3" value="<%=user.last_name%>">
-
-                            </div>
-                            <div class="forma">
-                                <label>Correo Electrónico</label>
-                                <input type="email" name="emailUsuario" value="<%=user.email%>">
-
-                            </div>
-                            <div class="forma">
-                                <label>Contraseña</label>
-                                <input type="password" name="contraseñaUsuario" min="8" value="<%=user.password%>">
-
-                            </div>
-                            <div class="forma">
-                                <label>Confirmación de Contraseña</label>
-                                <input type="password" name="confirmacionContraseñaUsuario" min="8" value="">
-
-                            </div>
-                            <div class="forma">
-                                <input type="file" name="avatar" placeholder="Debes eligir tu avatar..." value="<%=user.avatar%>">
-
-                            </div>
-
-                            <button class="botonRegistrarse" type="submit"><b>Registrarse</b></button>
-                            <button class="botonBorrar" type="reset"><b>Borrar</b></button>
-                            <div class="terminos">Ya tengo una cuenta? <a href="/login">Inicia sesión</a></div>
-
-                        </b>
+                    <h3>PERFIL</h3>
+                    <form action="/user/<%=user.id%>" method="get">
+                    <div class = "box">
+                        <div class="producto">
+                            <img class="imagen" src="/images/users/<%=user.avatar%>" alt="<%=user.avatar%>">
+                        </div>
+                        <div class="register">
+                            <% if(locals.user){%>
+                            <label>Nombre: <input type="text" name="nombreUsuario" min="3" value="<%=user.first_name%>"></label>
+                            <label>Apellido:<input type="text" name="apellidoUsuario" min="3" value="<%=user.last_name%>"></label>
+                            <label>Correo Electrónico: <input type="email" name="emailUsuario" value="<%=user.email%>"></label>                            
+                        </div>
+                        <%}%> 
+                        <div><a href="#" class="icon-pencil"><i class="fas fa-pencil-alt"></i></a></div>
+                    </div>
+                                           
                     </form>
-
+                    
                 </main>
                 <%- include ('./partials/footer') %>
 

@@ -24,7 +24,10 @@ last_name: {
     allowNull: false,
     type: dataTypes.STRING
   },
-  //confirmar contraseña
+  confirmarPassword: {
+    allowNull: false,
+    type: dataTypes.STRING
+  },  
   role: {
     allowNull: false,
     type: dataTypes.INTEGER,

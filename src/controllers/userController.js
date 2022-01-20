@@ -3,15 +3,14 @@ const usersModel = require('../model/users.js');
 const { validationResult } = require('express-validator');
 const { decodeBase64 } = require('bcryptjs');
 
-const db = require("../database/models/User");
 
 const userController = {
+
+    /* CREATE USER */
 
     registro: function (req, res) {
         res.render('register');
     },
-
-    // CREATE USER //
 
     create: (req, res) => {
         const resultValidation = validationResult(req);
@@ -28,40 +27,43 @@ const userController = {
         }
     },
 
-    edit: function (req,res) {
+    /* EDIT USER */
 
-        db.User.findByPk (req.params.id)
-        .then (function(user){
-            res.render ("editUser", {user:user})
-        })       
+    edit: async(req, res) => {
+
+        try {
+            let idUser = req.params.id
+            let user = await usersModel.editOne(idUser);
+            res.render('editUser', { user });  
+        } catch (error) {
+            console.log(error);
+        }        
        
     },
 
     update: function (req,res) {
-        db.User.update({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            password: req.body.password,
-            role: req.body.role,
-            avatar: req.body.avatar,
-
-        },{
-            where: {
-                id: req.params.id
-            }
-        }) 
-        res.direct("/user/" + req.params.id)
+        let id = req.params.id;
+        let { nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario } = req.body;
+        let avatar = req.file;
+        usersModel.update(id, nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario, avatar);
+        res.redirect("/user" + req.params.id);        
 
     },
 
-    detail: function (req, res){
-        db.User.findByPk(req.params.id)
-        .then (function(user){
-            res.render("userDetail", {user:user})
-        })
+    /* DETAIL USER */
+
+    detail: async(req, res) => {
+        try {
+            let detailUser = req.params.id;
+            let idDetailUser = await usersModel.findByPk(detailUser);
+            res.render('detailUser', { idDetailUser }); 
+        } catch (error) {
+            console.log(error);
+        }        
 
     },
+
+    /* LOGIN-LOGOUT PROCESS */
 
     login: (req, res) => {
         res.render('login');

@@ -6,9 +6,9 @@
         <body class="body">
             <%- include ('./partials/header') %>
                 <main class="body">
-                    <h3> CREAR CUENTA</h3>
+                    <h3> EDITAR PERFIL</h3>
 
-                    <form action="/user/<%=user.id%>?_method=PUT" method="POST" class="register" enctype="multipart/form-data"><b>
+                    <form action="/user/edit/<%=user.id%>?_method=PUT" method="POST" class="register" enctype="multipart/form-data"><b>
                             <div class="forma">
                                 <label>Nombre</label>
                                 <input type="text" name="nombreUsuario" min="3" value="<%=user.first_name%>">
@@ -31,7 +31,7 @@
                             </div>
                             <div class="forma">
                                 <label>Confirmación de Contraseña</label>
-                                <input type="password" name="confirmacionContraseñaUsuario" min="8" value="">
+                                <input type="password" name="confirmacionContraseñaUsuario" min="8" value="<%=confirmaciónPassword%>">
 
                             </div>
                             <div class="forma">
@@ -39,9 +39,7 @@
 
                             </div>
 
-                            <button class="botonRegistrarse" type="submit"><b>Registrarse</b></button>
-                            <button class="botonBorrar" type="reset"><b>Borrar</b></button>
-                            <div class="terminos">Ya tengo una cuenta? <a href="/login">Inicia sesión</a></div>
+                            <button class="botonRegistrarse" type="submit"><b>Editar</b></button>
 
                         </b>
                     </form>

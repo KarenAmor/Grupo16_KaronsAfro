@@ -80,6 +80,8 @@ const validacionesRegistro = [
   }),
 ];
 
+/* CREATE  USER */
+
 router.get("/register", guestMiddleware, userController.registro);
 
 router.post(
@@ -88,6 +90,9 @@ router.post(
   validacionesRegistro,
   userController.create
 );
+
+/* LOGIN-LOGOUT*/
+
 router.get('/login', guestMiddleware, userController.login);
 
 router.post('/login', [
@@ -98,10 +103,15 @@ router.post('/login', [
 // router.post('/login', controller.loginProcess);
 router.get('/logout/', userController.logout);
 
-router.get('/user/:id', userController.edit);
 
-router.put('/user/:id', userController.update);
+/* EDIT USER */
 
-router.get('user/detail/:id', userController.detail);
+router.get('/user/edit/:id', userController.edit);
+
+router.put('/user/edit/:id', upload.single("avatar"), validacionesRegistro, userController.update);
+
+/* DETAIL USER */
+
+router.get('/user/:id', userController.detail);
 
 module.exports = router;

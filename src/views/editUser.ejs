@@ -11,12 +11,12 @@
                     <form action="/user/edit/<%=user.id%>?_method=PUT" method="POST" class="register" enctype="multipart/form-data"><b>
                             <div class="forma">
                                 <label>Nombre</label>
-                                <input type="text" name="nombreUsuario" min="3" value="<%=user.first_name%>">
+                                <input type="text" name="nombreUsuario" min="3" value="<%=user.name%>">
 
                             </div>
                             <div class="forma">
                                 <label>Apellido</label>
-                                <input type="text" name="apellidoUsuario" min="3" value="<%=user.last_name%>">
+                                <input type="text" name="apellidoUsuario" min="3" value="<%=user.lastname%>">
 
                             </div>
                             <div class="forma">
@@ -31,7 +31,7 @@
                             </div>
                             <div class="forma">
                                 <label>Confirmación de Contraseña</label>
-                                <input type="password" name="confirmacionContraseñaUsuario" min="8" value="<%=confirmaciónPassword%>">
+                                <input type="password" name="confirmacionContraseñaUsuario" min="8" value="<%=user.confirmarPassword%>">
 
                             </div>
                             <div class="forma">

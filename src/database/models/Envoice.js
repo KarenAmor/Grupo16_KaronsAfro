@@ -36,9 +36,9 @@ let config = {
 const Envoice= sequelize.define(alias, cols, config);
 
 Envoice.associate = function(models) {
-  Envoice.hasMany(models.User, { 
+  Envoice.belongsTo(models.User, { 
             as: "envoice", 
-            foreignKey: "user_id"
+            foreignKey: "users_id"
         })
   Envoice.hasMany(models.Shopping, { 
           as: "shopping",
@@ -48,5 +48,3 @@ Envoice.associate = function(models) {
 
     return Envoice
 };
-
-

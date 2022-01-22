@@ -46,7 +46,7 @@ const userController = {
         let { nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario } = req.body;
         let avatar = req.file;
         usersModel.update(id, nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario, avatar);
-        res.redirect("/user" + req.params.id);        
+        res.redirect("/user/" + req.params.id);        
 
     },
 
@@ -55,7 +55,7 @@ const userController = {
     detail: async(req, res) => {
         try {
             let detailUser = req.params.id;
-            let idDetailUser = await usersModel.findByPk(detailUser);
+            let idDetailUser = await usersModel.detail(detailUser);
             res.render('detailUser', { idDetailUser }); 
         } catch (error) {
             console.log(error);
@@ -100,15 +100,15 @@ const userController = {
     //         return res.render('login', { errors: errors.errors });
     //     }
     // },
-    loginProcess: (req, res) => {
+    loginProcess: async(req, res) => {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-            let { email, password } = req.body;
-            let userFind = usersModel.access(email, password);
+            try {
+                let { email, password } = req.body;
+                let userFind = await usersModel.access(email, password);
+                console.log(userFind);
             if (userFind != undefined) {
-                if (userFind.Role == 1) {
-                    userFind.Password
-                    userFind.ConfirmPassword
+                if (userFind.rol == 1) {
                     req.session.adminLogged = userFind;
                     res.redirect('/');
                 } else {
@@ -116,6 +116,10 @@ const userController = {
                     res.redirect('/');
                 }
             }
+            } catch (error) {
+                console.log(error);
+            }
+            
         } else {
             return res.render('login', {
                 errors: [

@@ -7,11 +7,11 @@ module.exports = (sequelize, dataTypes) => {
     primaryKey: true,
     type: dataTypes.INTEGER
   },
-  first_name: {
+  name: {
     type: dataTypes.STRING(100),
     allowNull: false
 },
-last_name: {
+lastname: {
   type: dataTypes.STRING(100),
   allowNull: false
 },
@@ -22,22 +22,20 @@ last_name: {
   },
   password: {
     allowNull: false,
-    type: dataTypes.STRING
+    type: dataTypes.STRING(61)
   },
   confirmarPassword: {
     allowNull: false,
-    type: dataTypes.STRING
+    type: dataTypes.STRING(61)
   },  
-  role: {
-    allowNull: false,
-    type: dataTypes.INTEGER,
-  },
-  //avatar
-  avatar: {
+    avatar: {
     type: dataTypes.STRING,
     allowNull: false,
   },
-  
+  rol: {
+    allowNull: false,
+    type: dataTypes.INTEGER,
+  },
 };
 let config = {
   timestamps: false

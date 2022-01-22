@@ -8,19 +8,19 @@
                 <main class="body">
 
                     <h3>PERFIL</h3>
-                    <form action="/user/<%=user.id%>" method="get">
+                    <form action="/user/<%=idDetailUser.id%>" method="get">
                     <div class = "box">
                         <div class="producto">
-                            <img class="imagen" src="/images/users/<%=user.avatar%>" alt="<%=user.avatar%>">
+                            <img class="imagen" src="/images/users/<%=idDetailUser.avatar%>" alt="<%=idDetailUser.avatar%>" width="500px">
                         </div>
                         <div class="register">
-                            <% if(locals.user){%>
-                            <label>Nombre: <input type="text" name="nombreUsuario" min="3" value="<%=user.first_name%>"></label>
-                            <label>Apellido:<input type="text" name="apellidoUsuario" min="3" value="<%=user.last_name%>"></label>
-                            <label>Correo Electrónico: <input type="email" name="emailUsuario" value="<%=user.email%>"></label>                            
+                            <% if(locals.idDetailUser){%>
+                            <label>Nombre: <input type="text" name="nombreUsuario" min="3" value="<%=idDetailUser.name%>"></label>
+                            <label>Apellido:<input type="text" name="apellidoUsuario" min="3" value="<%=idDetailUser.lastname%>"></label>
+                            <label>Correo Electrónico: <input type="email" name="emailUsuario" value="<%=idDetailUser.email%>"></label>                            
                         </div>
                         <%}%> 
-                        <div><a href="#" class="icon-pencil"><i class="fas fa-pencil-alt"></i></a></div>
+                        <div><a href="/user/edit/<%=idDetailUser.id%>" class="icon-pencil"><i class="fas fa-pencil-alt"></i></a></div>
                     </div>
                                            
                     </form>

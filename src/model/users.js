@@ -26,17 +26,16 @@ const usersModel = {
     //     let usersJson = JSON.stringify(usersDb, null, 4)
     //     fs.writeFileSync(path.resolve(__dirname, "./users.json"), usersJson)
     // },
-    create: (first_name,last_name,email,pass,confirmedPass,role,avatar)=>{
-
+    create: (first_name,last_name,email,pass,confirmedPass,avatar)=>{
         try {
             usersDb.User.create({
-                first_name: first_name,
-                last_name: last_name,
+                name: first_name,
+                lastname: last_name,
                 email: email,
                 password: bcrypt.hashSync(pass, 10),
-                confirmacionPassword: bcrypt.hashSync(confirmedPass, 10),
-                role: role,
-                avatar: avatar ? avatar.filename : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU",
+                confirmarPassword: bcrypt.hashSync(confirmedPass, 10),                
+                avatar: /*avatar ?*/ avatar.filename /*: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU"*/,
+                rol: 2
             })            
         } catch (error) {
             console.log(error);
@@ -47,9 +46,19 @@ const usersModel = {
 
     /* LOGIN */
 
-    access: (email, pass) => {
-        let user = usersDb.filter(user => user.Email == email && bcrypt.compareSync(pass, user.Password))[0]
-        return user;
+    access: async(email, pass) => {
+        // let user = usersDb.filter(user => user.Email == email && bcrypt.compareSync(pass, user.Password))[0]
+        try {
+            let user= await usersDb.User.findOne({
+                where:{
+                    email: email,
+                    password: bcrypt.compareSync(pass, password)
+                }
+            })
+            return user;
+        } catch (error) {
+            console.log(error);
+        }
     }, 
 
     /* EDIT USER */
@@ -61,30 +70,43 @@ const usersModel = {
         } catch (error) {
             console.log(error);
         }        
-    },  
+    },
 
-    update: (first_name,last_name,email,pass,confirmedPass,role,avatar)=>{
-
-        try {
-            usersDb.User.update({
-                first_name: first_name,
-                last_name: last_name,
-                email: email,
-                password: bcrypt.hashSync(pass, 10),
-                confirmacionPassword: bcrypt.hashSync(confirmedPass, 10),
-                role: role,
-                avatar: avatar ? avatar.filename : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU",
-            })            
-        } catch (error) {
-            console.log(error);
+    update: (id,first_name,last_name,email,pass,confirmedPass,avatar)=>{
+        usersDb.User.update({
+            name: first_name,
+            lastname: last_name,
+            email: email,
+            password: bcrypt.hashSync(pass, 10),
+            confirmarPassword: bcrypt.hashSync(confirmedPass, 10),
+            avatar: /*avatar ?*/ avatar.filename /*: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU"*/,
+            rol: 2,
+        },{
+          where: {id: id}  
+        }        
+        )
+        .then(()=>{})  
+        .catch(error=>console.log(error))
+        // try {
+        //     usersDb.User.update({
+        //         name: first_name,
+        //         lastname: last_name,
+        //         email: email,
+        //         password: bcrypt.hashSync(pass, 10),
+        //         confirmarPassword: bcrypt.hashSync(confirmedPass, 10),
+        //         avatar: /*avatar ?*/ avatar.filename /*: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU"*/,
+        //         rol: 2,
+        //     })            
+        // } catch (error) {
+        //     console.log(error);
             
-        }       
+        // }       
 
     },
 
      /* DETAIL USER */
 
-    detail: async(id)=>{
+     detail: async(id)=>{
         try {
             let idDetailUser = await usersDb.User.findByPk(id);
             return idDetailUser;

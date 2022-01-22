@@ -422,7 +422,7 @@ label input{
   .register {
     padding: 30px;
     margin-top: 50px;
-    margin-left: 1px;
+    margin-left: 350px;
     margin-bottom: 20px;
     background-color: white;
     opacity: 80%;
@@ -433,12 +433,13 @@ label input{
   }
 
   label{
-    font-size: 18px;
+    font-size: 22px;
     text-align: left;
     font-weight: bold;
   }
 
   label input{
+    font-size: 20px;
     border: transparent solid;
   }
   

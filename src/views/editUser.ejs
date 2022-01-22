@@ -8,7 +8,7 @@
                 <main class="body">
                     <h3> EDITAR PERFIL</h3>
 
-                    <form action="/user/edit/<%=user.id%>?_method=PUT" method="POST" class="register" enctype="multipart/form-data"><b>
+                    <form action="/user/<%=user.name%>/edit/<%=user.id%>?_method=PUT" method="POST" class="register" enctype="multipart/form-data"><b>
                             <div class="forma">
                                 <label>Nombre</label>
                                 <input type="text" name="nombreUsuario" min="3" value="<%=user.name%>">
@@ -26,12 +26,12 @@
                             </div>
                             <div class="forma">
                                 <label>Contraseña</label>
-                                <input type="password" name="contraseñaUsuario" min="8" value="<%=user.password%>">
+                                <input type="password" name="contraseñaUsuario" min="8" placeholder="Coloca tu contraseña o cambiala" required>
 
                             </div>
                             <div class="forma">
                                 <label>Confirmación de Contraseña</label>
-                                <input type="password" name="confirmacionContraseñaUsuario" min="8" value="<%=user.confirmarPassword%>">
+                                <input type="password" name="confirmacionContraseñaUsuario" min="8" placeholder="Coloca tu contraseña o cambiala" required>
 
                             </div>
                             <div class="forma">

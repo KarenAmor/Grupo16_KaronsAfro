@@ -106,12 +106,12 @@ router.get('/logout/', userController.logout);
 
 /* EDIT USER */
 
-router.get('/user/edit/:id', userController.edit);
+router.get('/user/:profile/edit/:id', userController.edit);
 
-router.put('/user/edit/:id', upload.single("avatar"), validacionesRegistro, userController.update);
+router.put('/user/:profile/edit/:id', upload.single("avatar"), validacionesRegistro, userController.update);
 
 /* DETAIL USER */
 
-router.get('/user/:id', userController.detail);
+router.get('/user/:profile', userController.detail);
 
 module.exports = router;

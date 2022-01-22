@@ -2,6 +2,7 @@ const usersModel = require('../model/users.js');
 
 const { validationResult } = require('express-validator');
 const { decodeBase64 } = require('bcryptjs');
+const bcrypt = require('bcryptjs/dist/bcrypt');
 
 
 const userController = {
@@ -41,25 +42,32 @@ const userController = {
        
     },
 
-    update: function (req,res) {
-        let id = req.params.id;
+    update: async function (req,res) {
+        let id = req.params.id;        
         let { nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario } = req.body;
         let avatar = req.file;
         usersModel.update(id, nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario, avatar);
-        res.redirect("/user/" + req.params.id);        
-
+        try {
+            let upSession=await usersModel.detail(nombreUsuario,emailUsuario);
+            res.locals.userLogged = upSession;
+            console.log(res.locals.userLogged);
+            res.redirect('/');        
+        } catch (error) {
+            console.log(error);
+        }
+        
     },
 
     /* DETAIL USER */
 
     detail: async(req, res) => {
-        try {
-            let detailUser = req.params.id;
-            let idDetailUser = await usersModel.detail(detailUser);
-            res.render('detailUser', { idDetailUser }); 
-        } catch (error) {
-            console.log(error);
-        }        
+        //try {
+            // let detailUser = req.params.profile;            
+            // let idDetailUser = await usersModel.detail(detailUser, detailUser2);
+            res.render('detailUser'/*, { idDetailUser }*/); 
+        // } catch (error) {
+        //     console.log(error);
+        // }        
 
     },
 
@@ -100,33 +108,39 @@ const userController = {
     //         return res.render('login', { errors: errors.errors });
     //     }
     // },
-    loginProcess: async(req, res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-            try {
-                let { email, password } = req.body;
-                let userFind = await usersModel.access(email, password);
-                console.log(userFind);
+    loginProcess: async(req, res) => {        
+        try {
+            let errors = validationResult(req);
+            if (errors.isEmpty()) {                            
+            let { email, password } = req.body;
+            let userFind = await usersModel.access(email);
             if (userFind != undefined) {
-                if (userFind.rol == 1) {
+                if(bcrypt.compareSync(password, userFind.password)){
+                    if (userFind.rol == 1) {
                     req.session.adminLogged = userFind;
                     res.redirect('/');
                 } else {
                     req.session.userLogged = userFind;
                     res.redirect('/');
                 }
+                }else{
+                    return res.render('login', {
+                        errors: [
+                            { msg: 'Credenciales invalidas' }
+                        ]
+                    });
+                }                            
             }
-            } catch (error) {
-                console.log(error);
-            }
-            
-        } else {
+            } else {
             return res.render('login', {
                 errors: [
                     { msg: 'Credenciales invalidas' }
                 ]
             });
         }
+            } catch (error) {
+                console.log(error);
+            }                    
     },
     logout: (req, res) => {
         req.session.destroy();

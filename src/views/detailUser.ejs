@@ -8,22 +8,22 @@
                 <main class="body">
 
                     <h3>PERFIL</h3>
-                    <form action="/user/<%=idDetailUser.id%>" method="get">
+                    <!-- <form action="/user/" method="get"> -->
                     <div class = "box">
                         <div class="producto">
-                            <img class="imagen" src="/images/users/<%=idDetailUser.avatar%>" alt="<%=idDetailUser.avatar%>" width="500px">
+                            <% if(locals.userLogged){%>
+                            <img class="imagen" src="/images/users/<%=userLogged.avatar%>" alt="<%=userLogged.avatar%>" width="250px">
                         </div>
-                        <div class="register">
-                            <% if(locals.idDetailUser){%>
-                            <label>Nombre: <input type="text" name="nombreUsuario" min="3" value="<%=idDetailUser.name%>"></label>
-                            <label>Apellido:<input type="text" name="apellidoUsuario" min="3" value="<%=idDetailUser.lastname%>"></label>
-                            <label>Correo Electrónico: <input type="email" name="emailUsuario" value="<%=idDetailUser.email%>"></label>                            
-                        </div>
+                        <div class="register">                            
+                            <label>Nombre: <%=userLogged.name%></label>
+                            <label>Apellido: <%=userLogged.lastname%></label>
+                            <label>Correo Electrónico: <%=userLogged.email%></label>                            
+                        </div>                        
+                        <div><a href="/user/<%=userLogged.name%>/edit/<%=userLogged.id%>" class="icon-pencil"><i class="fas fa-pencil-alt"></i></a></div>
                         <%}%> 
-                        <div><a href="/user/edit/<%=idDetailUser.id%>" class="icon-pencil"><i class="fas fa-pencil-alt"></i></a></div>
                     </div>
                                            
-                    </form>
+                    <!-- </form> -->
                     
                 </main>
                 <%- include ('./partials/footer') %>

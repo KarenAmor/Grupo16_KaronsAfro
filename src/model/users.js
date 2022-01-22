@@ -46,13 +46,12 @@ const usersModel = {
 
     /* LOGIN */
 
-    access: async(email, pass) => {
+    access: async(email) => {
         // let user = usersDb.filter(user => user.Email == email && bcrypt.compareSync(pass, user.Password))[0]
         try {
             let user= await usersDb.User.findOne({
                 where:{
-                    email: email,
-                    password: bcrypt.compareSync(pass, password)
+                    email: email
                 }
             })
             return user;
@@ -73,42 +72,35 @@ const usersModel = {
     },
 
     update: (id,first_name,last_name,email,pass,confirmedPass,avatar)=>{
-        usersDb.User.update({
-            name: first_name,
-            lastname: last_name,
-            email: email,
-            password: bcrypt.hashSync(pass, 10),
-            confirmarPassword: bcrypt.hashSync(confirmedPass, 10),
-            avatar: /*avatar ?*/ avatar.filename /*: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU"*/,
-            rol: 2,
-        },{
-          where: {id: id}  
-        }        
-        )
-        .then(()=>{})  
-        .catch(error=>console.log(error))
-        // try {
-        //     usersDb.User.update({
-        //         name: first_name,
-        //         lastname: last_name,
-        //         email: email,
-        //         password: bcrypt.hashSync(pass, 10),
-        //         confirmarPassword: bcrypt.hashSync(confirmedPass, 10),
-        //         avatar: /*avatar ?*/ avatar.filename /*: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU"*/,
-        //         rol: 2,
-        //     })            
-        // } catch (error) {
-        //     console.log(error);
-            
-        // }       
+        
+        try {
+            usersDb.User.update({
+                name: first_name,
+                lastname: last_name,
+                email: email,
+                password: bcrypt.hashSync(pass, 10),
+                confirmarPassword: bcrypt.hashSync(confirmedPass, 10),
+                avatar: /*avatar ?*/ avatar.filename /*: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU"*/,
+                rol: 2,
+            },{
+                where: {id: id}  
+              })            
+        } catch (error) {
+            console.log(error);            
+        }       
 
     },
 
      /* DETAIL USER */
 
-     detail: async(id)=>{
+     detail: async(name, email)=>{
         try {
-            let idDetailUser = await usersDb.User.findByPk(id);
+            let idDetailUser = await usersDb.User.findOne({
+                where: {
+                    name: name,
+                    email: email
+                }
+            });
             return idDetailUser;
         } catch (error) {
             console.log(error);

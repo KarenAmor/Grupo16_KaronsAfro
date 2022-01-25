@@ -7,7 +7,10 @@
             <%- include ('./partials/header') %>
                 <main class="body">
                     <h3> EDITAR PERFIL</h3>
-
+                    <p class="aviso">Importante: Todo campo actualizado en su perfil será reflejado cuando inicie sesión 
+                        la próxima vez. También para que se efectuen los cambios y por motivos de seguridad
+                        debe colocar su contraseña en dichos campos. 
+                    </p>
                     <form action="/user/<%=user.name%>/edit/<%=user.id%>?_method=PUT" method="POST" class="register" enctype="multipart/form-data"><b>
                             <div class="forma">
                                 <label>Nombre</label>

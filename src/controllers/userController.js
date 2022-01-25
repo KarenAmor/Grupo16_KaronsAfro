@@ -43,15 +43,14 @@ const userController = {
     },
 
     update: async function (req,res) {
+        try {
         let id = req.params.id;        
         let { nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario } = req.body;
         let avatar = req.file;
-        usersModel.update(id, nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario, avatar);
-        try {
-            let upSession=await usersModel.detail(nombreUsuario,emailUsuario);
-            res.locals.userLogged = upSession;
-            console.log(res.locals.userLogged);
-            res.redirect('/');        
+        await usersModel.update(id, nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario, avatar);                
+        let upSession=await usersModel.detail(emailUsuario);
+        res.locals.userLogged = upSession;
+        res.redirect('/');        
         } catch (error) {
             console.log(error);
         }

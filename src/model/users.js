@@ -71,10 +71,10 @@ const usersModel = {
         }        
     },
 
-    update: (id,first_name,last_name,email,pass,confirmedPass,avatar)=>{
+    update: async (id,first_name,last_name,email,pass,confirmedPass,avatar)=>{
         
         try {
-            usersDb.User.update({
+            await usersDb.User.update({
                 name: first_name,
                 lastname: last_name,
                 email: email,
@@ -93,11 +93,11 @@ const usersModel = {
 
      /* DETAIL USER */
 
-     detail: async(name, email)=>{
+     detail: async(/*name,*/ email)=>{
         try {
             let idDetailUser = await usersDb.User.findOne({
                 where: {
-                    name: name,
+                    // name: name,
                     email: email
                 }
             });

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const guestMiddleware=require("../middlewares/guestMiddleware");
+const userMiddleware=require("../middlewares/userMiddleware");
 
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
@@ -106,12 +107,12 @@ router.get('/logout/', userController.logout);
 
 /* EDIT USER */
 
-router.get('/user/:profile/edit/:id', userController.edit);
+router.get('/user/:profile/edit/:id', userMiddleware, userController.edit);
 
 router.put('/user/:profile/edit/:id', upload.single("avatar"), validacionesRegistro, userController.update);
 
 /* DETAIL USER */
 
-router.get('/user/:profile', userController.detail);
+router.get('/user/:profile', userMiddleware, userController.detail);
 
 module.exports = router;

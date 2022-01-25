@@ -151,6 +151,11 @@ h3 {
   border: 1px solid black;
 }
 
+.aviso{
+  font-size: 10px;
+  color: red;
+}
+
 .botonRegistrarse {
   background-color: #8c4e37;
   color: white;

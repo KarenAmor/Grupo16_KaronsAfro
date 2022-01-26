@@ -1,4 +1,3 @@
-
 const express = require ('express');
 const app = express();
 const path = require('path');
@@ -29,6 +28,9 @@ app.use('/', rutas);
 app.use('/',products);
 app.use('/', usuario);
 
+app.use((req, res, next)=>{
+    res.status(404).render('error');
+  });
 
 app.listen(port, ()=> console.log(`Servidor corriendo ${port}`))
 

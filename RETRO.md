@@ -119,3 +119,30 @@ ________________________________________________________________________________
 • No avisar a los integrantes del grupo cuando se presentan impedimentos en las responsabilidades asignadas.
 
 ______________________________________________________________________________________________________________
+
+## ESTRELLA DE MAR DEL SPRINT 6:
+
+## KEEP DOING:
+• Una reunion por semana.
+• Distribución de responsabilidades.
+• Apoyo mutuo entre los integrantes del grupo.
+• Requerir la ayuda de los docentes cuando sea necesario.
+
+## MORE OF:
+• Informar constantemente cuando haya dificultades en la realización de las responsabilidades.
+• Mantenerse informado en los temas vistos para evitar inconvenientes.
+• La entrega de las responsabilidades individuales son máximo dos días antes de la entrega del sprint actual.
+• Realizar más validaciones en Heroku.
+
+## START DOING:
+• Estudiar React.
+• Adecuaciones en CSS.
+
+## STOP DOING:
+• Realizar adecuaciones a última hora cuando la entrega del sprint este cercana. 
+
+## LESS OF:
+• No dejar las inquietudes a ultimo momento a los profesores ni a los integrantes del grupo.
+• No avisar a los integrantes del grupo cuando se presentan impedimentos en las responsabilidades asignadas.
+
+______________________________________________________________________________________________________________

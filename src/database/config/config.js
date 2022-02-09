@@ -1,13 +1,12 @@
 require('dotenv').config()
-
+const env = process.env;
 module.exports = {
   "development": {
-    "username": "root",
-    "password": "1234",
-    "database": "karonsafros_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port": "3307"
+    "username": env.USER,
+    "password": env.DATABASE_PASS,
+    "database": env.DATABASE_NAME,
+    "host": env.DATABASE_HOST,
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

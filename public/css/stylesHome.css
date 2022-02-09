@@ -1,215 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
-
 * {
   box-sizing: border-box;
   margin: 0%;
   padding: 0;
 }
-img {
-  width: 100%;
-}
-html,
-body {
-  font-size: 62.5%;
-  font-family: "Roboto Mono", monospace;
-  height: 100%;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
 
-/*HEADER*/
-
-header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  min-width: 320px;
-  height: 320px;
-  text-align: center;
-  background: linear-gradient(207.8deg, #201e1c 16.69%, #f7931a 100%);
-}
-header img {
-  margin-top: 0px;
-  align-self: center;
-}
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.primeraParte .segundaParte .form {
-  width: 300px;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-
-.primeraParte .segundaParte .form .contenedor {
-  width: 300px;
-  border-radius: 100px;
-  border: 1px solid #dfe1e5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.primeraParte .segundaParte .form input {
-  width: 265px;
-  height: 25px;
-  border: none;
-  outline: none;
-}
-.primeraParte .segundaParte .form .contenedor:hover {
-  box-shadow: 0 1px 6px 0 #20212447;
-  border-color: #dfe1e500;
-}
-.primeraParte .segundaParte .form .lupa {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 18px;
-  height: 18px;
-  font-size: 18px;
-}
-.burger-menu i {
-  background-color: white;
-  border-radius: 5px;
-  color: black;
-  font-size: 20px;
-  margin: 10px;
-  padding: 10px;
-}
-
-.grupoIconos {
-  font-size: 3rem;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-.grupoIconos .iconos {
-  margin-right: 30px;
-  color: beige;
-}
-.grupoIconos .iconos:hover {
-  border: 1px solid #c6c6c6;
-  box-shadow: 0 1px 1px black;
-  color: #222;
-}
-
-/*.letrasMenu{
-  display: none;
-}
-/*MAIN*/
 main {
-  background-color: #f2d6bd;
-  position: relative;
-  display: flex;
+  position: relative; 
   justify-content: center;
-  width: 100%;
-  min-width: 320px;
-  text-align: center;
-  flex-direction: column;
-  right: 1px;
-  left: 1px;
-}
-.user-icon a i {
-  padding: 10px;
-  font-size: 30px;
-}
-.saludo-user h1 {
-  font-size: 15px;
-  margin-left: 10px;
-}
-h3 {
-  text-align: center;
-  font-weight: bold;
-  padding: 5px;
-  font-size: 18px;
+  overflow: hidden;
 }
 
-main ul li img {
+main div{
+  margin:auto;
   width: 300px;
-  height: 250px;
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  object-fit: cover;
-  margin-bottom: 2px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 0px; 
+  margin-left: 60px; 
 }
 
-.container,
-.container2,
-.container3 {
-  margin: auto;
-  background-color: #f2d6bd;
-  height: 350px;
-  bottom: 0;
+
+main ul{
+  display: flex;
+  width:320px;
+  height:240px;
+  animation: cambio 20s infinite alternate;
 }
 
-ul,
-li {
-  padding: 0;
-  margin: 0;
+main ul li{
   list-style: none;
+  width: 100%;
 }
 
-ul.slider {
-  position: relative;
-  height: 200px;
-  width: 100px;
+main ul li img{
+  width:320px;
+  height:240px;
 }
+@keyframes cambio{
+  0%{margin-left:0;}
+  20%{margin-left:0;}
 
-ul.slider li {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  opacity: 0;
-  width: inherit;
-  height: inherit;
-  transition: opacity 0.5s;
-  background: #fff;
-}
+  25%{margin-left:-100%;}
+  45%{margin-left:-100%;}
 
-ul.slider li img {
-  object-fit: cover;
-}
+  50%{margin-left:-200%;}
+  70%{margin-left:-200%;}
 
-ul.slider li:first-child {
-  opacity: 1; /*Mostramos el primer <li>*/
-}
-
-ul.slider li:target {
-  opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
-}
-
-.menu,
-.menu2,
-.menu3 {
-  text-align: center;
-  margin: 100px;
-}
-
-.menu li,
-.menu2 li,
-.menu3 li {
-  display: inline-block;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.menu li a,
-.menu2 li a,
-.menu3 li a {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  background-color: grey;
-  width: 15px;
-  height: 15px;
-  font-size: 10px;
-  border: solid gray 1px;
-  margin-top: 0;
-  margin-bottom: 0;
+  75%{margin-left:-300%;}
+  100%{margin-left:-300%;}
 }
 
 /*FOOTER*/
@@ -238,144 +76,13 @@ ul.slider li:target {
   text-align: center;
   font-size: 12px;
 }
-/*_________________MEDIA QUIERES_________________*/
-/*TABLET*/
-@media screen and (min-width: 424px) {
-  header {
-    height: 350px;
-  }
-  main {
-    display: flex;
-    justify-content: center;
-    margin-right: 0px;
-  }
-  main ul li img {
-    margin: 0;
-    padding: 0;
-    width: 424px;
-    margin-left: -64px;
-    margin-right: 20px;
-    justify-content: center;
-  }
-  .menu,
-  .menu2,
-  .menu3 {
-    text-align: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    justify-content: center;
-  }
+
+@media screen and (max-width: 599px) {
+
 }
 
-/*COMPUTADOR*/
-
-@media screen and (min-width: 768px) {
-  header {
-    width: 100%;
-    height: 57vh;
-  }
-  .burger-menu{
-    display: none;
-  }
-
-  .logo img {
-    width: 50%;
-  }
-
-  .letrasMenu{
-    display: flex;
-    background-color: white;
-    width: 100%;
-    border: black solid 1px;
-    font-weight: bold;
-  }
-  .letra {
-    color: black;
-  }
-
-  main ul li img {
-    margin: 0;
-    padding: 0;
-    width: 700px;
-    margin-left: -195px;
-    margin-right: 60px;
-    justify-content: center;
-  }
-
-  .letrasMenu ul li .letra:hover {
-    color: #f2be22;
-    border-radius: 20px;
-  }
-  nav .letra {
-    font-size: 22px;
-    margin-right: 33px;
-  }
-  main ul li img {
-    margin: 0;
-    padding: 0;
-    width: 600px;
-    margin-left: -150px;
-    margin-right: 20px;
-    justify-content: center;
-  }
-
-  .footer {
-    background-color: black;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    padding-right: 0px;
-    justify-content: space-around;
-    text-align: left;
-  }
-
-  .letra2 {
-    color: white;
-    text-decoration: none;
-    font-weight: normal;
-  }
-}
-
-@media screen and (min-width: 1024px){
-  header {
-    width: 100%;
-    height: 65vh;
-  }
-  .burger-menu{
-    display: none;
-  }
-
-  .logo img {
-    width: 50%;
-  }
-
-  .letrasMenu{
-    display: flex;
-    background-color: white;
-    width: 100%;
-    
-  }
-  .letra {
-    color: black;
-  }
-
-
-  main ul li img {
-    margin: 0;
-    padding: 0;
-    width: 700px;
-    margin-left: -195px;
-    margin-right: 60px;
-    justify-content: center;
-  }
+@media screen and (max-width: 1280px) and (min-width: 600px) {
   
-  .letrasMenu ul li .letra:hover {
-    color: #f2be22;
-    border-radius: 20px;
-  }
-  nav .letra {
-    font-size: 22px;
-    margin-right: 33px;
-  }
 }
+
+@media screen and (min-width: 1281px) {}

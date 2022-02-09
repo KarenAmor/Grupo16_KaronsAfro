@@ -1,66 +1,36 @@
+<link rel="stylesheet" href="/css/stylesHeader.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
 <header>
-    <div class="primeraParte">
-        <div class="logo"><img src="/Images/LogoKaros.JPG" alt="Logo Kairos Afro" width=100%></div>
+    <nav>
+        <input type="checkbox" id=check>
+        <!-- relacionando checkbox con label y 
+            haciendo clickeable fontawesone -->
+        <label for="check" class="checkbtn">
+            <i  class="fas fa-bars fa-2x"></i>
+        </label>
+        <label for="check" class="checkbtn_close">
+            <i  class="fas fa-times fa-2x"></i>
+        </label>
         
-        <div class="segundaParte">
-            <div>
-            <form action="/search" method="post">
-                <!-- <div class="form" action="#" method="GET"> -->
-            
-            <div class="form" action="/home" method="GET">
-                <div class="contenedor">
-                    <span class="lupa">
-                        <i class="fas fa-search"></i>
-                    </span>
-                    <input type="text" name="search">
-                </div>
-                </div>
-            </form>                    
-                  
-            </div>
-        </div>
-        <div class="grupoIconos">
-                <% if (locals.isUserLogged) { %>
-                    <div><a href="/logout/" class="iconos"><i class="fas fa-door-open"></i></a></div>    
-                    <div><a href="/carrito_compras" class="iconos"><i class="fas fa-shopping-cart" alt="Carrito de Compra"></i></a>
-                <% }else{ %>
-                <div><a href="/register" class="iconos"><i class="fas fa-user-plus" alt="Registrarse"></i></a></div>
-                <div><a href="/login" class="iconos"><i class="fas fa-sign-in-alt" alt="Ingresar"></i></a> </div>
-                <div><a href="/carrito_compras" class="iconos"><i class="fas fa-shopping-cart" alt="Carrito de Compra"></i></a>
-                </div>
-                <% } %>
-        </div>
-        <nav>
-
-            <div class="burger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-
-        </nav>
-    </div>
-    <div >
-        <nav>
-            <div class="letrasMenu">
-                <ul type="none">
-                    <li><a href="/" class="letra">Inicio</a></li>
-                </ul>
-                <ul type="none">
-                    <li><a href="/quienesSomos" class="letra">¿Quienes somos?</a></li>
-                </ul>
-                <ul type="none">
-                    <li><a href="/producto/cabello" class="letra">Cabello</a></li>
-                </ul>
-                <ul type="none">
-                    <li><a href="/producto/piel" class="letra">Piel</a></li>
-                </ul>
-                <ul type="none">
-                    <li><a href="/producto/maquillaje" class="letra">Maquillaje</a></li>
-                </ul>
-                <ul type="none">
-                    <li><a href="/producto/accesorios" class="letra">Accesorios</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+        <label class="logo"><img src="/Images/flor.svg">KARONSAFRO</label>
+        <ul>   
+            <% if (locals.isUserLogged) { %>
+            <li><a href="/logout/" class="iconos"><i class="fas fa-door-open"></i></a></li>    
+            <li><a href="/carrito_compras" class="iconos"><i class="fas fa-shopping-cart" alt="Carrito de Compra"></i></a>
+            <% }else{ %>        
+            <li><a href="/register">Registrarse</a></li>
+            <li><a href="/login">Ingresar</i></a> </li>
+            <li><a href="/carrito_compras"><i class="fas fa-shopping-cart" alt="Carrito de Compra"></i></a></li>
+            <li><a href="/" >Inicio</a></li>
+            <li><a href="/quienesSomos">¿Quienes somos?</a></li>
+            <li><a href="/producto/cabello">Cabello</a></li>
+            <li><a href="/producto/piel">Piel</a></li>
+            <li><a href="/producto/maquillaje">Maquillaje</a></li>
+           <li><a href="/producto/accesorios">Accesorios</a></li> 
+           <% } %>            
+        </ul>
+    </nav>
   
 </header>

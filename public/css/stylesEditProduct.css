@@ -20,86 +20,6 @@ body {
 
 /*HEADER*/
 
-header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  min-width: 320px;
-  height: 320px;
-  text-align: center;
-  background: linear-gradient(207.8deg, #201e1c 16.69%, #f7931a 100%);
-}
-header img {
-  margin-top: 0px;
-  align-self: center;
-}
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.primeraParte .segundaParte .form {
-  width: 300px;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-
-.primeraParte .segundaParte .form .contenedor {
-  width: 300px;
-  border-radius: 100px;
-  border: 1px solid #dfe1e5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.primeraParte .segundaParte .form input {
-  width: 265px;
-  height: 25px;
-  border: none;
-  outline: none;
-}
-.primeraParte .segundaParte .form .contenedor:hover {
-  box-shadow: 0 1px 6px 0 #20212447;
-  border-color: #dfe1e500;
-}
-.primeraParte .segundaParte .form .lupa {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 18px;
-  height: 18px;
-  font-size: 18px;
-}
-.burger-menu i {
-  background-color: white;
-  border-radius: 5px;
-  color: black;
-  font-size: 20px;
-  margin: 10px;
-  padding: 10px;
-}
-
-.grupoIconos {
-  font-size: 3rem;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-.grupoIconos .iconos {
-  margin-right: 30px;
-  color: beige;
-}
-.grupoIconos .iconos:hover {
-  border: 1px solid #c6c6c6;
-  box-shadow: 0 1px 1px black;
-  color: #222;
-}
-
-.letrasMenu {
-  display: none;
-}
 /*BODY*/
 main{
   background-color: #f2d6bd;
@@ -113,10 +33,7 @@ main{
   right: 1px;
   left: 1px;
 }
-/* .body {
-  background-color: #f2d6bd;
-  padding-bottom: 10px;
-} */
+
 h3 {
   text-align: center;
   font-weight: bold;
@@ -194,10 +111,7 @@ h3 {
 
 /*_________________MEDIA QUIERES_________________*/
 /*TABLET*/
-@media screen and (min-width: 424px) {
-  header {
-    height: 350px;
-  }
+@media screen and (min-width: 424px) {  
   main {
     display: flex;
     justify-content: center;
@@ -223,49 +137,7 @@ h3 {
 
 /*COMPUTADOR*/
 
-@media screen and (min-width: 768px) {
-  header {
-    width: 100%;
-    height: 57vh;
-  }
-  .burger-menu{
-    display: none;
-  }
-
-  .logo img {
-    width: 50%;
-  }
-
-  .letrasMenu{
-    display: flex;
-    background-color: white;
-    width: 100%;
-  }
-  .letra {
-    color: black;
-  }
-  /* .contenedor {
-    margin-top: 20px;
-  }
-  .container,
-  .container2,
-  .container3 {
-    height: 500px;
-  } */
-
-  nav .letrasMenu {
-    display: flex;
-    justify-content: space-between;
-    border: black solid 1px;
-    background-color: white;
-    font-weight: bold;
-  }
-  nav .letra {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-    margin-right: 30px;
-  }
+@media screen and (min-width: 768px) { 
   main ul li img {
     margin: 0;
     padding: 0;
@@ -349,9 +221,4 @@ h3 {
     display: flex;
     flex-direction: column;
   }
-  
-
-
 }
-
-

@@ -18,88 +18,6 @@ body {
   overflow-x: hidden;
 }
 
-/*HEADER*/
-
-header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  min-width: 320px;
-  height: 320px;
-  text-align: center;
-  background: linear-gradient(207.8deg, #201e1c 16.69%, #f7931a 100%);
-}
-header img {
-  margin-top: 0px;
-  align-self: center;
-}
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.primeraParte .segundaParte .form {
-  width: 300px;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-
-.primeraParte .segundaParte .form .contenedor {
-  width: 300px;
-  border-radius: 100px;
-  border: 1px solid #dfe1e5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.primeraParte .segundaParte .form input {
-  width: 265px;
-  height: 25px;
-  border: none;
-  outline: none;
-}
-.primeraParte .segundaParte .form .contenedor:hover {
-  box-shadow: 0 1px 6px 0 #20212447;
-  border-color: #dfe1e500;
-}
-.primeraParte .segundaParte .form .lupa {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 18px;
-  height: 18px;
-  font-size: 18px;
-}
-.burger-menu i {
-  background-color: white;
-  border-radius: 5px;
-  color: black;
-  font-size: 20px;
-  margin: 10px;
-  padding: 10px;
-}
-
-.grupoIconos {
-  font-size: 3rem;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-.grupoIconos .iconos {
-  margin-right: 30px;
-  color: beige;
-}
-.grupoIconos .iconos:hover {
-  border: 1px solid #c6c6c6;
-  box-shadow: 0 1px 1px black;
-  color: #222;
-}
-
-.letrasMenu {
-  display: none;
-}
 /* footer */
 
 .footer {
@@ -131,11 +49,6 @@ main {
   width: 100%;
 }
 
-/* .admin{
-    display: block;
-    margin-bottom: -15px;
-} */
-
 .admin h2{
     font-size: 60px;
     text-align: center;
@@ -148,133 +61,6 @@ main {
 .admin .agregar-producto a{
   font-size: 17px;
 }
-
-/* .admin .table-1{
-    margin-right: -80px;
-    display: flex;
-    justify-content: center;
-    font-size: 13px;
-}
-
-.admin .table-1 .table-2{
-    width: 100%;
-}
-
-.admin .table-1 .table-2 thead{
-    width: 90vw;
-    display: flex;
-    border-bottom: 1px solid black;
-}
-
-.admin .table-1 .table-2 thead tr{
-    display: block;
-    width: 100vw;
-}
-
-.admin .table-1 .table-2 thead tr th{
-    display: inline;
-    margin-right: 190px;    
-}
-
-.admin .table-1 .table-2 tbody tr{
-    display: block;
-    width: 90vw;
-    border-bottom: 1px solid gray;
-}
-
-.admin .table-1 .table-2 tbody tr td{
-    display: inline;
-} 
-
-.admin .table-1 .table-2 tbody .primer-item td{
-    margin-right: 160px;
-}
-
-.admin .table-1 .table-2 tbody .primer-item td .icon-eye{
-    position: relative;
-    right: 45px;
-}
-
-.admin .table-1 .table-2 tbody .primer-item td .icon-trash{
-    position: relative;
-    left: 70px;
-}
-
-.admin .table-1 .table-2 tbody .segundo-item td{
-    margin-right: 160px;
-}
-
-.admin .table-1 .table-2 tbody .segundo-item td .icon-eye{
-    position: relative;
-    left: 10px;
-}
-
-.admin .table-1 .table-2 tbody .segundo-item td .icon-pencil{
-    position: relative;
-    left: 55px;
-}
-
-.admin .table-1 .table-2 tbody .segundo-item td .icon-trash{
-    position: relative;
-    left: 125px;
-}
-
-.admin .table-1 .table-2 tbody .tercer-item td{
-    margin-right: 160px;
-}
-
-.admin .table-1 .table-2 tbody .tercer-item td .icon-eye{
-    position: relative;
-    right: 51px;
-}
-
-.admin .table-1 .table-2 tbody .tercer-item td .icon-pencil{
-    position: relative;
-    right: 8px;
-}
-
-.admin .table-1 .table-2 tbody .tercer-item td .icon-trash{
-    position: relative;
-    left: 63px;
-}
-
-.admin .table-1 .table-2 tbody .cuarto-item td{
-    margin-right: 160px;
-}
-
-.admin .table-1 .table-2 tbody .cuarto-item td .icon-eye{
-    position: relative;
-    right: 168px;
-}
-
-.admin .table-1 .table-2 tbody .cuarto-item td .icon-pencil{
-    position: relative;
-    right: 125px;
-}
-
-.admin .table-1 .table-2 tbody .cuarto-item td .icon-trash{
-    position: relative;
-    right: 53px;
-}
-
-.admin .table-1 .table-2 tbody .quinto-item td{
-    margin-right: 160px;
-}
-
-.admin .table-1 .table-2 tbody .quinto-item td .icon-eye{
-    position: relative;
-    right: 11px;
-}
-
-.admin .table-1 .table-2 tbody .quinto-item td .icon-pencil{
-    position: relative;
-    left: 30px;
-}
-
-.admin .table-1 .table-2 tbody .quinto-item td .icon-trash{
-    position: relative;
-    left: 103px;
-} */
 
 .admin table {
   font-size: 1rem;
@@ -324,9 +110,7 @@ main {
 /*_________________MEDIA QUIERES_________________*/
 /*TABLET*/
 @media screen and (min-width: 424px) {
-  header {
-    height: 350px;
-  }
+  
   main {
     justify-content: center;
     margin-right: 0px;
@@ -352,48 +136,7 @@ main {
 /*COMPUTADOR*/
 
 @media screen and (min-width: 768px) {
-  header {
-    width: 100%;
-    height: 57vh;
-  }
-  .burger-menu{
-    display: none;
-  }
-
-  .logo img {
-    width: 50%;
-  }
-
-  .letrasMenu{
-    display: flex;
-    background-color: white;
-    width: 100%;
-  }
-  .letra {
-    color: black;
-  }
-  /* .contenedor {
-    margin-top: 20px;
-  }
-  .container,
-  .container2,
-  .container3 {
-    height: 500px;
-  } */
-
-  nav .letrasMenu {
-    display: flex;
-    justify-content: space-between;
-    border: black solid 1px;
-    background-color: white;
-    font-weight: bold;
-  }
-  nav .letra {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-    margin-right: 30px;
-  }
+  
   main ul li img {
     margin: 0;
     padding: 0;

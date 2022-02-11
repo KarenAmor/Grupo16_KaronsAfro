@@ -8,48 +8,28 @@
                 <main class="body">
                     <h3> EDITAR PERFIL</h3>
                     <p class="aviso">Importante: Todo campo actualizado en su perfil será reflejado cuando inicie sesión 
-                        la próxima vez. También para que se efectuen los cambios y por motivos de seguridad
-                        debe colocar su contraseña en dichos campos. 
+                        la próxima vez. 
                     </p>
                     <form action="/user/<%=user.name%>/edit/<%=user.id%>?_method=PUT" method="POST" class="register" enctype="multipart/form-data"><b>
                             <div class="forma">
                                 <label>Nombre</label>
-                                <input type="text" name="nombreUsuario" min="3" value="<%=user.name%>">
-
+                                <input type="text" name="nombreUsuario" min="2" value="<%= user.name%>">                                
                             </div>
                             <div class="forma">
                                 <label>Apellido</label>
-                                <input type="text" name="apellidoUsuario" min="3" value="<%=user.lastname%>">
-
+                                <input type="text" name="apellidoUsuario" min="2" value="<%= user.lastname%>">                                
                             </div>
                             <div class="forma">
                                 <label>Correo Electrónico</label>
-                                <input type="email" name="emailUsuario" value="<%=user.email%>">
-
+                                <input type="text" name="emailUsuario" value="<%= user.email%>">                                
                             </div>
                             <div class="forma">
-                                <label>Contraseña</label>
-                                <input type="password" name="contraseñaUsuario" min="8" placeholder="Coloca tu contraseña o cambiala" required>
-
+                                <input type="file" name="avatar" placeholder="Debes eligir tu avatar...">
                             </div>
-                            <div class="forma">
-                                <label>Confirmación de Contraseña</label>
-                                <input type="password" name="confirmacionContraseñaUsuario" min="8" placeholder="Coloca tu contraseña o cambiala" required>
-
-                            </div>
-                            <div class="forma">
-                                <input type="file" name="avatar" placeholder="Debes eligir tu avatar..." value="<%=user.avatar%>">
-
-                            </div>
-
                             <button class="botonRegistrarse" type="submit"><b>Editar</b></button>
-
-                        </b>
+                            </b>
                     </form>
-
                 </main>
                 <%- include ('./partials/footer') %>
-
         </body>
-
-        </html>
+</html>

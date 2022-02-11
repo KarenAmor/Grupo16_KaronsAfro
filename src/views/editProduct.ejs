@@ -11,28 +11,75 @@
                         " method="POST" class="register" enctype="multipart/form-data"><b>
                             <div class="forma">
                                 <label>Nombre del Producto</label>
-                                <input type="text" name="nombreProducto" value="<%= product.name %>" required>
+                                <input type="text" name="nombreProducto" value="<%= product.name %>" 
+                                class="<%= locals.errors && errors.nombreProducto ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.nombreProducto : null %>"
+                                >
+                                <% if (locals.errors && errors.nombreProducto) { %>
+                                    <div class="text-danger">
+                                        <%= errors.nombreProducto.msg  %> 
+                                    </div>                     
+                                <% } %>
                             </div>
                             <div class="forma">
                                 <label>Precio</label>
-                                <input type="number" name="precioProducto" value="<%= product.price %>" required>
+                                <input type="number" name="precioProducto" value="<%= product.price %>" 
+                                class="<%= locals.errors && errors.precioProducto ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.precioProducto : null %>"
+                                >
+                                <% if (locals.errors && errors.precioProducto) { %>
+                                    <div class="text-danger">
+                                        <%= errors.precioProducto.msg  %> 
+                                    </div>                     
+                                <% } %>
                             </div>
                             <div class="forma">
                                 <label>Referencia</label>
-                                <input type="texto" name="referenciaProducto" value="<%= product.reference %>" required>
+                                <input type="texto" name="referenciaProducto" value="<%= product.reference %>" }
+                                class="<%= locals.errors && errors.referenciaProducto ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.referenciaProducto : null %>"
+                                >
+                                <% if (locals.errors && errors.referenciaProducto) { %>
+                                    <div class="text-danger">
+                                        <%= errors.referenciaProducto.msg  %> 
+                                    </div>                     
+                                <% } %>
                             </div>
                             <div class="forma">
                                 <label>Cantidad Disponible</label>
-                                <input type="texto" name="cantidadProducto" value="<%= product.quantity %>" required>
+                                <input type="texto" name="cantidadProducto" value="<%= product.quantity %>" 
+                                class="<%= locals.errors && errors.cantidadProducto ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.cantidadProducto : null %>"
+                                >
+                                <% if (locals.errors && errors.cantidadProducto) { %>
+                                    <div class="text-danger">
+                                        <%= errors.cantidadProducto.msg  %> 
+                                    </div>                     
+                                <% } %>
                             </div>
                             <div class="forma">
                                 <label>Descripción del Producto</label>
-                                <input type="texto" name="descripcionProducto" value="<%= product.description %>" required>
+                                <input type="texto" name="descripcionProducto" value="<%= product.description %>" 
+                                class="<%= locals.errors && errors.descripcionProducto ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.descripcionProducto : null %>"
+                                >
+                                <% if (locals.errors && errors.descripcionProducto) { %>
+                                    <div class="text-danger">
+                                        <%= errors.descripcionProducto.msg  %> 
+                                    </div>                     
+                                <% } %>
                             </div>
 
                             <div class="forma">
                                 <h4>Imagen del Producto</h4>
-                                <input type="file" name="imagenProducto" accept=".jpg , .png">
+                                <input type="file" name="imagenProducto"
+                                class="<%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>"
+                                >
+                                <% if (locals.errors && errors.imagenProducto) { %>
+                                    <div class="text-danger">
+                                        <%= errors.imagenProducto.msg  %> 
+                                    </div>                     
+                                <% } %>
                             </div>
                             <div>
                                 <button class="botonEdit" type="submit"><b>Actualizar Cambios</b></button>

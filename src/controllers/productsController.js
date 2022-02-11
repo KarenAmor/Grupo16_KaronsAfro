@@ -1,4 +1,5 @@
 const productsModel = require('../model/products');
+const { validationResult } = require('express-validator');
 
 const producstController = {
 
@@ -20,10 +21,18 @@ const producstController = {
     },
     store: (req, res) => {
         try {
-            let { nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto } = req.body;
-            let imagenProducto = req.file;
-            productsModel.create(nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto, imagenProducto);
-            res.redirect("/administrador");
+            let resultValidation = validationResult(req);
+            if (resultValidation.isEmpty()) {
+                let { nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto } = req.body;
+                let imagenProducto = req.file;
+                productsModel.createProduct(nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto, imagenProducto);
+                res.redirect("/administrador");
+            } else {
+                return res.render('addProduct', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            }
         } catch (error) {
             res.render('error');
         }
@@ -46,19 +55,29 @@ const producstController = {
     editProduct: async (req, res) => {
         try {
             let idProduct = req.params.id
-            let product = await productsModel.editOne(idProduct);
+            let product = await productsModel.editOneProduct(idProduct);
             res.render('editProduct', { product });
         } catch (error) {
             res.render('error');
         }
     },
-    update: (req, res) => {
+    update: async(req, res) => {
         try {
-            let id = req.params.id;
-            let { nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto } = req.body;
-            let imagenProducto = req.file;
-            productsModel.update(id, nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto, imagenProducto);
-            res.redirect("/administrador");
+            let resultValidation = validationResult(req);
+            let idProduct = req.params.id;
+            let product = await productsModel.editOneProduct(idProduct);
+            if (resultValidation.isEmpty()) {                                
+                let { nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto } = req.body;
+                let imagenProducto = req.file;
+                productsModel.updateProduct(idProduct, nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto, imagenProducto);
+                res.redirect("/administrador");
+            } else {
+                return res.render('editProduct', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    product
+                });
+            }
         } catch (error) {
             res.render('error');
         }
@@ -69,7 +88,7 @@ const producstController = {
     delete: (req, res) => {
         try {
             let id = req.params.id
-            productsModel.delete(id);
+            productsModel.deleteProduct(id);
             res.redirect("/administrador");
         } catch (error) {
             res.render('error');

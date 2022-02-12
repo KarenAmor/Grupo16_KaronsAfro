@@ -10,10 +10,9 @@ const controller = {
         try {
             let hair = '10-';
             let hairProducts = await productsModel.findByCategory(hair);
-            console.log(hairProducts)
             res.render('cabello', { hairProducts: hairProducts, toThousand });
         } catch (error) {
-            res.render('error');
+            res.render('error',{error});
         }
     },
     piel: async (req, res) => {
@@ -22,7 +21,7 @@ const controller = {
             let skinProducts = await productsModel.findByCategory(skin);
             res.render('piel', { skinProducts: skinProducts, toThousand });
         } catch (error) {
-            res.render('error');
+            res.render('error',{error});
         }
 
     },
@@ -32,7 +31,7 @@ const controller = {
             let makeupProducts = await productsModel.findByCategory(makeup);
             res.render('maquillaje', { makeupProducts: makeupProducts, toThousand });
         } catch (error) {
-            res.render('error');
+            res.render('error',{error});
         }
 
     },
@@ -42,7 +41,7 @@ const controller = {
             let accessoriesProducts = await productsModel.findByCategory(accessories);
             res.render('accesorios', { accessories: accessoriesProducts, toThousand });
         } catch (error) {
-            res.render('error');
+            res.render('error',{error});
         }
 
     },
@@ -58,7 +57,7 @@ const controller = {
             let products = await productsModel.findAll(productToFind);
             res.render('search', { products: products, productToFind, toThousand });
         } catch (error) {
-            res.render('error');
+            res.render('error',{error});
         }
     }
 }

@@ -48,7 +48,7 @@ const validacionesRegistro = [
 
   body("descripcionProducto")
     .isLength({ min: 20 })
-    .withMessage("La drescripción del producto debe tener al menos veinte caracteres"),
+    .withMessage("La descripción del producto debe tener al menos veinte caracteres"),
 
   body("imagenProducto").custom((value, { req }) => {
     const file = req.file;

@@ -10,7 +10,6 @@ const controller = {
         try {
             let hair = '10-';
             let hairProducts = await productsModel.findByCategory(hair);
-            console.log(hairProducts)
             res.render('cabello', { hairProducts: hairProducts, toThousand });
         } catch (error) {
             res.render('error',{error});

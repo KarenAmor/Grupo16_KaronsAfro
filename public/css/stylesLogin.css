@@ -54,14 +54,16 @@ h3 {
   flex-direction: column;
 }
 
-.forma {
+.correo,
+.contraseña {
   margin-bottom: 20px;
   align-items: center;
   font-size: 16px;
   text-align: left;
 }
 
-.forma input {
+.correo input,
+.contraseña input {
   width: 100%;
   margin-top: 5px;
   padding: 20px 5px;
@@ -69,6 +71,20 @@ h3 {
   border: 1px solid black;
 }
 
+.is-valid {
+  color: #198754;
+}
+
+.is-invalid {
+  color: #842029;
+}
+
+.alert-warning{
+  color:#842029;
+  background-color: #F8D7DA;
+  text-align: center;
+  border-radius: 10px;
+}
 
   .boton{
     background-color: #8C4E37;
@@ -100,7 +116,7 @@ h3 {
     background-color: #F28E13;
   }
 
-  .contraseña{
+  .oContraseña{
     font-size: 16px;
     color: black;
     text-decoration: underline;

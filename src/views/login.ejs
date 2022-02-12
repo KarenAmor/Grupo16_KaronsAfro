@@ -1,50 +1,57 @@
 <%- include ('./partials/doctype') %>
 
     <%- include ('./partials/head') %>
-    <link rel="stylesheet" href="/css/stylesLogin.css">
+        <link rel="stylesheet" href="/css/stylesLogin.css">
 
         <body class="body">
             <%- include ('./partials/header') %>
 
-            <% if(typeof errors != 'undefined'){%>
-                <p style="color:red">ERROR</p>
-                <ul>
-                    <% for(let i=0; i < errors.length; i++) { %>
-                    <li>
-                        <%=errors[i].msg%>
-                    </li>
-                <% } %>
-                </ul>
-                <% } %>
-            
-                <main class="body">
-                    <h3> Bienvenido(a)
-                        Inicia Sesion
-                    </h3>
-                    <form action="/login" method="POST" class="login"><b>
-                            <div>
-                                <label for="email" class="forma">Email</label>
-                                <input type="email" id="email" name="email">
-                            </div>
-                            <div>
-                                <label for="password" class="forma">Password</label>
-                                <input type="password" id="password" name="password" >
-                            </div>
-                            <button class="boton" type="submit"><b class="boton">Ingresar</b></button>
-                            <!-- <input type="submit" value ="Login"> -->
-                            <div class="contraseña">
-                                <a class="contraseña" href="#">Olvidaste tu contraseña?</a>
-                            </div>
+                <% if(typeof errors !='undefined' ){%>
+                    <p style="color:red">ERROR</p>
+                    <ul>
+                        <% for(let i=0; i < errors.length; i++) { %>
+                            <li>
+                                <%=errors[i].msg%>
+                            </li>
+                            <% } %>
+                    </ul>
+                    <% } %>
 
-                            <div>
-                                <button class="boton2"><a href="/register" class="boton"><b>Crear Cuenta</b></a></button>
+                        <main class="body">
+                            <h3> Bienvenido(a)
+                                Inicia Sesion
+                            </h3>
+                            <div class="errores">
+                                <ul>
+                                    
+                                </ul>
                             </div>
-                        </b>
-                    </form>
+                            <form action="/login" method="POST" class="login"><b>
+                                    <div>
+                                        <label for="email" class="correo">Email</label>
+                                        <input type="email" id="email" name="email">
+                                    </div>
+                                    <div>
+                                        <label for="password" class="contraseña">Password</label>
+                                        <input type="password" id="password" name="password">
+                                    </div>
+                                    <button class="boton" type="submit"><b class="boton">Ingresar</b></button>
+                                    <!-- <input type="submit" value ="Login"> -->
+                                    <div class="oContraseña">
+                                        <a class="oContraseña" href="#">Olvidaste tu contraseña?</a>
+                                    </div>
 
-                </main>
-                <%- include ('./partials/footer') %>
+                                    <div>
+                                        <button class="boton2"><a href="/register" class="boton"><b>Crear
+                                                    Cuenta</b></a></button>
+                                    </div>
+                                </b>
+                            </form>
+
+                        </main>
+                        <%- include ('./partials/footer') %>
 
         </body>
+        <Script src="/public/js/login.js"></Script>
 
         </html>

@@ -7,9 +7,13 @@
             <%- include ('./partials/header') %>
                 <main class="body">
                     <h3> CREAR CUENTA</h3>
-
+                    <div class="errores">
+                        <ul>
+            
+                        </ul>
+                    </div>
                     <form action="/register" method="POST" class="register" enctype="multipart/form-data"><b>
-                            <div class="forma">
+                            <div class="nombre">
                                 <label>Nombre</label>
                                 <input type="text" name="nombreUsuario" min="2"
                                     class="<%= locals.errors && errors.nombreUsuario ? 'is-invalid' : null %> "
@@ -20,7 +24,7 @@
                                     </div>
                                     <% } %>
                             </div>
-                            <div class="forma">
+                            <div class="apellido">
                                 <label>Apellido</label>
                                 <input type="text" name="apellidoUsuario" min="2"
                                     class="<%= locals.errors && errors.apellidoUsuario ? 'is-invalid' : null %> "
@@ -31,7 +35,7 @@
                                     </div>
                                     <% } %>
                             </div>
-                            <div class="forma">
+                            <div class="correo">
                                 <label>Correo Electrónico</label>
                                 <input type="text" name="emailUsuario"
                                     class="<%= locals.errors && errors.emailUsuario ? 'is-invalid' : null %> "
@@ -46,7 +50,7 @@
                                         </div>
                                         <% } %>
                             </div>
-                            <div class="forma">
+                            <div class="contraseña">
                                 <label>Contraseña</label>
                                 <input type="password" name="contraseñaUsuario" min="8"
                                     class="<%= locals.errors && errors.contraseñaUsuario ? 'is-invalid' : null %> ">
@@ -56,7 +60,7 @@
                                     </div>
                                     <% } %>
                             </div>
-                            <div class="forma">
+                            <div class="confirmacionContraseña">
                                 <label>Confirmación de Contraseña</label>
                                 <input type="password" name="confirmacionContraseñaUsuario" min="8"
                                     class="<%= locals.errors && errors.confirmacionContraseñaUsuario ? 'is-invalid' : null %> ">
@@ -66,7 +70,8 @@
                                     </div>
                                     <% } %>
                             </div>
-                            <div class="forma">
+                            <div class="avatar">
+                                <label>Avatar</label>
                                 <input type="file" name="avatar" placeholder="Debes eligir tu avatar..."
                                     class="<%= locals.errors && errors.avatar ? 'is-invalid' : null %> "
                                     value="<%= locals.oldData ? oldData.avatar : null %>">
@@ -84,5 +89,6 @@
                 </main>
                 <%- include ('./partials/footer') %>
         </body>
+        <script src="/js/register.js"></script>
 
         </html>

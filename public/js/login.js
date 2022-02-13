@@ -1,7 +1,6 @@
 window.addEventListener("load", function(){
 
     let formulario = document.querySelector("form.login");
-    formulario.campoCorreo.focus();
 
     formulario.addEventListener('submit', function(e){
         
@@ -15,14 +14,12 @@ window.addEventListener("load", function(){
 
         if(campoCorreo.value == ""){
             errores.push('El campo correo no puede estar vacío');
-            campoCorreo.classList.add('is-invalid');            
-        }if(formatoValido.test(campoCorreo.value)){
+            campoCorreo.style.border="2px solid #be1c29";             
+        }else if(!formatoValido.exec(campoCorreo.value)){
             errores.push('El campo correo debe estar escrito en un formato válido');
-            campoCorreo.classList.add('is-invalid');            
+            campoCorreo.style.border="2px solid #be1c29";             
         }else {
-            campoCorreo.classList.add('is-valid');
-            campoCorreo.classList.remove('is-invalid');
-            formulario.campoContraseña.focus();
+            campoCorreo.style.border="2px solid #198754";
         };
 
         // CONTRASEÑA
@@ -31,10 +28,9 @@ window.addEventListener("load", function(){
         let campoContraseña = document.querySelector(".contraseña input");
         if(campoContraseña.value == ""){
             errores.push('El campo contraseña no puede estar vacío');
-            campoContraseña.classList.add('is-invalid');            
+            campoContraseña.style.border="2px solid #be1c29";           
         }else {
-            campoContraseña.classList.add('is-valid');
-            campoContraseña.classList.remove('is-invalid');
+            campoCorreo.style.border="2px solid #198754";
         };
         
         // ERRORES
@@ -43,12 +39,12 @@ window.addEventListener("load", function(){
             e.preventDefault();
             let ulErrors = document.querySelector('.errores');
             ulErrors.classList.add('alert-warning');
+            alert('Ups! Parece que hay inconvenientes con alguno de los campos.')
             for (let i = 0; i < errores.length; i++) {
                 ulErrors.innerHTML += "<li>" +  errores[i] + "</li>";
             };
-        }else{
-            alert('La validación fué exitosa')
-            form.submit();
         }
+        
+        errores.splice(0);
     });
 })

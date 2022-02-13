@@ -18,7 +18,7 @@ window.addEventListener("load", function(){
             campoNombre.style.border="2px solid #198754";   
         };
 
-        const campoApellido = document.querySelector(".apellido input");
+        let campoApellido = document.querySelector(".apellido input");
         if(campoApellido.value == ""){
             errores.push('El campo apellido no puede estar vacío');
             campoApellido.style.border="2px solid #be1c29";               
@@ -31,14 +31,14 @@ window.addEventListener("load", function(){
 
         // CORREO
 
-        const campoCorreo = document.querySelector(".correo input");
+        let campoCorreo = document.querySelector(".correo input");
 
         const formatoValido = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
         if(campoCorreo.value === ""){
             errores.push('El campo correo no puede estar vacío');
             campoCorreo.style.border="2px solid #be1c29";            
-        }if(!formatoValido.test(campoCorreo.value)){
+        }if(!formatoValido.exec(campoCorreo.value)){
             errores.push('El campo correo debe estar escrito en un formato válido');
             campoCorreo.style.border="2px solid #be1c29";            
         }else {
@@ -48,7 +48,7 @@ window.addEventListener("load", function(){
         // CONTRASEÑA Y CONFIRMACIÓN
         
         
-        const campoContraseña = document.querySelector(".contraseña input");
+        let campoContraseña = document.querySelector(".contraseña input");
         if(campoContraseña.value == ""){
             errores.push('El campo contraseña no puede estar vacío');
             campoContraseña.style.border="2px solid #be1c29";            
@@ -60,15 +60,15 @@ window.addEventListener("load", function(){
         };
 
         
-        const campoConfirmacionContraseña = document.querySelector(".confirmacionContraseña input");
+        let campoConfirmacionContraseña = document.querySelector(".confirmacionContraseña input");
         if(campoConfirmacionContraseña.value == ""){
             errores.push('El campo confirmación de contraseña no puede estar vacío');
             campoConfirmacionContraseña.style.border="2px solid #be1c29";            
-        }else if(campoConfirmacionContraseña.value !== campoContraseña.value){
-            errores.push('El valor ingresado en el campo confirmación de contraseña no coincide con lo ingresado en el campo Contraseña');
-            campoConfirmacionContraseña.style.border="2px solid #be1c29";            
         }else if(campoConfirmacionContraseña.value.length < 8){
             errores.push('El campo confirmación de contraseña debe contener al menos 8 caracteres');
+            campoConfirmacionContraseña.style.border="2px solid #be1c29";            
+        }else if(campoConfirmacionContraseña.value !== campoContraseña.value){
+            errores.push('Los valores de los campos contraseña y confirmación de contraseña no coinciden');
             campoConfirmacionContraseña.style.border="2px solid #be1c29";            
         }else {
             campoConfirmacionContraseña.style.border="2px solid #198754";
@@ -76,13 +76,13 @@ window.addEventListener("load", function(){
 
         //AVATAR
         
-        const campoAvatar = document.querySelector(".avatar input");
+        let campoAvatar = document.querySelector(".avatar input");
         const formatoAvatarValido =/.(gif|jpeg|jpg|png)$/i;
 
         if(campoAvatar.value == ""){
             errores.push('Debes subir un avatar');
             campoAvatar.style.border="2px solid #be1c29";            
-        }else if(!formatoAvatarValido.test(campoAvatar.value)){
+        }else if(!formatoAvatarValido.exec(campoAvatar.value)){
             errores.push('El campo avatar debe tener una imagen en formato JPG, JPEG, PNG y/o GIF');
             campoAvatar.style.border="2px solid #be1c29";            
         }else {
@@ -95,15 +95,16 @@ window.addEventListener("load", function(){
         
         if (errores.length > 0) {
             e.preventDefault();
-            const ulErrors = document.querySelector('.errores');
+            let ulErrors = document.querySelector('.errores');
             ulErrors.classList.add('alert-warning');
             alert('Ups! Parece que hay inconvenientes con alguno de los campos.')
-            for (const i = 0; i < errores.length; i++) {
+            for (let i = 0; i < errores.length; i++) {
                 ulErrors.innerHTML += "<li>" +  errores[i] + "</li>";                
-            };    
+            };
             
         }else{
-            alert('El registro se ha realizado exitosamente 🙂')
+            alert('El registro se ha realizado 🙂');
+            formulario.submit();
         }
         
     });

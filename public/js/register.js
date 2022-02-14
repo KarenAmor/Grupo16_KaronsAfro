@@ -49,14 +49,18 @@ window.addEventListener("load", function(){
         
         
         let campoContraseña = document.querySelector(".contraseña input");
+        let caracteres = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         if(campoContraseña.value == ""){
             errores.push('El campo contraseña no puede estar vacío');
             campoContraseña.style.border="2px solid #be1c29";            
         }else if(campoContraseña.value.length < 8){
             errores.push('El campo contraseña debe contener al menos 8 caracteres');
             campoContraseña.style.border="2px solid #be1c29";            
+        }else if(!caracteres.test(campoContraseña.value)){
+            errores.push('El campo contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial');
+            campoContraseña.style.border="2px solid #be1c29";            
         }else {
-            campoCorreo.style.border="2px solid #198754";
+            campoContraseña.style.border="2px solid #198754";
         };
 
         
@@ -93,9 +97,11 @@ window.addEventListener("load", function(){
         // ERRORES
 
         
+        let ulErrors = document.querySelector('.errores');
+        ulErrors.innerHTML = "";
+
         if (errores.length > 0) {
             e.preventDefault();
-            let ulErrors = document.querySelector('.errores');
             ulErrors.classList.add('alert-warning');
             alert('Ups! Parece que hay inconvenientes con alguno de los campos.')
             for (let i = 0; i < errores.length; i++) {

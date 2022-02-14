@@ -30,21 +30,25 @@ window.addEventListener("load", function(){
             errores.push('El campo contraseña no puede estar vacío');
             campoContraseña.style.border="2px solid #be1c29";           
         }else {
-            campoCorreo.style.border="2px solid #198754";
+            campoContraseña.style.border="2px solid #198754";
         };
         
         // ERRORES
         
+        let ulErrors = document.querySelector('.errores');
+        ulErrors.innerHTML = "";
+
         if (errores.length > 0) {
             e.preventDefault();
-            let ulErrors = document.querySelector('.errores');
             ulErrors.classList.add('alert-warning');
             alert('Ups! Parece que hay inconvenientes con alguno de los campos.')
             for (let i = 0; i < errores.length; i++) {
-                ulErrors.innerHTML += "<li>" +  errores[i] + "</li>";
+                ulErrors.innerHTML += "<li>" +  errores[i] + "</li>";                
             };
+            
+        }else{
+            alert('El registro se ha realizado 🙂');
+            formulario.submit();
         }
-        
-        errores.splice(0);
     });
 })

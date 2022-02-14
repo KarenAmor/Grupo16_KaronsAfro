@@ -3,9 +3,6 @@ const router = express.Router();
 const path = require("path");
 const guestMiddleware=require("../middlewares/guestMiddleware");
 const userMiddleware=require("../middlewares/userMiddleware");
-
-const bcrypt = require("bcryptjs");
-const fs = require("fs");
 const multer = require("multer");
 const { body } = require("express-validator");
 
@@ -27,30 +24,39 @@ const upload = multer({ storage });
 const validacionesRegistro = [
   body("nombreUsuario")
     .notEmpty()
-    .withMessage("El campo nombre no puede estar vacío"),
+    .withMessage("El campo nombre no puede estar vacío")
+    .bail()
+    .isLength({min: 2})
+    .withMessage("El campo debe ser mínimo dos caracteres"),
 
   body("apellidoUsuario")
     .notEmpty()
-    .withMessage("El campo apellido no puede estar vacío"),
+    .withMessage("El campo apellido no puede estar vacío")
+    .bail()
+    .isLength({min: 2})
+    .withMessage("El campo debe ser mínimo dos caracteres"),
 
   body("emailUsuario")
     .notEmpty()
     .withMessage("Agrega un email")
     .bail()
     .isEmail()
-    .withMessage("Agrega un formato de email valido"),
+    .withMessage("Agrega un formato de email válido"),
 
   body("contraseñaUsuario")
     .notEmpty()
     .withMessage("Debes escribir una contraseña")
     .bail()
     .isLength({ min: 8 })
-    .withMessage('La contraseña debe tener un mínimo de 8 caractéres'),
+    .withMessage('La contraseña debe tener un mínimo de 8 caracteres'),
 
   body("confirmacionContraseñaUsuario")
+    .notEmpty()
+    .withMessage("Debes escribir la confirmación de la contraseña")
+    .bail()
     .isLength({ min: 8 })
     .withMessage(
-      "La confirmación de la contraseña debe tener un mínimo de 8 caractéres"
+      "La confirmación de la contraseña debe tener también un mínimo de 8 caracteres"
     ),
 
   body("confirmacionContraseñaUsuario")
@@ -65,7 +71,7 @@ const validacionesRegistro = [
 
   body("avatar").custom((value, { req }) => {
     const file = req.file;
-    const acceptedExtenssions = [".jpg", ".png", ".jpeg"];
+    const acceptedExtenssions = [".jpg", ".png", ".jpeg", ".gif"];
 
     if (!file) {
       throw new Error("Tienes que subir una imagen para tu avatar");
@@ -73,12 +79,24 @@ const validacionesRegistro = [
       const fileExtension = path.extname(file.originalname);
       if (!acceptedExtenssions.includes(fileExtension)) {
         throw new Error(
-          "Solo puedes subir archivos en formato .jpg, .jpeg, .png"
+          "Solo puedes subir archivos en formato .jpg, .jpeg, .png, .gif"
         );
       }
     }
     return true;
   }),
+];
+
+const validacionesLogin=[
+  body("email")
+  .notEmpty()
+  .withMessage("Debes colocar un email")
+  .bail()
+  .isEmail()
+  .withMessage('Email inválido. Coloque un correo electrónico válido'),
+  body("password")
+  .notEmpty()
+  .withMessage("Debes escribir tu contraseña")
 ];
 
 /* CREATE  USER */
@@ -96,12 +114,8 @@ router.post(
 
 router.get('/login', guestMiddleware, userController.login);
 
-router.post('/login', [
-    body('email').isEmail().withMessage('Email invalido'),
-    body('password').isLength({min:8}).withMessage('La contraseña debe tener minimo 8 caracteres')
-],userController.loginProcess);
+router.post('/login', validacionesLogin, userController.loginProcess);
 
-// router.post('/login', controller.loginProcess);
 router.get('/logout/', userController.logout);
 
 
@@ -109,7 +123,7 @@ router.get('/logout/', userController.logout);
 
 router.get('/user/:profile/edit/:id', userMiddleware, userController.edit);
 
-router.put('/user/:profile/edit/:id', upload.single("avatar"), validacionesRegistro, userController.update);
+router.put('/user/:profile/edit/:id', upload.single("avatar"), userController.update);
 
 /* DETAIL USER */
 

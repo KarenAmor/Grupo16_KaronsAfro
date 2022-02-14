@@ -1,7 +1,7 @@
 const usersModel = require('../model/users.js');
 const { validationResult } = require('express-validator');
 const { decodeBase64 } = require('bcryptjs');
-const bcrypt = require('bcryptjs/dist/bcrypt');
+const bcrypt = require('bcryptjs');
 
 
 const userController = {
@@ -12,13 +12,21 @@ const userController = {
         res.render('register');
     },
 
-    create: (req, res) => {
+    create: async (req, res) => {
         try {
             const resultValidation = validationResult(req);
             if (resultValidation.isEmpty()) {
                 let { nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario } = req.body;
                 let avatar = req.file;
-                usersModel.create(nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario, avatar);
+                let emailToCheck = emailUsuario;
+                let existsUser = await usersModel.detail(emailToCheck);
+                if (existsUser != null) {
+                    res.render('register', {
+                        errors: { msg: "Ya existe un usuario registrado con el email ingresado" },
+                        oldData: req.body
+                    });
+                }
+                usersModel.createUser(nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario, avatar);
                 res.redirect("/login");
             } else {
                 return res.render('register', {
@@ -27,44 +35,40 @@ const userController = {
                 });
             }
         } catch (error) {
-            res.render('error');
+            res.render('error', { error });
         }
     },
 
     /* EDIT USER */
 
     edit: async (req, res) => {
-
         try {
             let idUser = req.params.id
             let user = await usersModel.editOne(idUser);
             res.render('editUser', { user });
         } catch (error) {
-            res.render('error');
+            res.render('error', { error });
         }
-
     },
 
     update: async function (req, res) {
         try {
             let id = req.params.id;
-            let { nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario } = req.body;
+            let { nombreUsuario, apellidoUsuario, emailUsuario } = req.body;
             let avatar = req.file;
-            await usersModel.update(id, nombreUsuario, apellidoUsuario, emailUsuario, contraseñaUsuario, confirmacionContraseñaUsuario, avatar);
+            await usersModel.update(id, nombreUsuario, apellidoUsuario, emailUsuario, avatar);
             let upSession = await usersModel.detail(emailUsuario);
             res.locals.userLogged = upSession;
             res.redirect('/');
         } catch (error) {
-            res.render('error');
+            res.render('error', { error });
         }
-
     },
 
     /* DETAIL USER */
 
     detail: async (req, res) => {
         res.render('detailUser');
-
     },
 
     /* LOGIN-LOGOUT PROCESS */
@@ -78,7 +82,7 @@ const userController = {
             if (errors.isEmpty()) {
                 let { email, password } = req.body;
                 let userFind = await usersModel.access(email);
-                if (userFind != undefined) {
+                if (userFind != null) {
                     if (bcrypt.compareSync(password, userFind.password)) {
                         if (userFind.rol == 1) {
                             req.session.adminLogged = userFind;
@@ -89,21 +93,21 @@ const userController = {
                         }
                     } else {
                         return res.render('login', {
-                            errors: [
-                                { msg: 'Credenciales invalidas' }
-                            ]
+                            errors: { msg: 'El correo o la contraseña no son válidos. Vuelva a intentarlo.' }
                         });
                     }
+                } else {
+                    return res.render('login', {
+                        errors: { msg: 'El correo o la contraseña no son válidos. Vuelva a intentarlo.' }
+                    });
                 }
             } else {
                 return res.render('login', {
-                    errors: [
-                        { msg: 'Credenciales invalidas' }
-                    ]
+                    errors: errors.mapped()
                 });
             }
         } catch (error) {
-            res.render('error');
+            res.render('error', { error });
         }
     },
     logout: (req, res) => {

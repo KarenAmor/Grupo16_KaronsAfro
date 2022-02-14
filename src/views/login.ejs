@@ -1,50 +1,56 @@
 <%- include ('./partials/doctype') %>
 
     <%- include ('./partials/head') %>
-    <link rel="stylesheet" href="/css/stylesLogin.css">
+        <link rel="stylesheet" href="/css/stylesLogin.css">
 
         <body class="body">
             <%- include ('./partials/header') %>
-
-            <% if(typeof errors != 'undefined'){%>
-                <p style="color:red">ERROR</p>
-                <ul>
-                    <% for(let i=0; i < errors.length; i++) { %>
-                    <li>
-                        <%=errors[i].msg%>
-                    </li>
-                <% } %>
-                </ul>
-                <% } %>
-            
                 <main class="body">
                     <h3> Bienvenido(a)
                         Inicia Sesion
                     </h3>
+                    <div class="errores">
+                        <ul>
+            
+                        </ul>
+                    </div>
                     <form action="/login" method="POST" class="login"><b>
-                            <div>
-                                <label for="email" class="forma">Email</label>
-                                <input type="email" id="email" name="email">
+                            <div class="correo">
+                                <label for="email" >Email</label>
+                                <input type="text" id="email" name="email"
+                                    class="<%= locals.errors && errors.email ? 'is-invalid' : null %>">
+                                <% if (locals.errors && errors.email) { %>
+                                    <div class="text-danger" style="font-size: 15px;">
+                                        <%= errors.email.msg %>
+                                    </div>
+                                    <% } %>
                             </div>
-                            <div>
-                                <label for="password" class="forma">Password</label>
-                                <input type="password" id="password" name="password" >
+                            <div class="contraseña">
+                                <label for="password" >Password</label>
+                                <input type="password" id="password" name="password"
+                                    class="<%= locals.errors && errors.password ? 'is-invalid' : null %>">
+                                <% if (locals.errors && errors.password) { %>
+                                    <div class="text-danger" style="font-size: 15px;">
+                                        <%= errors.password.msg %>
+                                    </div>
+                                    <% } else if(typeof errors !='undefined' ){ %>
+                                        <div class="text-danger" style="font-size: 15px;">
+                                            <%= errors.msg %>
+                                        </div>
+                                        <% } %>
                             </div>
                             <button class="boton" type="submit"><b class="boton">Ingresar</b></button>
-                            <!-- <input type="submit" value ="Login"> -->
-                            <div class="contraseña">
-                                <a class="contraseña" href="#">Olvidaste tu contraseña?</a>
-                            </div>
-
-                            <div>
-                                <button class="boton2"><a href="/register" class="boton"><b>Crear Cuenta</b></a></button>
+                            <div class="oContraseña">
+                                <a class="oContraseña" href="#">Olvidaste tu contraseña?</a>
                             </div>
                         </b>
-                    </form>
-
+                        <div>
+                            <button class="boton"><a href="/register" class="boton"><b>Crear Cuenta</b></a></button>
+                        </div>
+                    </form>                    
                 </main>
                 <%- include ('./partials/footer') %>
-
         </body>
+        <script src="/js/login.js"></script>
 
         </html>

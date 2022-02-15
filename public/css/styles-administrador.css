@@ -5,9 +5,7 @@
   margin: 0%;
   padding: 0;
 }
-img {
-  width: 100%;
-}
+
 html,
 body {
   font-size: 62.5%;
@@ -231,10 +229,6 @@ main {
   }
   .burger-menu{
     display: none;
-  }
-
-  .logo img {
-    width: 50%;
   }
 
   .letrasMenu{

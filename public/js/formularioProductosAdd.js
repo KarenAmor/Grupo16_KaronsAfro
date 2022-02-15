@@ -1,10 +1,10 @@
 window.addEventListener("load", function(){
-    let formulario = document.querySelector("form.register")
+    const formulario = document.querySelector("form.register")
 
-    formulario.addEventListener("submit", function(e){
+    formulario.addEventListener('submit', function(e){
         const errores =[];
 
-        let campoNombreProducto = document.querySelector(".nombreProducto input");
+        let campoNombreProducto = document.querySelector(".nombreProducto #nombreProducto");
         
         if (campoNombreProducto.value=="") {
             errores.push("El campo Nombre del Producto debe estar completo")
@@ -16,19 +16,16 @@ window.addEventListener("load", function(){
             campoNombreProducto.style.border="2px solid #198754"
         }
 
-        let campoPrecio = document.querySelector(".precioProducto input");
+        let campoPrecio = document.querySelector(".precioProducto #precioProducto");
         
         if (campoPrecio.value=="") {
-            errores.push("El campo no debe estar vacio")
-            campoPrecio.style.border="2px solid #be1c29"; 
-        } else if (campoPrecio.value.length<5){
-            errores.push("El campo precio debe tener al menos 5 caracteres")  
-            campoPrecio.style.border="2px solid #be1c29"; 
+            errores.push("El campo del precio no debe estar vacio")
+            campoPrecio.style.border="2px solid #be1c29";
         }else{
             campoPrecio.style.border="2px solid #198754"
         }
 
-        let campoReferencia = document.querySelector(".referenciaProducto input");
+        let campoReferencia = document.querySelector(".referenciaProducto #referenciaProducto");
         
         if (campoReferencia.value=="") {
             errores.push("El campo referencia no debe estar vacio")
@@ -39,30 +36,29 @@ window.addEventListener("load", function(){
         }else{
             campoReferencia.style.border="2px solid #198754"
         }
-        let campoCantidadDisponible = document.querySelector(".cantidadProducto input");
+
+        let campoCantidadDisponible = document.querySelector(".cantidadProducto #cantidadProducto");
         
         if (campoCantidadDisponible.value=="") {
             errores.push("El campo cantidad Producto no debe estar vacio")
             campoCantidadDisponible.style.border="2px solid #be1c29"; 
-        } else if (campoCantidadDisponible.value.length<0){
-            errores.push("El campo cantidad Producto debe tener al menos 1 caracter") 
-            campoCantidadDisponible.style.border="2px solid #be1c29";  
         }else{
             campoCantidadDisponible.style.border="2px solid #198754"
         }
-        let campoDescripcionProducto = document.querySelector(".product.description input");
+
+        let campoDescripcionProducto = document.querySelector(".descripcionProducto #descripcionProducto");
         
         if (campoDescripcionProducto.value=="") {
-            errores.push("El campo Descripcion del Producto  no debe estar vacio")
+            errores.push("El campo Descripcion del Producto no debe estar vacio")
             campoDescripcionProducto.style.border="2px solid #be1c29"; 
         } else if (campoCantidadDisponible.value.length<20){
-            errores.push("El campo Descripcion del Producto  debe tener al menos 20 caracteres")
+            errores.push("El campo Descripcion del Producto debe tener al menos 20 caracteres")
             campoDescripcionProducto.style.border="2px solid #be1c29";   
         }else{
             campoDescripcionProducto.style.border="2px solid #198754"
         }
 
-        let campoImagenProducto = document.querySelector(".imagenProducto input");
+        let campoImagenProducto = document.querySelector(".imagenProducto #imagenProducto");
         const formatoImagenProductoValido =/.(gif|jpeg|jpg|png)$/i;
         
         if(campoImagenProducto.value == ""){
@@ -73,12 +69,13 @@ window.addEventListener("load", function(){
             campoImagenProducto.style.border="2px solid #be1c29";            
         }else {
             campoImagenProducto.style.border="2px solid #198754";
-        };
+        };    
 
-    });
+    let ulErrors = document.querySelector('.errores');
+    ulErrors.innerHTML = "";
+        
     if (errores.length > 0) {
-        e.preventDefault();
-        let ulErrors = document.querySelector('.errores');
+        e.preventDefault();  
         ulErrors.classList.add('alert-warning');
         alert('Ups! Parece que hay inconvenientes con alguno de los campos.')
         for (let i = 0; i < errores.length; i++) {
@@ -87,7 +84,7 @@ window.addEventListener("load", function(){
 
     }else{
         alert('El registro se ha realizado 🙂');
-            formulario.submit();
+            boton.submit();
         }
+    });
 })
-

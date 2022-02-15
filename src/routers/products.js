@@ -73,7 +73,7 @@ router.get('/administrador', adminMiddleware, productsController.administrador);
 
 /*** CREATE ONE PRODUCT ***/
 router.get('/administrador/addProduct', adminMiddleware, productsController.addProduct);
-router.post('/administrador',
+router.post('/administrador/addProduct',
   upload.single("imagenProducto"),
   validacionesRegistro,
   productsController.store);

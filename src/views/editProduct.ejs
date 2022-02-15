@@ -9,7 +9,7 @@
                     <h3> EDITAR PRODUCTO</h3>
                     <form action="/administrador/editProduct/<%= product.id %>?_method=PUT
                         " method="POST" class="register" enctype="multipart/form-data"><b>
-                            <div class="forma">
+                            <div class="nombreProducto">
                                 <label>Nombre del Producto</label>
                                 <input type="text" name="nombreProducto" value="<%= product.name %>" 
                                 class="<%= locals.errors && errors.nombreProducto ? 'is-invalid' : null %>"
@@ -21,7 +21,7 @@
                                     </div>                     
                                 <% } %>
                             </div>
-                            <div class="forma">
+                            <div class="precioProducto">
                                 <label>Precio</label>
                                 <input type="number" name="precioProducto" value="<%= product.price %>" 
                                 class="<%= locals.errors && errors.precioProducto ? 'is-invalid' : null %>"
@@ -33,7 +33,7 @@
                                     </div>                     
                                 <% } %>
                             </div>
-                            <div class="forma">
+                            <div class="referenciaProducto">
                                 <label>Referencia</label>
                                 <input type="texto" name="referenciaProducto" value="<%= product.reference %>" }
                                 class="<%= locals.errors && errors.referenciaProducto ? 'is-invalid' : null %>"
@@ -45,7 +45,7 @@
                                     </div>                     
                                 <% } %>
                             </div>
-                            <div class="forma">
+                            <div class="cantidadProducto">
                                 <label>Cantidad Disponible</label>
                                 <input type="texto" name="cantidadProducto" value="<%= product.quantity %>" 
                                 class="<%= locals.errors && errors.cantidadProducto ? 'is-invalid' : null %>"
@@ -57,7 +57,7 @@
                                     </div>                     
                                 <% } %>
                             </div>
-                            <div class="forma">
+                            <div class="descripcionProducto">
                                 <label>Descripción del Producto</label>
                                 <input type="texto" name="descripcionProducto" value="<%= product.description %>" 
                                 class="<%= locals.errors && errors.descripcionProducto ? 'is-invalid' : null %>"
@@ -70,7 +70,7 @@
                                 <% } %>
                             </div>
 
-                            <div class="forma">
+                            <div class="imagenProducto">
                                 <h4>Imagen del Producto</h4>
                                 <input type="file" name="imagenProducto"
                                 class="<%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>"

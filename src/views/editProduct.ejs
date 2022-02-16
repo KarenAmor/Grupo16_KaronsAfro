@@ -7,6 +7,11 @@
             <%- include ('./partials/header') %>
                 <main class="body">
                     <h3> EDITAR PRODUCTO</h3>
+                    <div class="errores">
+                        <ul>
+            
+                        </ul>
+                    </div>
                     <form action="/administrador/editProduct/<%= product.id %>?_method=PUT
                         " method="POST" class="register" enctype="multipart/form-data"><b>
                             <div class="nombreProducto">
@@ -85,7 +90,7 @@
                                 <button class="botonEdit" type="submit"><b>Actualizar Cambios</b></button>
                         </b>
                     </form>
-
+                
                 </main>
                 <%- include ('./partials/footer') %>
         </body>

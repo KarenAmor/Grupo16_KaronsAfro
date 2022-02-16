@@ -12,10 +12,10 @@
         
                     </ul>
                 </div>
-                <form action="/administrador" method="POST" class="register" enctype="multipart/form-data"><b>
+                <form action="/administrador/addProduct" method="POST" class="register" enctype="multipart/form-data"><b>
                         <div class="nombreProducto">
                             <label>Nombre del Producto</label>
-                            <input type="text" name="nombreProducto" 
+                            <input type="text" id="nombreProducto" name="nombreProducto" 
                             class="<%= locals.errors && errors.nombreProducto ? 'is-invalid' : null %>"
                             value="<%= locals.oldData ? oldData.nombreProducto : null %>"
                             >
@@ -27,7 +27,7 @@
                         </div>
                         <div class="precioProducto">
                             <label>Precio</label>
-                            <input type="number" name="precioProducto"
+                            <input type="number" id="precioProducto" name="precioProducto"
                             class="<%= locals.errors && errors.precioProducto ? 'is-invalid' : null %>"
                             value="<%= locals.oldData ? oldData.precioProducto : null %>"
                             >
@@ -39,7 +39,7 @@
                         </div>
                         <div class="referenciaProducto">
                             <label>Referencia</label>
-                            <input type="texto" name="referenciaProducto"
+                            <input type="texto" id="referenciaProducto" name="referenciaProducto"
                             class="<%= locals.errors && errors.referenciaProducto ? 'is-invalid' : null %>"
                             value="<%= locals.oldData ? oldData.referenciaProducto : null %>"
                             >
@@ -51,7 +51,7 @@
                         </div>
                         <div class="cantidadProducto">
                             <label>Cantidad Disponible</label>
-                            <input type="number" name="cantidadProducto"
+                            <input type="number" id="cantidadProducto" name="cantidadProducto"
                             class="<%= locals.errors && errors.cantidadProducto ? 'is-invalid' : null %>"
                             value="<%= locals.oldData ? oldData.cantidadProducto : null %>"
                             >
@@ -63,7 +63,7 @@
                         </div>
                         <div class="descripcionProducto">
                             <label>Descripción del Producto</label>
-                            <input type="texto" name="descripcionProducto"
+                            <input type="texto" id="descripcionProducto" name="descripcionProducto"
                             class="<%= locals.errors && errors.descripcionProducto ? 'is-invalid' : null %>"
                             value="<%= locals.oldData ? oldData.descripcionProducto : null %>"
                             >
@@ -76,7 +76,7 @@
 
                         <div class="imagenProducto">
                             <h4>Imagen del Producto</h4>
-                            <input type="file" name="imagenProducto"
+                            <input type="file" id="imagenProducto" name="imagenProducto"
                             class="<%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>"
                             >
                             <% if (locals.errors && errors.imagenProducto) { %>

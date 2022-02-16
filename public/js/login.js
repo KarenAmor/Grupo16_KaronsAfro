@@ -47,7 +47,6 @@ window.addEventListener("load", function(){
             };
             
         }else{
-            alert('El registro se ha realizado 🙂');
             formulario.submit();
         }
     });

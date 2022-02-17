@@ -4,10 +4,16 @@
   padding: 0;
 }
 
+body {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
 main {
   position: relative; 
   justify-content: center;
   overflow: hidden;
+  
 }
 
 main div{
@@ -19,6 +25,11 @@ main div{
   margin-left: 60px; 
 }
 
+main video{
+  margin-left: 30rem;
+  margin-bottom: 3rem;
+  border: 1px solid black;
+}
 
 main ul{
   display: flex;
@@ -50,39 +61,66 @@ main ul li img{
   100%{margin-left:-300%;}
 }
 
-/*FOOTER*/
 
-.footer {
-  background-color: black;
-  width: 105vw;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  justify-content: space-around;
-  text-align: center;
-  margin-top: 15px;
-}
+@media screen and (min-width: 425px) and (max-width: 599px) {
 
-.footer p {
-  padding: 10px 0px 0px 15px;
-  font-size: 16px;
-}
-
-.letra2 {
-  color: white;
-  text-decoration: none;
-  margin: 0px;
-  padding: 25px;
-  text-align: center;
-  font-size: 12px;
-}
-
-@media screen and (max-width: 599px) {
+  main ul{
+    display: flex;
+    width:600px;
+    height:420px;
+    animation: cambio 20s infinite alternate;
+  }
+  
+  main ul li{
+    list-style: none;
+    width: 100%;
+  }
+  
+  main ul li img{
+    width:600px;
+    height:420px;
+  }
 
 }
 
 @media screen and (max-width: 1280px) and (min-width: 600px) {
+
+  main ul{
+    display: flex;
+    width:600px;
+    height:420px;
+    animation: cambio 20s infinite alternate;
+  }
+  
+  main ul li{
+    list-style: none;
+    width: 100%;
+  }
+  
+  main ul li img{
+    width:600px;
+    height:420px;
+  }
   
 }
 
-@media screen and (min-width: 1281px) {}
+@media screen and (min-width: 1281px) {
+
+  main ul{
+    display: flex;
+    width:600px;
+    height:420px;
+    animation: cambio 20s infinite alternate;
+  }
+  
+  main ul li{
+    list-style: none;
+    width: 100%;
+  }
+  
+  main ul li img{
+    width:600px;
+    height:420px;
+  }
+  
+}

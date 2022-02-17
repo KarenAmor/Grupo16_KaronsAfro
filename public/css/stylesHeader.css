@@ -42,6 +42,7 @@ nav ul li a {
 	font-size: 9px;
 	text-transform: uppercase;
 	text-decoration: none;
+	font-weight: bold;
 }
 
 nav ul li a:hover {
@@ -105,7 +106,7 @@ nav ul li a:active {
 	}
 
 	nav ul li a {
-		font-size: 16px;
+		font-size: 10px;
 		color: black;
 	}
 
@@ -131,8 +132,8 @@ nav ul li a:active {
 		margin-left: 1px;
 	}
 
-	nav li a {
-		font-size: 12px;
+	nav ul li a {
+		font-size: 10px;
 		line-height: 60px;
 		margin-right: 3px;
 	}
@@ -160,8 +161,8 @@ nav ul li a:active {
 		margin: 0px 100px 0px 0px;
 	}
 
-	nav li a {
-		font-size: 14px;
+	nav ul li a {
+		font-size: 10px;
 		line-height: 80px;
 		margin-right: 48px;
 	}

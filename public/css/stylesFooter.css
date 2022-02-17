@@ -1,0 +1,81 @@
+/*FOOTER*/
+
+.footer {
+  background-color: black;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 15px;
+  font-family: 'IBM Plex Mono', monospace;
+  position: absolute;
+}
+
+.footer p {
+  padding: 10px 0px 0px 5px;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.letra2 {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 599px) {
+
+}
+
+@media screen and (max-width: 1280px) and (min-width: 600px) {
+
+
+
+  /*FOOTER*/
+  .footer {
+    flex-direction: row;
+    text-align: left;
+    margin-top: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+    padding-bottom: 1rem;
+    bottom: 0;
+    /* position: fixed; */
+  }
+  
+  .footer p {
+    font-size: 18px;
+  }
+  
+  .letra2 {
+    font-size: 14px;
+  }
+
+  
+}
+
+@media screen and (min-width: 1281px) {
+  /*FOOTER*/
+  .footer {
+    flex-direction: row;
+    text-align: left;
+    margin-top: 15px;    
+    font-family: 'IBM Plex Mono', monospace;
+    clear: both;
+    padding-bottom: 1rem;
+    /*bottom: 0;
+    position: fixed; */
+    position:static; /*mantener el footer abajo*/
+    bottom: 0;
+  }
+  
+  .footer p {
+    font-size: 18px;
+  }
+  
+  .letra2 {
+    font-size: 14px;
+  }
+}

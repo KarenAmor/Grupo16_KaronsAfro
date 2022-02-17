@@ -97,32 +97,6 @@ h2 {
   text-align: justify;
 }
 
-/*FOOTER*/
-
-.footer {
-  background-color: black;
-  width: 105vw;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  justify-content: space-around;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.footer p {
-  padding: 10px 0px 0px 15px;
-  font-size: 16px;
-}
-
-.letra2 {
-  color: white;
-  text-decoration: none;
-  margin: 0px;
-  padding: 25px;
-  text-align: center;
-  font-size: 12px;
-}
 
 /*_________________MEDIA QUIERES_________________*/
 /*TABLET*/
@@ -222,23 +196,6 @@ h2 {
    }
 
 
-  /*FOOTER*/
-  .footer {
-    background-color: black;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    padding-right: 0px;
-    justify-content: space-around;
-    text-align: left;
-  }
-
-  .letra2 {
-    color: white;
-    text-decoration: none;
-    font-weight: normal;
-  }
 }
 
 @media screen and (min-width: 1024px) {

@@ -1,20 +1,7 @@
 <% if (locals.adminLogged && locals.adminLogged.rol==1) { %>
-    <div>
-        <div class="user-icon">
-            <a><i class="far fa-user"></i></a>
-        </div>
-        <div class="saludo-user">
-            <h1>Hola administrador, <%= locals.adminLogged.name %>
-            </h1>
-        </div>
-    </div>
+            <a><i class="far fa-user" style="margin-right: 5px;margin-left: 5px;"></i></a>
+            <p>Hola administrador, <%= locals.adminLogged.name %></p>
     <% }else if(locals.userLogged) { %>
-        <div>
-            <div class="user-icon">
-                <a href="/user/<%= userLogged.name %> "><i class="far fa-user"></i></a>
-            </div>
-            <div class="saludo-user">
-                <h1>Hola <%= userLogged.name %>!</h1>
-            </div>
-        </div>
+                <a href="/user/<%= userLogged.name %> "><i class="far fa-user" style="margin-right: 5px; margin-left: 5px;"></i></a>
+                <p>Hola <%= userLogged.name %>!</p>
         <% }%>

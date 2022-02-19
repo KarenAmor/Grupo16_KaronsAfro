@@ -16,6 +16,16 @@ main {
   
 }
 
+.box{
+  display: initial;
+  margin-left: 20px;
+}
+
+.box .user{
+  display: flex;
+  margin-left: inherit;
+}
+
 main div{
   margin:auto;
   width: 300px;
@@ -85,6 +95,19 @@ main ul li img{
 
 @media screen and (max-width: 1280px) and (min-width: 600px) {
 
+  .box{
+    display: -webkit-inline-box;
+    margin-left: 42px;
+  }
+  
+  .box .user{
+    display: contents;
+  }
+
+  .box h6{
+    font-size: 20px;
+  }
+  
   main ul{
     display: flex;
     width:600px;

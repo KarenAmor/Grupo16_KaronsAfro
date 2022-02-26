@@ -1,19 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0%;
-  padding: 0;
+  padding: 0%;
 }
 
 body {
   margin: 0;
-  margin-bottom: 40px;
 }
 
 main {
   position: relative; 
   justify-content: center;
   overflow: hidden;
-  
+  background-image: url("https://static.vecteezy.com/system/resources/previews/003/321/398/non_2x/abstract-pink-background-pink-modern-shapes-background-vector.jpg");
+  height: auto;
+}
+
+.box input {    
+  border: 1px solid transparent;
+  width: 95vw;
+  height: 5vh;
+  margin-left: 0.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;  
 }
 
 .box{
@@ -28,131 +41,247 @@ main {
 
 main div{
   margin:auto;
-  width: 300px;
-  height: 50px;
   margin-top: 10px;
-  margin-bottom: 0px; 
-  margin-left: 60px; 
 }
 
-main video{
-  margin-left: 30rem;
-  margin-bottom: 3rem;
-  border: 1px solid black;
+main img{
+  margin-top: 10px;
 }
 
-main ul{
+.somos {
+  width: 100vw;
+  height: auto;
+  margin-top: 3rem;
+  text-align: center;
+  background-color: rgb(248, 234, 234);
+}
+
+p {
+  font-family: 'Playfair Display', serif;
+  text-align: justify;
+  margin: 1rem;
+}
+
+.carousel{
   display: flex;
-  width:320px;
-  height:240px;
-  animation: cambio 20s infinite alternate;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-main ul li{
-  list-style: none;
-  width: 100%;
+h2 {  
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin: 20px auto;
+  color: black;
+  text-align: center;
+  background-color: rgb(248, 234, 234);
+
 }
 
-main ul li img{
-  width:320px;
-  height:240px;
-}
-@keyframes cambio{
-  0%{margin-left:0;}
-  20%{margin-left:0;}
-
-  25%{margin-left:-100%;}
-  45%{margin-left:-100%;}
-
-  50%{margin-left:-200%;}
-  70%{margin-left:-200%;}
-
-  75%{margin-left:-300%;}
-  100%{margin-left:-300%;}
+.sliderDestacados {
+  width: 80vw;
+  height: 30vh;
+  background: url(../Images/products/polvo-compacto.png);
+  background-size: cover;
+  margin: 20px auto;
+  border-radius: 5%;
+  animation: slideDestacados 40s infinite;
 }
 
+@keyframes slideDestacados {
 
-@media screen and (min-width: 425px) and (max-width: 599px) {
+  20%{
+    background: url(../Images/products/crema-arminio.png);
+    background-size: cover;
+  }
+  40%{
+    background: url(../Images/products/crema-afro.jpg);
+    background-size: cover;
+  }
+  60%{
+    background: url(../Images/products/crema-cetafhil.jpg);
+    background-size: cover;
+  }
+  80%{
+    background: url(../Images/products/Maxi_Aretes_Vive-Afro_2.jpg);
+    background-size: cover;
+  }
+  100%{
+    background: url(../Images/products/polvo-compacto.png);
+    background-size: cover;
+  }
+}
 
-  main ul{
+.sliderMarcas {
+  width: 80vw;
+  height: 30vh;
+  background: url(../Images/marcas/africabest.JPG);
+  background-size: cover;
+  margin: 20px auto;
+  border-radius: 5%;
+  animation: slideMarcas 40s infinite;
+}
+
+@keyframes slideMarcas {
+
+  20%{
+    background: url(../Images/marcas/africabest.JPG);
+    background-size: cover;
+  }
+  40%{
+    background: url(../Images/marcas/hawai.JPG);
+    background-size: cover;
+  }
+  60%{
+    background: url(../Images/marcas/bigen.JPG);
+    background-size: cover;
+  }
+  80%{
+    background: url(../Images/marcas/devacurl.JPG);
+    background-size: cover;
+  }
+  100%{
+    background: url(../Images/marcas/africabest.JPG);
+    background-size: cover;
+  }
+}
+
+.sliderCategorias {
+  width: 80vw;
+  height: 30vh;
+  background: url(../Images/categorias/accesorios.JPG);
+  background-size: cover;
+  margin: 20px auto;
+  border-radius: 5%;
+  animation: slideCategorias 40s infinite;
+}
+
+@keyframes slideCategorias {
+
+  25%{
+    background: url(../Images/categorias/cabello.JPG);
+    background-size: cover;
+  }
+  50%{
+    background: url(../Images/categorias//maquillaje.JPG);
+    background-size: cover;
+  }
+  75%{
+    background: url(../Images/categorias/piel.JPG);
+    background-size: cover;
+  }
+  100%{
+    background: url(../Images/categorias/accesorios.JPG);
+    background-size: cover;
+  }
+}
+
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+
+  .sliderDestacados, 
+  .sliderCategorias, 
+  .sliderMarcas {
+    width: 80vw;
+    height: 40vh;
+  }
+}
+
+
+@media screen and (max-width: 1280px) and (min-width: 768px) {
+  
+  main img {
+    height: 50vh;
+    width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  h2{
+    margin: 2rem 0rem 0rem 0rem;
+  }
+
+  .somos {
     display: flex;
-    width:600px;
-    height:420px;
-    animation: cambio 20s infinite alternate;
-  }
-  
-  main ul li{
-    list-style: none;
-    width: 100%;
-  }
-  
-  main ul li img{
-    width:600px;
-    height:420px;
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 0rem;
+    text-align: center;
+    background-color: rgb(248, 234, 234);
   }
 
-}
+  .somos img {
+    width: 40vw;
+    height: 35vh;
+  }
+  
+  p {
+    font-family: 'Playfair Display', serif;
+    text-align: left;
+    width: 28vw;
+    margin-top: 0;
+  }
 
-@media screen and (max-width: 1280px) and (min-width: 600px) {
-
-  .box{
-    display: -webkit-inline-box;
-    margin-left: 42px;
-  }
-  
-  .box .user{
-    display: contents;
+  .sliderCategorias,
+  .sliderDestacados,
+  .sliderMarcas {
+    width: 230px;
+    height: 120px;
   }
 
-  .box h6{
-    font-size: 20px;
-  }
-  
-  main ul{
-    display: flex;
-    width:600px;
-    height:420px;
-    animation: cambio 20s infinite alternate;
-  }
-  
-  main ul li{
-    list-style: none;
-    width: 100%;
-  }
-  
-  main ul li img{
-    width:600px;
-    height:420px;
-  }
-  
 }
 
 @media screen and (min-width: 1281px) {
 
-  .box{
-    display: -webkit-inline-box;
-    margin-left: 100px;
+  .box input {    
+    border: 1px solid transparent;
+    width: 95vw;
+    height: 5vh;
+    margin: 0.5rem 2rem;
+    font-size: 15px;
   }
 
-  .box .user{
-    display: contents;
+  main img {
+    height: 60vh;
+    width: 95vw;
+    position: relative;
+    margin: 0.5rem 2rem;
+    top: 0;
+    left: 0;
   }
-  
-  main ul{
+
+  h2{
+    margin: 2rem 0rem 0rem 0rem;
+  }
+
+  .somos {
     display: flex;
-    width:600px;
-    height:420px;
-    animation: cambio 20s infinite alternate;
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 0rem;
+    text-align: center;
+    background-color: rgb(248, 234, 234);
+  }
+
+  .somos img {
+    width: 30vw;
+    height: 40vh;
   }
   
-  main ul li{
-    list-style: none;
-    width: 100%;
+  p {
+    font-family: 'Playfair Display', serif;
+    text-align: left;
+    width: 20vw;
+    margin-top: 2rem;
+    margin-right: 2rem;
   }
-  
-  main ul li img{
-    width:600px;
-    height:420px;
+
+  .sliderCategorias,
+  .sliderDestacados,
+  .sliderMarcas {
+    width: 430px;
+    height: 250px;
   }
-  
+
 }

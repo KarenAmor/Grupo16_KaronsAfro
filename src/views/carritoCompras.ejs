@@ -1,44 +1,104 @@
 <%- include ('./partials/doctype') %>
 
     <%- include ('./partials/head') %>
-    <link rel="stylesheet" href="/css/stylesProductCard.css">
+        <link rel="stylesheet" href="/css/stylesProductCard.css">
 
         <body>
             <%- include ('./partials/header') %>
                 <main>
-                    <h3>CARRITO ACTUAL</h3>
-                    <section>
-                        <article class="contenido-carrito">
-                            <div class="subtitulos-productos">
-                                <h5>Producto(s)</h5>
-                                <h5>Cantidad(es)</h5>
-                                <h5>Precio</h5>
-                            </div>
-                            <div class="productos-en-bolsa">
-                                <img class="producto" src="/images/crema_de_peinar.jpg" alt="articulo">
-                                <p class="cantidad-producto">1</p>
-                                <p class="precio-producto">$299.999</p>
-                            </div>
-                        </article>
-                        <button type="submit" class="boton-eliminar">Eliminar</button>
-                        <article class="cuadro">
-                            <div class="cuadro-pago">
-                                <a href="#" class="cupones">Cupones</a>
-                                <p class="subtotal">Subtotal:</p>
-                                <p class="envio">Envio:</p>
-                                <p class="total-pago">Total:</p>
-                            </div>
-                            <div class="botones-cuadro-pago">
-                                <form>
-                                    <button type="submit">Finalizar compra</button>
-                                    <br>
-                                    <button type="submit">Seguir comprando</button>
-                                </form>
-                            </div>
-                        </article>
-                    </section>
-                </main>
+            <h3>CARRITO ACTUAL</h3>
 
+                <div class="admin">
+                    <div>
+                        <article class="table-1">
+                            <table class="table-2">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Producto(s)</th>
+                                        <th scope="col">Cantidad(es)</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="primer-item">
+                                        <td><img class="producto" src="/images/crema_de_peinar.jpg" alt="articulo"></td>
+                                        <td>1</td>
+                                        <td>$25.000</td>
+                                        <td><button type="submit" class="boton-eliminar">Eliminar</button></td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                            <table class="table-2">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Producto(s)</th>
+                                        <th scope="col">Cantidad(es)</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="primer-item">
+                                        <td><img class="producto" src="/Images/products/aretes.png" alt="articulo"></td>
+                                        <td>1</td>
+                                        <td>$30.000</td>
+                                        <td><button type="submit" class="boton-eliminar">Eliminar</button></td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                            <table class="table-2">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Producto(s)</th>
+                                        <th scope="col">Cantidad(es)</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="primer-item">
+                                        <td><img class="producto" src="/Images/products/set-maquillaje.png" alt="articulo"></td>
+                                        <td>1</td>
+                                        <td>$25.000</td>
+                                        <td><button type="submit" class="boton-eliminar">Eliminar</button></td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                        </article>
+                    </div>
+                    <div class="total">
+                        <h2>RESUMEN DEL PEDIDO</h2>
+                        <table class="table-2">
+                            <thead>
+                                <tr>
+                                    <th scope="col">N° Items:</th>
+                                    <th scope="col">3</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Subtotal:</th>
+                                    <th scope="col">$80.000</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Costo Domicilio:</th>
+                                    <th scope="col">Gratis</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr style="font-weight: bold; text-decoration: underline;">
+                                    <th scope="col">TOTAL:</th>
+                                    <th scope="col">$80.000</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <h3>REALIZAR PAGO</h3>
+                    </div>
+                </div>
+                </main>
                 <%- include ('./partials/footer') %>
         </body>
 

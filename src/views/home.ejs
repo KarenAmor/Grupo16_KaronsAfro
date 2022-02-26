@@ -1,30 +1,50 @@
 <%- include ('./partials/doctype') %>
-<%- include ('./partials/head') %>
-<link rel="stylesheet" href="/css/stylesHome.css">
-    <body>
-        <%- include ('./partials/header') %>
-            <main>                    
-                    <div class="box">                        
-                            <input type="search" id="search" placeholder="Search..." />
-                            <%- include('./partials/greetingsUser') %> 
-                    </div>  
+    <%- include ('./partials/head') %>
+        <link rel="stylesheet" href="/css/stylesHome.css">
 
-                    <!-- <video src="/public/video/banner.mp4" type="video/mp4" width="400px" height="280px" controls autoplay loop muted>
-                    </video> -->
-                    
-                    <ul>
-                        <li><img src="/Images/carrusel/mujerAfro1.jpg" alt=""></li>
-                        <li><img src="/Images/carrusel/mujerAfro2.jpg" alt=""></li>
-                        <li><img src="/Images/carrusel/mujerAfro3.jpg" alt=""></li>
-                        <li><img src="/Images/carrusel/mujerAfro4.jpg" alt=""></li>
-                        <li><img src="/Images/carrusel/mujerAfro1.jpg" alt=""></li>
-                        <li><img src="/Images/carrusel/mujerAfro2.jpg" alt=""></li>
-                        <li><img src="/Images/carrusel/mujerAfro3.jpg" alt=""></li>
-                        <li><img src="/Images/carrusel/mujerAfro4.jpg" alt=""></li>
-                        <li><img src="/Images/carrusel/mujerAfro1.jpg" alt=""></li>
-                        <li><img src="/Images/carrusel/mujerAfro2.jpg" alt=""></li>
-                    </ul>
-            </main>
-            <%- include ('./partials/footer') %>
-    </body>
-</html>
+        <body>
+            <%- include ('./partials/header') %>
+                <main>
+                        <div class="box">
+                            <input type="search" id="search" placeholder="Search..." />
+                            <%- include('./partials/greetingsUser') %>
+                        </div>
+
+                        <img src="/video/afro.gif">
+
+                        <h2>¿QUIENES SOMOS?</h2>
+                        <div class="somos">
+                            <div>
+                                <img class="imagen" src="/images/Afro.jpg" width="300px" height="250px" alt="Skala">
+                            </div>
+                            <div>
+                                <p>Kairos Afro es una empresa dedicada a la distribución de productos
+                                    de belleza Afro.
+                                </p>
+                                <p> Creemos en el potencial de las relaciones y en el poder de la
+                                    cosmética como ampliadora de conciencia, por esta razón, nuestra finalidad es
+                                    exaltar la estética Afrocolombiana.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="carousel">
+                            <div>
+                                <h2>PRODUCTOS DESTACADOS</h2>
+                                <div class="sliderDestacados"></div>
+                            </div>
+                            <div>
+                                <h2>MARCAS</h2>
+                                <div class="sliderMarcas"></div>
+                            </div>
+                            <div>
+                                <h2>CATEGORIAS</h2>
+                                <div class="sliderCategorias"></div>
+                            </div>
+                        </div>
+                </main>
+                <%- include ('./partials/footer') %>
+
+        </body>
+
+        </html>

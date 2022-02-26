@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,36 +8,17 @@
   padding: 0;
 }
 
-html,
-body {
-  font-size: 62.5%;
-  font-family: "Roboto Mono", monospace;
-  height: 100%;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-/*HEADER*/
-
-/*BODY*/
-main{
-  background-color: white;
-  position: relative;
-  display: flex;
+main {
+  position: relative; 
   justify-content: center;
-  width: 100%;
-  min-width: 320px;
-  text-align: center; 
-  flex-direction: column;
-  right: 1px;
-  left: 1px;
+  overflow: hidden;
+  background-image: url("https://media.istockphoto.com/vectors/bamboo-and-wood-floor-background-vector-id1071103156?k=20&m=1071103156&s=170667a&w=0&h=N7v4bH6SWg14YUhLzz2wikzB5MVXbULIEzKzRuN5Eao=");
+  background-size: cover;
+  height: auto;  
 }
-/* .body {
-  background-color: #f2d6bd;
-  padding-bottom: 10px;
-} */
-h3 {
+
+h3 {  
+  font-family: 'Playfair Display', serif;
   text-align: center;
   font-weight: bold;
   font-size: 16px;
@@ -43,13 +26,17 @@ h3 {
   padding-bottom: 10px;
 }
 
+.desktop{
+  display: none;
+}
+
 .register {
+  box-shadow: 3px 3px 32px 11px rgba(0,0,0,0.66);
   padding: 20px;
   margin-top: 20px;
   background-color: #ffe4ec;
-  opacity: 80%;
   border-radius: 5px;
-  margin: 2% 10% 2% 10%;
+  margin: 5% 10% 2% 10%;
   display: flex;
   flex-direction: column;
 }
@@ -59,10 +46,11 @@ h3 {
 .correo,
 .contraseña,
 .confirmacionContraseña,
-.avatar {
+.avatar {  
+  font-family: 'Playfair Display', serif;
   margin-bottom: 20px;
   align-items: center;
-  font-size: 16px;
+  font-size: 12px;
   text-align: left;
 }
 
@@ -72,22 +60,25 @@ h3 {
 .contraseña input,
 .confirmacionContraseña input {
   width: 100%;
-  margin-top: 5px;
-  padding: 20px 5px;
+  margin-top: 2px;
+  padding: 5px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid transparent;
 }
 
 .avatar input {
   background-color: white;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 2px;
   padding: 20px 5px;
   border-radius: 5px;
   border: 1px solid transparent;
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
 }
 
 .alert-warning{
+  font-family: 'Playfair Display', serif;
   color:#842029;
   background-color: #F8D7DA;
   text-align: center;
@@ -104,7 +95,8 @@ h3 {
 }
 
 .botonRegistrarse {
-  background-color: #8c4e37;
+  background-color: #c97f64;
+  font-size: 12px;
   color: white;
   text-decoration: none;
   width: 100%;
@@ -115,12 +107,9 @@ h3 {
   border: 1px solid transparent;
   transition-property: all;
 }
-.botonRegistrarse:hover{
-  background-color: #F28E13;
-}
 
 .botonBorrar {
-  background-color: #8c4e37;
+  background-color: #c97f64;
   color: white;
   width: 100%;
   margin-bottom: 10px;
@@ -131,111 +120,125 @@ h3 {
   transition-property: all;
 }
 
-.botonBorrar:hover{
-  background-color: #F28E13;
-}
 .terminos{
-  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+  text-align: center;
 }
 
-
-
-
-/*_________________MEDIA QUIERES_________________*/
-/*TABLET*/
-@media screen and (min-width: 424px) {
- 
+@media screen and (min-width: 425px) and (max-width: 767px) {
   main {
     display: flex;
-    justify-content: center;
-    margin-right: 0px;
-  }
-  main ul li img {
-    margin: 0;
-    padding: 0;
-    width: 424px;
-    margin-left: -64px;
-    margin-right: 20px;
-    justify-content: center;
-  }
-  .menu,
-  .menu2,
-  .menu3 {
-    text-align: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    justify-content: center;
-  }
+    flex-wrap: wrap;
+  } 
 }
 
-/*COMPUTADOR*/
-
-@media screen and (min-width: 768px) {
- 
-  /* .contenedor {
-    margin-top: 20px;
-  }
-  .container,
-  .container2,
-  .container3 {
-    height: 500px;
-  } */
-
-  
-  main ul li img {
-    margin: 0;
-    padding: 0;
-    width: 600px;
-    margin-left: -150px;
-    margin-right: 20px;
-    justify-content: center;
-  }
-
-  
-}
-
-@media screen and (min-width: 1024px) {
- 
-  main ul li img {
-    margin: 0;
-    padding: 0;
-    width: 700px;
-    margin-left: -195px;
-    margin-right: 60px;
-    justify-content: center;
-  }
-  
-  .letrasMenu ul li .letra:hover {
-    color: #f2be22;
-    border-radius: 20px;
-  }
-  nav .letra {
-    font-size: 22px;
-    margin-right: 33px;
-  }
-
-  /*MAIN*/
-  h3 {
-    align-items: center;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  .register {
-    padding: 20px;
-    background-color: #ffe4ec;
-    opacity: 85%;
-    width: 40%;
-    border-radius: 5px;
-    margin: auto;
+@media screen and (max-width: 1280px) and (min-width: 768px) {
+  main {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    margin-bottom: 20px;
-    margin-top: 20px;
   }
-  .terminos{
+
+  .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 12rem;
+  }
+
+  .desktop{
+    display: flex;
+    width: 20vw;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    margin-left: 5rem ;  
+    margin-top: 5rem;
+    font-size: 18px;  
+  }
+
+  .desktop p {
+    text-align: right;
+    line-height: 50px;    
+  }
+
+  h3{
+    font-size: 18px;
+  }
+  
+  .register{
+    width: 40vw;
+    margin: auto;
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+
+  .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 15rem;
+  }
+
+  .desktop{
+    display: flex;
+    width: 20vw;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    margin-left: 5rem ;  
+    margin-top: 8rem;
+    font-size: 25px;  
+  }
+
+  .desktop p {
+    text-align: right;
+    line-height: 50px;    
+  }
+
+  h3{
+    font-size: 25px;
+  }
+
+  .register{
+    margin-top: 1rem;
+    width: 40vw;
+    margin: 1rem 0 1rem 8rem;
+  }
+  .nombre,
+  .apellido,
+  .correo,
+  .contraseña,
+  .confirmacionContraseña,
+  .avatar {  
     font-size: 16px;
   }
 
+  .avatar input{
+    font-size: 14px;
+  }
 
+  .botonRegistrarse {
+    font-size: 14px;
+  }
+
+  .botonRegistrarse:hover{
+    background-color: #e6c398;
+  }
+  
+  .botonBorrar {
+    font-size: 14px;
+  }
+  
+  .botonBorrar:hover{
+    background-color: #e6c398;
+  }
+
+  .terminos{
+    font-size: 14px;
+  }
 
 }
+

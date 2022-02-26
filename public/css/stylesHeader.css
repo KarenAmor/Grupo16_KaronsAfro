@@ -22,9 +22,11 @@ nav {
 }
 
 .logo {
-line-height: 50px;
-font-family: 'Playfair Display', serif;
-font-size: 25px;
+	line-height: 50px;
+	font-family: 'Playfair Display', serif;
+	font-size: 25px;
+	text-decoration: none;
+	color: black;
 }
 
 nav ul {

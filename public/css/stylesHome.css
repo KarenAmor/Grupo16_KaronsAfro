@@ -17,7 +17,6 @@ main {
   overflow: hidden;
   background-image: url("https://static.vecteezy.com/system/resources/previews/003/321/398/non_2x/abstract-pink-background-pink-modern-shapes-background-vector.jpg");
   height: auto;
-  
 }
 
 .box input {    
@@ -25,6 +24,9 @@ main {
   width: 95vw;
   height: 5vh;
   margin-left: 0.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;  
 }
 
 main div{

@@ -2,7 +2,6 @@
 
 .footer {
   background-color: black;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   color: white;
@@ -10,7 +9,7 @@
   text-align: center;
   margin-top: 15px;
   font-family: 'IBM Plex Mono', monospace;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .footer p {

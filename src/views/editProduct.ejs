@@ -76,7 +76,9 @@
                             </div>
 
                             <div class="imagenProducto">
-                                <h4>Imagen del Producto</h4>
+                                <h4>Imagen del Producto actual</h4>
+                                <img src="/Images/products/<%= product.image %>"
+                                width="300px" height="250px" alt="<%=product.name%>">
                                 <input type="file" name="imagenProducto"
                                 class="<%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>"
                                 >

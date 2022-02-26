@@ -68,9 +68,15 @@ const producstController = {
             let product = await productsModel.editOneProduct(idProduct);
             if (resultValidation.isEmpty()) {                                
                 let { nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto } = req.body;
-                let imagenProducto = req.file;
-                productsModel.updateProduct(idProduct, nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto, imagenProducto);
-                res.redirect("/administrador");
+                if(req.file){
+                    let newImage = req.file.filename;
+                    productsModel.updateProduct(idProduct, nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto, newImage);
+                    res.redirect("/administrador");
+                }else{
+                    let oldImage=product.image;
+                    productsModel.updateProduct(idProduct, nombreProducto, precioProducto, referenciaProducto, cantidadProducto, descripcionProducto, oldImage);
+                    res.redirect("/administrador");
+                }                            
             } else {
                 return res.render('editProduct', {
                     errors: resultValidation.mapped(),

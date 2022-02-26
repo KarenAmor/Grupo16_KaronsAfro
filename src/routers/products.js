@@ -68,6 +68,52 @@ const validacionesRegistro = [
   }),
 ]
 
+const validacionesActualizacion = [
+  body("nombreProducto")
+    .notEmpty()
+    .withMessage("Debes colocar el nombre del producto")
+    .bail()
+    .isLength({ min: 5 })
+    .withMessage("El nombre del producto debe tener al menos cinco caracteres"),
+
+  body("precioProducto")
+    .notEmpty()
+    .withMessage("Debes colocar el precio del producto")
+    .bail()
+    .isNumeric()
+    .withMessage("Debes colocar valores númericos"),
+
+  body("referenciaProducto")
+    .notEmpty()
+    .withMessage("Debes colocar la referencia del producto"),
+
+  body("cantidadProducto")
+    .notEmpty()
+    .withMessage("Debes colocar la cantidad del producto en existencia")
+    .bail()
+    .isNumeric()
+    .withMessage("Debes colocar valores númericos"),
+
+  body("descripcionProducto")
+    .isLength({ min: 20 })
+    .withMessage("La descripción del producto debe tener al menos veinte caracteres"),
+
+  body("imagenProducto").custom((value, { req }) => {
+    const file = req.file;
+    const acceptedExtenssions = [".jpg", ".png", ".jpeg", ".gif"];
+
+    if (file) {
+      const fileExtension = path.extname(file.originalname);
+      if (!acceptedExtenssions.includes(fileExtension)) {
+        throw new Error(
+          "Solo puedes subir archivos en formato .jpg, .jpeg, .png, .gif"
+        );
+      }
+    }
+    return true;
+  }),
+]
+
 /*** GET ALL PRODUCTS ***/
 router.get('/administrador', adminMiddleware, productsController.administrador);
 
@@ -86,7 +132,7 @@ router.get('/producto/detail/:id', adminMiddleware, productsController.detail);
 router.get('/administrador/editProduct/:id', adminMiddleware, productsController.editProduct);
 router.put('/administrador/editProduct/:id', 
   upload.single("imagenProducto"), 
-  validacionesRegistro, 
+  validacionesActualizacion, 
   productsController.update)
 
 /*** DELETE ONE PRODUCT***/

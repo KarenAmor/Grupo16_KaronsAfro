@@ -13,14 +13,14 @@ const productsModel = {
                     }
                 })
             } catch (err) {
-                console.log(err);
+                // console.log(err);
                 return new error
             }
         } else {
             try {
                 return await productsDb.Product.findAll();
             } catch (err) {
-                console.log(err);
+                // console.log(err);
                 return new error
             }
         }
@@ -35,7 +35,7 @@ const productsModel = {
                 }
             })
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return new error
         }
     },
@@ -50,7 +50,7 @@ const productsModel = {
                 image: image.filename
             })
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return new error
         }
     },
@@ -59,7 +59,7 @@ const productsModel = {
             let idDetailProduct = await productsDb.Product.findByPk(id);
             return idDetailProduct;
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return new error
         }
     },
@@ -68,7 +68,7 @@ const productsModel = {
             let product = await productsDb.Product.findByPk(id);
             return product;
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return new error
         }
     },
@@ -80,12 +80,12 @@ const productsModel = {
                 reference: reference,
                 quantity: quantity,
                 description: description,
-                image: image ? image.filename : ''
+                image: image
             }, {
                 where: { id: id }
             })
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return new error
         }
     },
@@ -95,7 +95,7 @@ const productsModel = {
                 where: { id: id }
             })
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return new error
         }
     }

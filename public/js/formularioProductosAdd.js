@@ -51,7 +51,7 @@ window.addEventListener("load", function(){
         if (campoDescripcionProducto.value=="") {
             errores.push("El campo Descripcion del Producto no debe estar vacio")
             campoDescripcionProducto.style.border="2px solid #be1c29"; 
-        } else if (campoCantidadDisponible.value.length<20){
+        } else if (campoDescripcionProducto.value.length<20){
             errores.push("El campo Descripcion del Producto debe tener al menos 20 caracteres")
             campoDescripcionProducto.style.border="2px solid #be1c29";   
         }else{
@@ -73,7 +73,7 @@ window.addEventListener("load", function(){
 
     let ulErrors = document.querySelector('.errores');
     ulErrors.innerHTML = "";
-        
+        console.log(campoDescripcionProducto.value.length);
     if (errores.length > 0) {
         e.preventDefault();  
         ulErrors.classList.add('alert-warning');

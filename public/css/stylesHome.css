@@ -129,6 +129,15 @@ main ul li img{
 
 @media screen and (min-width: 1281px) {
 
+  .box{
+    display: -webkit-inline-box;
+    margin-left: 100px;
+  }
+
+  .box .user{
+    display: contents;
+  }
+  
   main ul{
     display: flex;
     width:600px;

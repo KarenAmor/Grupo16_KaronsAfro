@@ -149,7 +149,7 @@ h2 {
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;
-     align-items: center;
+     /* align-items: center; */
      justify-content: space-around;
        
    }
@@ -215,7 +215,7 @@ h2 {
 
   /*MAIN*/
   .articulo{
-   width: 30%;
+   /* width: 30%; */
    padding: 10px;
 
   }
@@ -229,7 +229,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-around;
       
   }

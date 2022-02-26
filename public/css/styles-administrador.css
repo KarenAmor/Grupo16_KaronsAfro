@@ -166,7 +166,6 @@ main {
 @media screen and (min-width: 1024px) {
   header {
     width: 100%;
-    height:  65vh;
   }
   .burger-menu{
     display: none;

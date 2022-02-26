@@ -17,7 +17,7 @@ const usersModel = {
                 rol: 2
             })            
         } catch (err) {
-            console.log(err);            
+            // console.log(err);            
             return new error
         }        
 
@@ -34,7 +34,7 @@ const usersModel = {
             })
             return user;
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return new error
         }
     }, 
@@ -46,7 +46,7 @@ const usersModel = {
             let user =await usersDb.User.findByPk(id);
             return user; 
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return new error
         }        
     },
@@ -63,7 +63,7 @@ const usersModel = {
                 where: {id: id}  
               })            
         } catch (err) {
-            console.log(err);     
+            // console.log(err);     
             return new error       
         }       
 
@@ -80,7 +80,7 @@ const usersModel = {
             });
             return idDetailUser;
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return new error
         }        
     }

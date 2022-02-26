@@ -51,7 +51,7 @@ window.addEventListener("load", function(){
         if (campoDescripcionProducto.value=="") {
             errores.push("El campo Descripcion del Producto no debe estar vacio")
             campoDescripcionProducto.style.border="2px solid #be1c29"; 
-        } else if (campoCantidadDisponible.value.length<20){
+        } else if (campoDescripcionProducto.value.length<20){
             errores.push("El campo Descripcion del Producto debe tener al menos 20 caracteres")
             campoDescripcionProducto.style.border="2px solid #be1c29";   
         }else{
@@ -61,10 +61,7 @@ window.addEventListener("load", function(){
         let campoImagenProducto = document.querySelector(".imagenProducto input");
         const formatoImagenProductoValido =/.(gif|jpeg|jpg|png)$/i;
         
-        if(campoImagenProducto.value == ""){
-            errores.push('Debes subir una imagen del producto');
-            campoImagenProducto.style.border="2px solid #be1c29"; 
-        }else if(!formatoImagenProductoValido.exec(campoImagenProducto.value)){
+        if(campoImagenProducto.value && !formatoImagenProductoValido.exec(campoImagenProducto.value)){
             errores.push('El campo Imagen del producto debe tener una imagen en formato JPG, JPEG, PNG y/o GIF');
             campoImagenProducto.style.border="2px solid #be1c29";            
         }else {

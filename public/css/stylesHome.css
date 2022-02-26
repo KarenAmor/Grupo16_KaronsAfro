@@ -29,6 +29,16 @@ main {
   font-family: 'Playfair Display', serif;  
 }
 
+.box{
+  display: initial;
+  margin-left: 20px;
+}
+
+.box .user{
+  display: flex;
+  margin-left: inherit;
+}
+
 main div{
   margin:auto;
   margin-top: 10px;

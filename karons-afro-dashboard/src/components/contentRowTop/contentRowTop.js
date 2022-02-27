@@ -7,10 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Table from './table/table';
 import Error from './error404/error404'
 import Home from './home/home'
-
-
-
-
+import {useState,useEffect} from 'react';
 
 let contentArray = [
     {
@@ -54,6 +51,40 @@ const categoriesArray=[
 ];
 
 function ContentRowTop() {
+    let {totalProducts, setProducts} = useState()
+    let {totalUsers, setUsers} = useState()
+
+    let callApiProducts= async()=>{
+        try {
+            let call= await fetch("http://localhost:4000/api/products")
+            let result=call.json()
+            return result
+        } catch (error) {
+            throw error
+        }
+    }
+
+    let callApiUsers = async ()=>{
+        try {
+            let call= await fetch("http://localhost:4000/api/users")
+            let result=call.json()
+            return result
+        } catch (error) {
+            throw error
+        }
+    }
+
+    useEffect(async()=>{
+        let products=await callApiProducts()
+        setProducts(products.count)
+
+        let users=await callApiUsers()
+        setUsers(users.count)
+    },[]);
+    const list=totalProducts
+    console.log(list);
+    const listu=totalUsers
+    console.log(listu);
     return (
         <div className="container-fluid">
 

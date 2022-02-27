@@ -19,12 +19,43 @@ let contentTable = [
 ]
 
 function Table() {
-    let [countries, setCountries]=useState([])
+    // let [countries, setCountries]=useState([])
 
-    let callApi=async()=>{
+    // let callApi=async()=>{
+    //     try {
+    //         let call=await fetch("https://restcountries.com/v3.1/all")
+    //         let result= call.json()
+    //         return result
+    //     } catch (error) {
+    //         throw error
+    //     }
+    // }
+
+    // useEffect(async()=>{
+    //     const paises=await callApi()
+    //     setCountries([...countries,...paises])
+    // },[]);
+
+    // const lista=countries
+    
+    //  const fin=lista ? lista.map(pais=> pais.name.common ) : "Cargando...";
+     
+    let {products,setProducts} = useState([])
+    let callApiProducts= async()=>{
         try {
-            let call=await fetch("https://restcountries.com/v3.1/all")
-            let result= call.json()
+            let call= await fetch("http://localhost:4000/api/products")
+            let result=call.json()
+            return result
+        } catch (error) {
+            throw error
+        }
+    }
+
+    let {users, setUsers} = useState([])
+    let callApiUsers = async ()=>{
+        try {
+            let call= await fetch("http://localhost:4000/api/users")
+            let result=call.json()
             return result
         } catch (error) {
             throw error
@@ -32,15 +63,12 @@ function Table() {
     }
 
     useEffect(async()=>{
-        const paises=await callApi()
-        setCountries([...countries,...paises])
-    },[]);
+        let productsResult=await callApiProducts()
+        setProducts(...products, ...productsResult)
 
-    const lista=countries
-    console.log(lista);
-     const fin=lista ? lista.map(pais=> pais.name.common ) : "Cargando...";
-     
-    
+        let usersResult=await callApiUsers()
+        setUsers(...users, ...usersResult)
+    },[]);
     
     return (
         <table>

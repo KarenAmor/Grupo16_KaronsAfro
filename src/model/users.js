@@ -58,7 +58,7 @@ const usersModel = {
                 name: first_name,
                 lastname: last_name,
                 email: email,
-                avatar: /*avatar ?*/ avatar.filename /*: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpU1XgDizdfgZP4trNrHeUxVxF6Pmz2tLvA&usqp=CAU"*/
+                avatar: avatar
             },{
                 where: {id: id}  
               })            

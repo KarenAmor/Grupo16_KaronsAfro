@@ -13,6 +13,7 @@
                     </ul>
                 </div>
                 <form action="/administrador/addProduct" method="POST" class="register" enctype="multipart/form-data"><b>
+                    <button class="botonBack" type="button"><a href="/administrador">Volver</a></button>
                         <div class="nombreProducto">
                             <label>Nombre del Producto</label>
                             <input type="text" id="nombreProducto" name="nombreProducto" 
@@ -62,11 +63,11 @@
                             <% } %>
                         </div>
                         <div class="descripcionProducto">
-                            <label>Descripción del Producto</label>
-                            <input type="texto" id="descripcionProducto" name="descripcionProducto"
+                            <label style="position: relative; bottom: 50px;">Descripción del Producto</label>
+                            <textarea id="descripcionProducto" name="descripcionProducto"
                             class="<%= locals.errors && errors.descripcionProducto ? 'is-invalid' : null %>"
                             value="<%= locals.oldData ? oldData.descripcionProducto : null %>"
-                            >
+                            ></textarea>
                             <% if (locals.errors && errors.descripcionProducto) { %>
                                 <div class="text-danger">
                                     <%= errors.descripcionProducto.msg  %> 

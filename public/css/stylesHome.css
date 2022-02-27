@@ -200,7 +200,16 @@ h2 {
 
   h2{
     margin: 2rem 0rem 0rem 0rem;
+  } 
+
+  /* .box{
+    display: -webkit-inline-box;
+    margin-left: 100px;
   }
+
+  .box .user{
+    display: contents;
+  } */
 
   .somos {
     display: flex;

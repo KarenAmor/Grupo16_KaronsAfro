@@ -1,5 +1,6 @@
 import React from "react";
 import TableData from "./tableData/tableData";
+import {useState,useEffect} from 'react'
 
 let contentTable = [
     {
@@ -18,6 +19,29 @@ let contentTable = [
 ]
 
 function Table() {
+    let [countries, setCountries]=useState([])
+
+    let callApi=async()=>{
+        try {
+            let call=await fetch("https://restcountries.com/v3.1/all")
+            let result= call.json()
+            return result
+        } catch (error) {
+            throw error
+        }
+    }
+
+    useEffect(async()=>{
+        const paises=await callApi()
+        setCountries([...countries,...paises])
+    },[]);
+
+    const lista=countries
+    console.log(lista);
+     const fin=lista ? lista.map(pais=> pais.name.common ) : "Cargando...";
+     
+    
+    
     return (
         <table>
             <thead>
@@ -30,15 +54,17 @@ function Table() {
                 </thead>
                 <tbody>
                     {contentTable.map((dato, index) => {
-                        return <TableData
+                           return  <TableData
                             titulo={dato.titulo}
                             precio={dato.precio}
                             referencia={dato.referencia}
                             cantidad={dato.cantidad}
                             key={dato.titulo + index}
+                            // datos={fin}
+                            
                         ></TableData>
-                    })
-                    }
+                     }) 
+                     } 
                 </tbody>            
         </table>
     )

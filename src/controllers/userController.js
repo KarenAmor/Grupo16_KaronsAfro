@@ -44,22 +44,27 @@ const userController = {
     edit: async (req, res) => {
         try {
             let idUser = req.params.id
-            let user = await usersModel.editOne(idUser);
+            let user = await usersModel.editOneUser(idUser);
             res.render('editUser', { user });
         } catch (error) {
             res.render('error', { error });
         }
     },
 
-    update: async function (req, res) {
+    update: async (req, res) => {
         try {
             let id = req.params.id;
             let { nombreUsuario, apellidoUsuario, emailUsuario } = req.body;
-            let avatar = req.file;
-            await usersModel.update(id, nombreUsuario, apellidoUsuario, emailUsuario, avatar);
-            let upSession = await usersModel.detail(emailUsuario);
-            res.locals.userLogged = upSession;
-            res.redirect('/');
+            let user= await usersModel.editOneUser(id);
+            if(req.file){
+                let newAvatar = req.file.filename;
+                await usersModel.updateUser(id, nombreUsuario, apellidoUsuario, emailUsuario, newAvatar);                
+                res.redirect('/');
+            }else{
+                let oldAvatar = user.avatar;
+                await usersModel.updateUser(id, nombreUsuario, apellidoUsuario, emailUsuario, oldAvatar);                
+                res.redirect('/');
+            }                        
         } catch (error) {
             res.render('error', { error });
         }

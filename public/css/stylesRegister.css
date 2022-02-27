@@ -17,6 +17,21 @@ main {
   height: auto;  
 }
 
+#mainEditUser{
+  background-image: url("https://www.artmajeur.com/medias/standard/a/r/artdenoe/artwork/10015597_afro-girl-adn.jpg");
+  background-size: auto;
+}
+
+#mainEditUser h3{
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgb(204, 204, 12);
+}
+
 h3 {  
   font-family: 'Playfair Display', serif;
   text-align: center;
@@ -162,8 +177,18 @@ h3 {
     line-height: 50px;    
   }
 
+  #mainEditUser h3{    
+    font-size: 18px;
+  }
+
   h3{
     font-size: 18px;
+  }
+
+  .aviso{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
   }
   
   .register{
@@ -197,16 +222,50 @@ h3 {
     text-align: right;
     line-height: 50px;    
   }
+  
+  #mainEditUser h3{    
+    font-size: 25px;
+  }
 
   h3{
     font-size: 25px;
   }
+
+  .aviso{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    position: relative;
+    bottom: 17px;
+  }  
 
   .register{
     margin-top: 1rem;
     width: 40vw;
     margin: 1rem 0 1rem 8rem;
   }
+
+  #editUserForm{
+    width: 27vw;
+    text-align: inherit;
+    height: 50vh;
+    padding-top: 30px;
+    position: relative;
+    left: 350px;
+  }
+
+  #editUserForm b{
+    margin: auto;
+  }  
+
+  .forma{
+    margin-bottom: 20px;
+  }
+
+  .forma input{
+    border-radius: 5px;
+  }
+
   .nombre,
   .apellido,
   .correo,

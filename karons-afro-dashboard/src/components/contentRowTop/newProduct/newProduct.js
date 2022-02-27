@@ -14,8 +14,8 @@ function NewProduct(props) {
                 <h5 className="m-0 font-weight-bold text-gray-800">{props.titulo}</h5>
             </div>
             <div className="card-body">
-                <div className="text-center">
-                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={props.img} alt=" Star Wars - Mandalorian " />
+                <div className="">
+                    <img className="img-fluid mt-3 mb-4" src={props.img} alt=" Star Wars - Mandalorian " />
                 </div>
                 <p>{props.texto}</p>    
             </div>

@@ -1,3 +1,4 @@
+import './categories.css';
 import React from "react";
 
 function categories(props) {

@@ -1,0 +1,25 @@
+.welcome{
+    color:black;
+    font-weight: bold;
+    width: 80vw;
+    text-align: center;
+}
+
+.gif {
+    width: 30vw;
+    height: 30vw;
+    align-content: center;
+    border-radius: 300px;
+    margin-bottom: 3rem;
+}
+
+.text-container{
+    position: absolute;
+    margin-top: 20rem;
+    width: 80vw;
+    color: black;
+    font-style: italic;
+}
+.texto {
+    margin-bottom: 4rem;
+}

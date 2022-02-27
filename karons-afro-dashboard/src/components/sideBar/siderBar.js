@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../img/logo.jpg';
+import logo from '../../img/LogoKaros.JPG';
 import {Link} from 'react-router-dom';
 
 function SideBar() {
@@ -9,7 +9,7 @@ function SideBar() {
 
             <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                 <div className="sidebar-brand-icon">
-                    <img className="w-100" src={logo} alt="Digital House" />
+                    <img className="w-100" src={logo} alt="Karons Afro" />
                 </div>
             </Link>
 
@@ -32,48 +32,56 @@ function SideBar() {
 
 
             <li className="nav-item">
-                <Link className="nav-link collapsed" to="/lastMovie">
+                <Link className="nav-link" to="/totales">
+                    <i className="fas fa-fw fa-chart-area"></i>
+                    <span>Totales</span>
+                </Link>
+            </li>
+
+
+            <li className="nav-item">
+                <Link className="nav-link collapsed" to="/productList">
                     <i className="fas fa-fw fa-folder"></i>
                     <span>Lista de productos</span>                    
                 </Link>
             </li>
 
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
                 <Link className="nav-link" to="/genres">
                     <i className="fas fa-fw fa-chart-area"></i>
                     <span>Lista de usuarios</span>
                 </Link>
-            </li>
+            </li> */}
 
 
             <li className="nav-item">
-                <Link className="nav-link" to="/tables">
+                <Link className="nav-link" to="/categories">
                     <i className="fas fa-fw fa-table"></i>
                     <span>Categorías</span>
                 </Link>
             </li>
 
             <li className="nav-item">
-                <Link className="nav-link" to="/tables">
+                <Link className="nav-link" to="/newProduct">
                     <i className="fas fa-fw fa-table"></i>
                     <span>Último producto registrado</span>
                 </Link>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
                 <Link className="nav-link" to="/tables">
                     <i className="fas fa-fw fa-table"></i>
                     <span>Productos por categorías</span>
                 </Link>
-            </li>
+            </li> */}
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
                 <Link className="nav-link" to="/tables">
                     <i className="fas fa-fw fa-table"></i>
                     <span>Tabla de productos</span>
                 </Link>
-            </li>
+            </li> */}
 
             <hr className="sidebar-divider d-none d-md-block" />
         </ul>

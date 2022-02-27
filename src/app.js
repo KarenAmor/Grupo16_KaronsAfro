@@ -9,6 +9,8 @@ const rutas = require("./routers/main.js");
 const products = require("./routers/products.js");
 const usuario = require("./routers/user.js");
 const userLoggedMiddleware=require("./middlewares/userLoggedMiddleware");
+const apiUsers = require("./routers/routerAPI/apiUserRouter")
+const apiProducts = require("./routers/routerAPI/apiProductRouter")
 
 app.set('view engine', 'ejs');
 
@@ -27,6 +29,8 @@ app.use(express.json());
 app.use('/', rutas);
 app.use('/',products);
 app.use('/', usuario);
+app.use('/', apiUsers);
+app.use('/', apiProducts);
 
 app.use((req, res, next)=>{
     res.status(404).render('error');

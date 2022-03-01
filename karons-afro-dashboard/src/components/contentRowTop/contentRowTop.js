@@ -115,9 +115,9 @@ function ContentRowTop() {
 
     return (
         <div className="container-fluid">
-            <div className="row">
+            <div className="column">
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route className="home" path="/" element={<Home />} />
                     <Route path="/totales" element={contentArray.map((card, index) => {
                         return <ContentRowKaronsDb
                             titulo={card.titulo}

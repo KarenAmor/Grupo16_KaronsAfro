@@ -1,9 +1,10 @@
 const express = require ('express');
 const app = express();
 const path = require('path');
-const port = process.env.PORT ||3000;
+const port = process.env.PORT ||4000;
 const methodOverride = require('method-override')
 const session=require('express-session');
+const cors = require("cors");
 
 const rutas = require("./routers/main.js");
 const products = require("./routers/products.js");
@@ -25,6 +26,7 @@ app.use(methodOverride('_method'));
 app.use(session({secret: "Shhhh... Fran and Mati don't have to know it...", resave: false, saveUninitialized: false}));
 app.use(userLoggedMiddleware);
 app.use(express.json());
+app.use(cors());
 
 app.use('/', rutas);
 app.use('/',products);

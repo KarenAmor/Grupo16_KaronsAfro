@@ -15,7 +15,7 @@ const apiUserController = {
                 ...subset
             })
         } catch (error) {
-            console.error(error)
+            // console.error(error)
             res.json({
                 status: 400,
                 messague: error.messague || "user doesn't exist or bad connection"
@@ -41,7 +41,7 @@ const apiUserController = {
             }
             )
         } catch (error) {
-            console.error(error)
+            // console.error(error)
             res.json({
                 status: 500,
                 messague: error.messague || "bad server connection"

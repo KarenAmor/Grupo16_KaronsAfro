@@ -46,6 +46,7 @@ main div{
 
 main img{
   margin-top: 10px;
+  border-radius: 20px;
 }
 
 .somos {
@@ -54,6 +55,7 @@ main img{
   margin-top: 3rem;
   text-align: center;
   background-color: rgb(248, 234, 234);
+  padding: 1rem;
 }
 
 p {
@@ -75,6 +77,7 @@ h2 {
   color: black;
   text-align: center;
   background-color: rgb(248, 234, 234);
+  padding: 1rem;
 
 }
 
@@ -85,7 +88,8 @@ h2 {
   background-size: cover;
   margin: 20px auto;
   border-radius: 5%;
-  animation: slideDestacados 40s infinite;
+  animation: slideDestacados 30s infinite;
+  animation-delay: 2s;
 }
 
 @keyframes slideDestacados {
@@ -119,7 +123,8 @@ h2 {
   background-size: cover;
   margin: 20px auto;
   border-radius: 5%;
-  animation: slideMarcas 40s infinite;
+  animation: slideMarcas 25s infinite;
+  animation-delay: 2s;
 }
 
 @keyframes slideMarcas {
@@ -153,7 +158,8 @@ h2 {
   background-size: cover;
   margin: 20px auto;
   border-radius: 5%;
-  animation: slideCategorias 40s infinite;
+  animation: slideCategorias 20s infinite;
+  animation-delay: 2s;
 }
 
 @keyframes slideCategorias {
@@ -227,7 +233,7 @@ h2 {
   
   p {
     font-family: 'Playfair Display', serif;
-    text-align: left;
+    text-align: justify;
     width: 28vw;
     margin-top: 0;
   }
@@ -280,7 +286,7 @@ h2 {
   
   p {
     font-family: 'Playfair Display', serif;
-    text-align: left;
+    text-align: justify;
     width: 20vw;
     margin-top: 2rem;
     margin-right: 2rem;

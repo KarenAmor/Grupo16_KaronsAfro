@@ -8,7 +8,7 @@ import gif from '../../../img/gif.gif';
 function Home(props) {
     return (
        
-        <><h1 className="col-lg-6 mb-4 welcome">BIENVENIDO(A) AL DASHBOARD DE KARONS AFRO</h1><></>
+        <><h1 className="col-lg-6 mb-4 welcome">BIENVENIDO(A) AL DASHBOARD DE KARONSAFRO</h1><></>
         <div>
             <img className="gif" src={gif} alt="Karons Afro" />
 

@@ -65,9 +65,9 @@ h3 {
   text-align: center;
   border-radius: 10px;
   font-size: 14px;
-  margin: 1rem 45rem;
+  margin: 1rem;
   text-align: left;
-  width: 30%;
+  width: 90vw;
 }
 
   .boton{
@@ -120,6 +120,10 @@ h3 {
     flex-direction: column;
   }
 
+  .alert-warning{
+    width: 40vw;
+  }
+
   .wrap{
     display: flex;
     flex-wrap: wrap;
@@ -155,6 +159,11 @@ h3 {
 }
 
 @media screen and (min-width: 1281px) {
+
+  .alert-warning{
+    margin: 1rem 0 1rem 13rem;
+    width: 20vw;
+  }
 
   .wrap{
     display: flex;

@@ -3,6 +3,7 @@
     font-weight: bold;
     width: 80vw;
     text-align: center;
+    position: relative;
 }
 
 .gif {
@@ -11,15 +12,23 @@
     align-content: center;
     border-radius: 300px;
     margin-bottom: 3rem;
+    position: absolute;
+    margin-left: 35rem;
+    bottom: 120px;
 }
 
 .text-container{
     position: absolute;
-    margin-top: 20rem;
+    margin-top: 16rem;
     width: 80vw;
     color: black;
     font-style: italic;
+    position: relative;
 }
 .texto {
     margin-bottom: 4rem;
+}
+
+.copyright{
+    position: relative;
 }

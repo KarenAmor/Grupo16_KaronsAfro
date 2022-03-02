@@ -6,7 +6,9 @@
             <%- include ('./partials/header') %>
                 <main>
                         <div class="box">
-                            <input type="search" id="search" placeholder="Search..." />
+                            <form action="/search" method="post">
+                                <input type="search" name="search" id="search" placeholder="Search..." />
+                            </form>                            
                             <%- include('./partials/greetingsUser') %>
                         </div>
 

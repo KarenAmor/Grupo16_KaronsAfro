@@ -48,13 +48,14 @@ main {
   font-weight: bold;
   padding: 20px;
   font-size: 30px;
+  color: bisque;
 }
 .articulo {
   background: white;
   margin: 50px;
   background-position: center;
   border-radius: 2%;
-  box-shadow: 3px 3px 32px 11px rgba(0,0,0,0.66);;
+  box-shadow: 3px 3px 32px 11px rgba(0,0,0,0.66);
 }
 
 .imagen {

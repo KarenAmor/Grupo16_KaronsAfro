@@ -7,10 +7,11 @@
             <%- include ('./partials/header') %>
                 <main class="body" id="mainEditUser">
                     <h3> EDITAR PERFIL</h3>
-                    <p class="aviso">Importante: Todo campo actualizado en su perfil será reflejado cuando inicie sesión 
-                        la próxima vez. 
-                    </p>
+                    
                     <form action="/user/<%=user.name%>/edit/<%=user.id%>?_method=PUT" method="POST" class="register" id="editUserForm" enctype="multipart/form-data"><b>
+                        <p class="aviso">Importante: Todo campo actualizado en su perfil será reflejado cuando inicie sesión 
+                            la próxima vez. 
+                        </p>
                             <div class="forma">
                                 <label>Nombre</label>
                                 <input type="text" name="nombreUsuario" min="2" value="<%= user.name%>">                                

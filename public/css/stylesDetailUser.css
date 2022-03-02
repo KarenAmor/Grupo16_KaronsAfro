@@ -8,6 +8,7 @@
 }
 .imagen {
   width: 50%;
+  border-radius: 50px;
 }
 html,
 body {
@@ -21,16 +22,18 @@ body {
 
 /*BODY*/
 main{
-  background-color: #f2d6bd;
+  /* background-color: #f2d6bd; */
   position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
   min-width: 320px;
-  text-align: center; 
+  text-align:-webkit-center; 
   flex-direction: column;
   right: 1px;
   left: 1px;
+  background-image: url("https://i.pinimg.com/originals/81/c8/ee/81c8eee118734475f96ee717bc13dfb4.jpg");
+  background-size: cover;
 }
 /* .body {
   background-color: #f2d6bd;
@@ -42,9 +45,11 @@ h3 {
   font-size: 16px;
   padding-top: 10px;
   padding-bottom: 10px;
+  color: aqua
 }
 
 .register {
+  width: 40vw;
   height: 20%;
   padding: 30px;
   margin-top: 20px;
@@ -70,9 +75,7 @@ label input{
 
 
 .imagen{
-  width: 100%;
   text-align: left;
-  padding: 5px;
 }
 
 .icon-pencil{
@@ -225,15 +228,18 @@ label input{
   }
 
   /*MAIN*/
+  main{
+    background-repeat: round;
+  }
   h3 {
     align-items: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 35px;
   }
   .register {
     padding: 30px;
     margin-top: 50px;
-    margin-left: 350px;
+    margin-left:100px;
     margin-bottom: 20px;
     background-color: white;
     opacity: 80%;
@@ -256,13 +262,14 @@ label input{
   
   .box{
     display: flex;
-    flex-wrap: wrap;
   }
   .imagen{
     text-align: left;
     padding: 1px;
     margin-bottom: 10px;
     margin-left: 20px;
+    width: 39vw;
+    height: 70vh;
   }
 
   .icon-pencil{

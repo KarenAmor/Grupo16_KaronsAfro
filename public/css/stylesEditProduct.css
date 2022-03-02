@@ -127,7 +127,7 @@ form div h4{
   border: 1px solid transparent;
   transition-property: all;
 }
-.botonRegistrarse:hover {
+.botonEdit:hover {
   background-color: #f28e13;
 }
 

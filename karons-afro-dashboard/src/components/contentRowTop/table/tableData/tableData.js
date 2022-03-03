@@ -23,8 +23,8 @@ function TableData() {
     let allProducts = products[0]
 
     let data = allProducts ? allProducts.products.map((data, index) => {
-        return <tr>
-            <td key={data + index}>{data.name}</td>
+        return <tr key={data + index}>
+            <td>{data.name}</td>
             <td>{data.price}</td>
             <td>{data.reference}</td>
             <td>{data.quantity}</td>

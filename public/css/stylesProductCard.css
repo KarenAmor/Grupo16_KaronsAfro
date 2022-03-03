@@ -18,7 +18,7 @@ main {
   background-image: url("https://media.istockphoto.com/photos/creative-concept-with-shopping-trolley-with-makeup-on-a-pink-perfume-picture-id1140638196?k=20&m=1140638196&s=170667a&w=0&h=LKfCXvaWMFwNm4OktqrgfDlVV1nwhW-AuL8Hzak3jOw=");
   background-size: 100% 100% ;
   height: auto;
-  
+  margin-bottom: -15px;
 }
 
 h3 {  
@@ -190,7 +190,7 @@ h3 {
     text-align: center;
   }
 
-  .admin tr td:nth-child(2) { text-align: left; }
+  .admin tr td:nth-child(2) { text-align: center; }
 
   .primer-item img{
 

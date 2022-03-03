@@ -16,8 +16,6 @@ body {
   overflow-x: hidden;
 }
 
-
-
 /* main admin */
 
 main {
@@ -25,6 +23,7 @@ main {
   padding: 20px;
   padding-bottom: 100px;
   width: 100%;
+  margin-bottom: -15px;
 }
 
 .admin h2{

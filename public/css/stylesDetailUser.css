@@ -32,8 +32,9 @@ main{
   flex-direction: column;
   right: 1px;
   left: 1px;
-  background-image: url("https://i.pinimg.com/originals/81/c8/ee/81c8eee118734475f96ee717bc13dfb4.jpg");
+  background-image: url("https://thumbs.dreamstime.com/b/fondo-de-bambú-23080305.jpg");
   background-size: cover;
+  margin-bottom: -15px;
 }
 /* .body {
   background-color: #f2d6bd;
@@ -45,8 +46,6 @@ h3 {
   font-size: 16px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: aqua;
-  background-color: rgba(0, 0, 0, 0.486);
 }
 
 .register {

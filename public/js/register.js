@@ -49,7 +49,7 @@ window.addEventListener("load", function(){
         
         
         let campoContraseña = document.querySelector(".contraseña input");
-        let caracteres = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        let caracteres = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&]{8,}$/;
         if(campoContraseña.value == ""){
             errores.push('El campo contraseña no puede estar vacío');
             campoContraseña.style.border="2px solid #be1c29";            

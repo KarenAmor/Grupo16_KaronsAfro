@@ -17,6 +17,7 @@ main {
   overflow: hidden;
   background-image: url("https://static.vecteezy.com/system/resources/previews/003/321/398/non_2x/abstract-pink-background-pink-modern-shapes-background-vector.jpg");
   height: auto;
+  margin-bottom: -15px;
 }
 
 .box input {    
@@ -42,6 +43,10 @@ main {
 
 .box .user a{
   margin: auto;
+}
+
+.box .user h4{
+  font-family: 'Playfair Display', serif;  
 }
 
 main div{
@@ -260,6 +265,10 @@ h2 {
     height: 5vh;
     margin: 0.5rem 2rem;
     font-size: 15px;
+  }
+
+  .box .user a i{
+    font-size: 40px;
   }
 
   main img {

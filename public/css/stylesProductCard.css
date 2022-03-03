@@ -64,8 +64,15 @@ h3 {
 
 }
 
+.trash{
+  width: 0.8rem;
+  fill: #df1538;
+  position: relative;
+  bottom: 10px;
+}
+
 .total{
-  width: 70vw;
+  width: 72vw;
   height: 50vh;
   background-color: white;
   margin: auto;
@@ -73,7 +80,6 @@ h3 {
   border-radius: 10px;
   opacity: 0.85;
   box-shadow: 3px 3px 32px 11px rgba(0,0,0,0.66);
-
 }
 
 .total table{
@@ -84,9 +90,8 @@ h3 {
 .total h2{
   font-size: 18px;
   text-align: center;
-  background: rgb(238, 165, 157);
+  border-bottom: 1px solid #00000085;
   height: 30px;
-  border-radius: 10px;
   font-family: 'Playfair Display', serif;
   font-weight: bold;
 }
@@ -97,10 +102,11 @@ h3 {
   background: rgb(241, 121, 108);
   height: 30px;
   border-radius: 10px;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   font-family: 'Playfair Display', serif;
   text-decoration: underline;
   font-weight: bold;
+  width: 50vw;
 }
 
 .total table {
@@ -152,6 +158,10 @@ h3 {
     background-color: transparent;
   }
 
+  .total h3{
+    width: 20vw;
+  }
+
 }
 
 @media screen and (min-width: 1281px) { 
@@ -189,7 +199,7 @@ h3 {
   }
 
   .total{
-    width: 20vw;
+    width: 22vw;
     height: 50vh;
     background-color: white;
     opacity: 0.85;
@@ -201,6 +211,10 @@ h3 {
   .total h2{
     font-size: 20px;
     text-align: center;
+  }
+
+  .total h3{
+    width: 15vw;
   }
 
   .total table {

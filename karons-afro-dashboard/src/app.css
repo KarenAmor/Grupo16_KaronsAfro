@@ -38,17 +38,22 @@ td ul li{
 }
 
 .sidebar .nav-item .nav-link span {
-    color: black;
+  color: black;
+  font-weight: bold;  
 }
 
 .sidebar-dark .sidebar-heading {
-    color: black;
+    color: #293c74;
     text-align: center;
     font-size: 15px;
+    border-bottom: 1px solid #eaecf46b;
+    padding-bottom: 1rem;
 }
 
 .sidebar .nav-item .nav-link {
-    margin-top: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #eaecf46b;
 }
 
 #wrapper #content-wrapper {
@@ -71,4 +76,11 @@ td ul li{
 
 .bg-dark {
     background-color: #eb9755!important;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+
 }

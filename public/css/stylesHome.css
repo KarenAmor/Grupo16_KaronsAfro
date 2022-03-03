@@ -36,8 +36,12 @@ main {
 }
 
 .box .user{
-  display: flex;
-  margin-left: inherit;
+  display: grid;
+  justify-content: center;
+}
+
+.box .user a{
+  margin: auto;
 }
 
 main div{

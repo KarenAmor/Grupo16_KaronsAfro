@@ -28,7 +28,7 @@ main {
 }
 
 .admin h2{
-    font-size: 60px;
+    font-size: 40px;
     text-align: center;
 }
 
@@ -60,7 +60,10 @@ main {
     color: rgb(32, 146, 146);
 }
 
-
+form button{
+  border-radius: 5px;  
+  background-color: #fff;
+}
 
 /*_________________MEDIA QUIERES_________________*/
 /*TABLET*/
@@ -197,5 +200,9 @@ main {
   nav .letra {
     font-size: 22px;
     margin-right: 33px;
+  }
+
+  form button:hover{
+    cursor: pointer;
   }
 }

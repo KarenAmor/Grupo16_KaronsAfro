@@ -73,7 +73,7 @@ window.addEventListener("load", function(){
 
     let ulErrors = document.querySelector('.errores');
     ulErrors.innerHTML = "";
-        console.log(campoDescripcionProducto.value.length);
+        
     if (errores.length > 0) {
         e.preventDefault();  
         ulErrors.classList.add('alert-warning');

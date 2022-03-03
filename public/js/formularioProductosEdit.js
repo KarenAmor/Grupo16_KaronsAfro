@@ -4,8 +4,8 @@ window.addEventListener("load", function(){
     formulario.addEventListener("submit", function(e){
         const errores =[];
 
-        let campoNombreProducto = document.querySelector(".nombreProducto input");
-        
+        let campoNombreProducto = document.querySelector(".nombreProducto #nombreProducto");
+        console.log(campoNombreProducto);
         if (campoNombreProducto.value=="") {
             errores.push("El campo Nombre del Producto debe estar completo")
             campoNombreProducto.style.border="2px solid #be1c29"; 
@@ -16,7 +16,7 @@ window.addEventListener("load", function(){
             campoNombreProducto.style.border="2px solid #198754"
         }
 
-        let campoPrecio = document.querySelector(".precioProducto input");
+        let campoPrecio = document.querySelector(".precioProducto #precioProducto");
         
         if (campoPrecio.value=="") {
             errores.push("El campo del precio no debe estar vacio")
@@ -25,7 +25,7 @@ window.addEventListener("load", function(){
             campoPrecio.style.border="2px solid #198754"
         }
 
-        let campoReferencia = document.querySelector(".referenciaProducto input");
+        let campoReferencia = document.querySelector(".referenciaProducto #referenciaProducto");
         
         if (campoReferencia.value=="") {
             errores.push("El campo referencia no debe estar vacio")
@@ -37,7 +37,7 @@ window.addEventListener("load", function(){
             campoReferencia.style.border="2px solid #198754"
         }
 
-        let campoCantidadDisponible = document.querySelector(".cantidadProducto input");
+        let campoCantidadDisponible = document.querySelector(".cantidadProducto #cantidadProducto");
         
         if (campoCantidadDisponible.value=="") {
             errores.push("El campo cantidad Producto no debe estar vacio")
@@ -46,7 +46,7 @@ window.addEventListener("load", function(){
             campoCantidadDisponible.style.border="2px solid #198754"
         }
 
-        let campoDescripcionProducto = document.querySelector(".descripcionProducto input");
+        let campoDescripcionProducto = document.querySelector(".descripcionProducto #descripcionProducto");
         
         if (campoDescripcionProducto.value=="") {
             errores.push("El campo Descripcion del Producto no debe estar vacio")
@@ -58,7 +58,7 @@ window.addEventListener("load", function(){
             campoDescripcionProducto.style.border="2px solid #198754"
         }
 
-        let campoImagenProducto = document.querySelector(".imagenProducto input");
+        let campoImagenProducto = document.querySelector(".imagenProducto #imagenProducto");
         const formatoImagenProductoValido =/.(gif|jpeg|jpg|png)$/i;
         
         if(campoImagenProducto.value && !formatoImagenProductoValido.exec(campoImagenProducto.value)){

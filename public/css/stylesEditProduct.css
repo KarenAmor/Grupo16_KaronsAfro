@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,54 +7,75 @@
   padding: 0;
 }
 
-html,
-body {
-  font-size: 62.5%;
-  font-family: "Roboto Mono", monospace;
-  height: 100%;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-/*HEADER*/
-
 /*BODY*/
 main{
-  background-color: #f2d6bd;
-  position: relative;
-  display: flex;
+  position: relative; 
   justify-content: center;
-  width: 100%;
-  min-width: 320px;
-  text-align: center; 
-  flex-direction: column;
-  right: 1px;
-  left: 1px;
+  overflow: hidden;
+  background-color: #f2d6bd;
+  height: auto;  
 }
 
 h3 {
+  font-family: 'Playfair Display', serif;
   text-align: center;
   font-weight: bold;
   font-size: 16px;
-  margin-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .register {
+  box-shadow: 3px 3px 32px 11px rgba(0,0,0,0.66);
   padding: 20px;
   margin-top: 20px;
-  background-color: white;
-  opacity: 80%;
+  background-color: #ffe4ec;
   border-radius: 5px;
-  margin: 2% 10% 2% 10%;
+  margin: 5% 10% 2% 10%;
   display: flex;
   flex-direction: column;
+}
+
+.nombreProducto,
+.precioProducto,
+.referenciaProducto,
+.cantidadProducto,
+.descripcionProducto,
+.imagenProducto {  
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  align-items: center;
+  font-size: 12px;
+  text-align: left;
+}
+
+.nombreProducto input,
+.precioProducto input,
+.referenciaProducto input,
+.cantidadProducto input,
+.descripcionProducto input {
+  width: 100%;
+  margin-top: 2px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.imagenProducto input {
+  background-color: white;
+  margin-top: 2px;
+  padding: 20px 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
 }
 
 .botonBack{
   border-radius: 5px;  
   position: absolute;
   left: 140px;
+  top: 10px;
 }
 
 .botonBack a{
@@ -62,7 +84,7 @@ h3 {
   text-decoration: none;
 }
 
-form div label{
+/* form div label{
   font-size: 20px;
 }
 
@@ -97,10 +119,12 @@ form div h4{
   padding: 8px 5px;
   border-radius: 5px;
   border: 1px solid black;
-}
+} */
 
 .imagenProducto img{
   margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
   display: block;  
 }
 
@@ -135,7 +159,7 @@ form div h4{
 
 /*_________________MEDIA QUIERES_________________*/
 /*TABLET*/
-@media screen and (min-width: 424px) {  
+/* @media screen and (min-width: 424px) {  
   main {
     display: flex;
     justify-content: center;
@@ -157,11 +181,11 @@ form div h4{
     margin-right: 100px;
     justify-content: center;
   }
-}
+} */
 
 /*COMPUTADOR*/
 
-@media screen and (min-width: 768px) { 
+/* @media screen and (min-width: 768px) { 
   main ul li img {
     margin: 0;
     padding: 0;
@@ -171,9 +195,41 @@ form div h4{
     justify-content: center;
   }
 
+} */
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1280px) and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }  
+  
+  .alert-warning{    
+    width: 55vw;
+    margin-left: 21rem;
+    margin-bottom: 1rem;
+  }
+
+  h3{
+    font-size: 18px;
+  }
+
+  .register{
+    width: 40vw;
+    margin: auto;
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
   header {
     width: 100%;
   }
@@ -206,10 +262,10 @@ form div h4{
   nav .letra {
     font-size: 22px;
     margin-right: 33px;
-  }
+  } */
 
   /*MAIN*/
-  h3 {
+  /* h3 {
     align-items: center;
     font-weight: bold;
     font-size: 20px;
@@ -223,5 +279,56 @@ form div h4{
     margin: 2% 10% 2% 10%;
     display: flex;
     flex-direction: column;
+  }
+} */
+
+@media screen and (min-width: 1281px) {
+
+  main{
+    display: grid;
+    justify-items: center;    
+  }
+
+  .alert-warning{    
+    width: 40vw;
+    margin-left: 45rem;
+    margin-bottom: 1rem;
+  }
+
+  h3{
+    font-size: 25px;
+  }
+
+  .register{
+    margin-top: 1rem;
+    width: 40vw;
+    margin: 1rem 0 2rem 5rem;
+  }
+
+  .nombreProducto,
+  .precioProducto,
+  .referenciaProducto,
+  .cantidadProducto,
+  .descripcionProducto,
+  .imagenProducto{  
+    font-size: 16px;
+  }
+
+  #descripcionProducto{
+    width: 492px;
+    height: 113px;
+    resize: none;
+  }
+
+  .imagenProducto input{
+    font-size: 14px;
+  }
+
+  .botonAdd {
+    font-size: 14px;
+  }
+
+  .botonAdd:hover{
+    background-color: #e6c398;
   }
 }

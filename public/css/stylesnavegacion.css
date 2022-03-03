@@ -49,7 +49,17 @@ main {
   padding: 20px;
   font-size: 30px;
   color: bisque;
+  background-color: rgba(0, 0, 0, 0.5);
 }
+
+.not-found{
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+  font-size: 30px;
+  color: bisque;
+}
+
 .articulo {
   background: white;
   margin: 50px;
@@ -220,7 +230,7 @@ h2 {
 
   /*MAIN*/
   .articulo{
-   /* width: 30%; */
+   width: 30%;
    padding: 10px;
 
   }
@@ -243,7 +253,7 @@ h2 {
     border-top: 1px solid transparent;
     background-color: #fff;
     padding: 20px 30px;
-    margin: auto;
+    margin: 0 0 0 4rem;
   }
   .datos {
     color: black;
@@ -256,6 +266,7 @@ h2 {
     padding: 20px 30px;
     text-align: center;
     border-radius: 5%;
+    margin: 0 4rem 0 4rem;
   }
   
   .titulo {

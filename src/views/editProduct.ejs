@@ -17,7 +17,7 @@
                             <button class="botonBack" type="button"><a href="/administrador">Volver</a></button>
                             <div class="nombreProducto">
                                 <label>Nombre del Producto</label>
-                                <input type="text" name="nombreProducto" value="<%= product.name %>" 
+                                <input type="text" id="nombreProducto" name="nombreProducto" value="<%= product.name %>" 
                                 class="<%= locals.errors && errors.nombreProducto ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.nombreProducto : null %>"
                                 >
@@ -29,7 +29,7 @@
                             </div>
                             <div class="precioProducto">
                                 <label>Precio</label>
-                                <input type="number" name="precioProducto" value="<%= product.price %>" 
+                                <input type="number" id="precioProducto" name="precioProducto" value="<%= product.price %>" 
                                 class="<%= locals.errors && errors.precioProducto ? 'is-invalid' : null %>"
                             value="<%= locals.oldData ? oldData.precioProducto : null %>"
                                 >
@@ -41,7 +41,7 @@
                             </div>
                             <div class="referenciaProducto">
                                 <label>Referencia</label>
-                                <input type="texto" name="referenciaProducto" value="<%= product.reference %>" }
+                                <input type="texto" id="referenciaProducto" name="referenciaProducto" value="<%= product.reference %>" }
                                 class="<%= locals.errors && errors.referenciaProducto ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.referenciaProducto : null %>"
                                 >
@@ -53,7 +53,7 @@
                             </div>
                             <div class="cantidadProducto">
                                 <label>Cantidad Disponible</label>
-                                <input type="texto" name="cantidadProducto" value="<%= product.quantity %>" 
+                                <input type="texto" id="cantidadProducto" name="cantidadProducto" value="<%= product.quantity %>" 
                                 class="<%= locals.errors && errors.cantidadProducto ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.cantidadProducto : null %>"
                                 >
@@ -64,8 +64,8 @@
                                 <% } %>
                             </div>
                             <div class="descripcionProducto">
-                                <label style="position: relative; bottom: 50px;">Descripción del Producto</label>
-                                <textarea name="descripcionProducto"
+                                <label>Descripción del Producto</label>
+                                <textarea id="descripcionProducto" name="descripcionProducto"
                                 class="<%= locals.errors && errors.descripcionProducto ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.descripcionProducto : null %>"
                                 ><%= product.description %></textarea>
@@ -80,7 +80,7 @@
                                 <h4>Imagen del Producto actual</h4>
                                 <img src="/Images/products/<%= product.image %>"
                                 width="300px" height="250px" alt="<%=product.name%>">
-                                <input type="file" name="imagenProducto"
+                                <input type="file" id="imagenProducto" name="imagenProducto"
                                 class="<%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>"
                                 >
                                 <% if (locals.errors && errors.imagenProducto) { %>

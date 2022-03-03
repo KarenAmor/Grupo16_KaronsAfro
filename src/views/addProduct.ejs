@@ -5,15 +5,16 @@
 
         <body class="body">
             <%- include ('./partials/header') %>
-            <main>
+            <main>                
                 <h3> AGREGAR PRODUCTO</h3>
+                <button class="botonBack" type="button"><a href="/administrador">Volver</a></button>
                 <div class="errores">
                     <ul>
         
                     </ul>
                 </div>
                 <form action="/administrador/addProduct" method="POST" class="register" enctype="multipart/form-data"><b>
-                    <button class="botonBack" type="button"><a href="/administrador">Volver</a></button>
+                    
                         <div class="nombreProducto">
                             <label>Nombre del Producto</label>
                             <input type="text" id="nombreProducto" name="nombreProducto" 
@@ -63,7 +64,7 @@
                             <% } %>
                         </div>
                         <div class="descripcionProducto">
-                            <label style="position: relative; bottom: 50px;">Descripción del Producto</label>
+                            <label>Descripción del Producto</label>
                             <textarea id="descripcionProducto" name="descripcionProducto"
                             class="<%= locals.errors && errors.descripcionProducto ? 'is-invalid' : null %>"
                             value="<%= locals.oldData ? oldData.descripcionProducto : null %>"

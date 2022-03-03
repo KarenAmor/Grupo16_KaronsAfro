@@ -6,7 +6,7 @@ function TableData() {
     const [products, setProducts] = useState([])
     let callApiProducts = async () => {
         try {
-            let call = await fetch("https://grupo16-karonsafro.herokuapp.com/api/products")
+            let call = await fetch("http://localhost:4000/api/products")
             let result = await call.json()
             return result
         } catch (error) {

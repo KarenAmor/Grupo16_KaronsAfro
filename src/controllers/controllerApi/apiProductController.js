@@ -116,7 +116,7 @@ const apiProductController = {
                     newProduct: {
                         name: newProduct.name,
                         description: newProduct.description,
-                        image: "https://grupo16-karonsafro.herokuapp.com/Images/products/"+newProduct.image
+                        image: "http://localhost:4000/Images/products/"+newProduct.image
                     }
                 }                
             })

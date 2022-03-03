@@ -17,7 +17,7 @@ function ContentRowTop() {
 
     let callApiProducts = async () => {
         try {
-            const call = await fetch("https://grupo16-karonsafro.herokuapp.com/api/products")
+            const call = await fetch("http://localhost:4000/api/products")
             const result = await call.json()
             return result
         } catch (error) {
@@ -27,7 +27,7 @@ function ContentRowTop() {
 
     let callApiUsers = async () => {
         try {
-            let call = await fetch("https://grupo16-karonsafro.herokuapp.com/api/users")
+            let call = await fetch("http://localhost:4000/api/users")
             let result = await call.json()
             return result
         } catch (error) {
@@ -37,7 +37,7 @@ function ContentRowTop() {
 
     let callApiProductsAmount = async () => {
         try {
-            let call = await fetch("https://grupo16-karonsafro.herokuapp.com/api/products-in-categories")
+            let call = await fetch("http://localhost:4000/api/products-in-categories")
             let result = await call.json()
             return result
         } catch (error) {
@@ -46,7 +46,7 @@ function ContentRowTop() {
     }
 
     let callApiNewProduct = async () => {
-        let call = await fetch("https://grupo16-karonsafro.herokuapp.com/api/lastProduct")
+        let call = await fetch("http://localhost:4000/api/lastProduct")
         let result = call.json()
         return result
     }

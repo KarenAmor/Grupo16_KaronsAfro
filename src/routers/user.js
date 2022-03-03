@@ -10,7 +10,7 @@ const userController = require("../controllers/userController");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.resolve(__dirname, "../../public/images/users"));
+    cb(null, path.resolve(__dirname, "../../public/Images/users"));
   },
   filename: function (req, file, cb) {
     cb(null, "foto" + "-" + Date.now() + path.extname(file.originalname));
